@@ -63,12 +63,19 @@ Die Energiedifferenz benachbarter Zeeman-Niveaus ist dann
 \end{equation}
 Der Lande-Faktor ist in diesem Fall
 \begin{equation}
-  g_\text{F} \approx g_\text{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
+  g_\text{F} \approx g_\text{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}.
 \end{equation}
+$F$ läuft von $I+J$ bis $|I-J|$, jedes Hyperfeinniveau spaltet in einem äußeren Magnetfeld in weiter $2F+1$ Zeeman-Niveaus
+auf. Für $I=\frac{3}{2}$ ist dies in \autoref{aufspaltung} beispielhaft gezeigt.
+\begin{figure}
+  \includegraphics{aufspaltung.png}
+  \caption{Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit $I=\frac{3}{2}$.}
+  \label{aufspaltung}
+\end{figure}
 
 \subsection{Optisches Pumpen}
 
-Energieniveaus der inneren Schalen der Elektronenhülle sind vollstandig besetzt, die Besetzung der äußeren Schalen ist
+Die Energieniveaus der inneren Schalen der Elektronenhülle sind vollstandig besetzt, die Besetzung der äußeren Schalen ist
 temperaturabhängig. Im thermischen Gleichgewicht wird sie für zwei Niveaus mit den Energien $W_1$ und $W_2$ durch die
 Boltzannsche Gleichung
 \begin{align}
@@ -80,6 +87,25 @@ dafür, wie viele Zustände es pro Energie $W_i$ gibt.
 
 Der Begriff Optisches Pumpen bezeichnet eine Methode, mit der eine Abweichung von der in \autoref{boltz} gegebenen
 Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion, wo $N_2 > N_1$ ist.
+Dafür wird Licht eingestrahlt, das gerade die nötige Energie besitzt, um ein Hüllenelektron vom Grundzustand in einen
+angeregten Zustand zu versetzen. Für ein Alkali-Atom ist $J=\frac{1}{2}$, $M_\text{J}$ kann also nur $\pm \frac{1}{2}$
+werden. Aufgrund der Auswahlregeln sind nur Übergänge mit $\Delta M = 0,\pm 1$ möglich.
+Bei $\pi$-Übergangen mit $\Delta M = 0$ wird linear polarisiertes Licht emitiert und absorbiert, für $\sigma^\pm$-Übergänge
+mit $\Delta M = \pm 1$ ist es rechtszirkular- bzw. linkszirkular-polarisiertes Licht.
+Wird rechtszirkular-polarisiertes Licht in eine Zelle mit dem Dampf eines Alkali-Atom eingestrahlt, können aufgrund der
+Beschränkung $\Delta M_\text{J}$ nur Elektronen aus dem energetisch niedrigeren Grundzustand angeregt werden, durch spontane
+Emission aus dem angeregten Zustand, werden aber beide Grundzustände bevölkert. Das energieärmere Niveau wird fortlaufend
+durch Einstrahlung von Licht geleert, das energetisch höhere, aus dem keine Elektronen angeregt werden können, wird gesättigt.
+Als Resultat steigt der Transmissionskoeffizient asymptotisch gegen den Wert 1, da keine Elektronen mehr verfügbar sind, die
+angeregt werden können.
+
+\subsection{Messung der Zeeman-Aufspaltung}
+
+Ein Elektron im angeregten Zustand kann durch spontane oder durch angeregte Emission in seinen Grundzustand zurückkehren.
+Dabei ist letzteres bei Energien, die für Zeeman-Aufspaltung relevant sind, um 25 Größenordnungen wahrscheinlicher, da die
+Übergangswahrscheinlichkeit für spontane Emission $\propto \nu^3$ ist.
+Die Zeeman-Aufspaltung tritt nur bei angelgtem Magnetfeld auf, sodass auch nur bei externem Magnetfeld das optische Pumpen
+stattfinden kann.
 
 \subsection{Quadratischer Zeeman-Effekt}
 
