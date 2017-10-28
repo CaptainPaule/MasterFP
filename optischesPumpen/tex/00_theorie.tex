@@ -1,4 +1,92 @@
-\thispagestyle{plain}
+\section{Zielsetzung}
+Durch Messung des Transmissionskoeffizienten von Rubidiumgas bei Anlegen eines externen Magnetfeldes wird die
+Stärke des Erdmagnetfeldes, die Lande-Faktoren und die Spins der Elektronenhülle und des Kerns der Rubidiumisotope
+Rb-85 und Rb-87 berechnet.
 
-\section*{Theorie}
-Hier steht der Theorieteil des Protokolls
+\section{Theorie}
+
+Für die beiden verwendeten Rubidiumisotope sind Hyperfeinstruktur- und Zeeman-Aufspaltung unterschiedlich. Die damit
+verbundenen Kenngrößen - der Landefaktor, das gyromagnetische Verhältnis und der Spin - können mit Hilfe optischen
+Pumpens aufgrund der unterschiedlichen Enerdifferenzen sehr präzise gemessen werden.
+
+\subsubsection{Aufspaltung von Energieniveaus}
+
+Quantenzahlen beschreiben Zustand eines Systems. Durch Kernspin und externes Magentfeld kommt es zu Hyperfeinstruktur-
+und Zeemann-Aufspaltung.
+Der Gesamtdrehimpuls der Elektronenhülle \vec{J} ist über
+\begin{equation}
+  \vec{\mu}_\text{J} = -g_\text{J}\mu_\text{B}\vec{J} \quad \text{bzw.} \quad |\vec{\mu}_\text{J}| = -g_\text{J}\mu_\text{B}\sqrt{J (J + 1)}
+  \label{magnMom}
+\end{equation}
+mit einem magnetischen Moment verknüpft, dabei ist $\mu_\text{B}$ das Bohrsche Magneton. Das magnetische Moment der gesamten
+Elektronenhülle setzt sich aus den magnetischen Momenten von Bahndrehimpuls $\vec{L}$ und Spin $\vec{S}$ zusammen:
+\begin{equation}
+  \vec{\mu}_\text{J} = \vec{\mu}_\text{L} + \vec{\mu}_\text{S} \quad \text{mit} \quad |\vec{\mu}_\text{J}| = \mu_\text{B}\sqrt{L (L + 1)} \quad \text{und}
+  \quad |\vec{\mu}_\text{S}| = g_\text{S}\mu_\text{B}\sqrt{S (S + 1)}.
+\end{equation}
+$g_\text{S}$ ist der Lande-Faktor des freien Elektrons, der Zusammenhang der magnetischen Momente wird durch den Lande-Faktor
+$g_\text{J}$ ausgedrückt.
+%$\vec{\mu}_J$ präzediert um $\vec{J}$, sodass für den Betrag gilt:
+%\begin{align}
+%  \begin{split}
+%    |\vec{\mu}_J| &= |\vec{\mu}_L|\cos\beta + |\vec{\mu}_S|\cos\alpha\\
+%    \equiv g_J\mu_B\sqrt{J (J + 1)} = & \mu_B\sqrt{L (L + 1)}\cos\beta + g_S\mu_B\sqrt{S (S + 1)}\cos\alpha
+%  \end{split}
+%\end{align}
+Dieser kann aus den Quantenzahlen über
+\begin{equation}
+  g_\text{J} = \frac{3.0023J(J+1) + 1.0023[S(S+1) - L(L+1)]}{2J(J+1)}
+\end{equation}
+berechnet werden.
+
+Liegt ein äußeres Magnetfeld an, kommt es zu einer Aufspaltung der Energieniveaus, da das magnetische Moment mit dem Feld
+wechselwirkt; die Wechselwirkungsenergie ist
+\begin{equation}
+  U_\text{magn} = -\vec{\mu}_\text{J}\cdot\vec{B}.
+\end{equation}
+Da nur die zu $\vec{B}$ parallele Komponente des magnetischen Moments zu diesem Effekt beiträgt, kommt es zu einer Aufspaltung
+der Energieniveaus gemäß
+\begin{equation}
+  U_\text{magn} = M_\text{J}g_\text{J}\mu_\text{B}B,
+\end{equation}
+wobei $M_\text{J}$ ganzzahlig ist und aus $-J, -J+1, ..., J-1, J$ stammt. Der sogenannte Zeeman-Effekt beschreibt also die
+Aufspaltung in $2J+1$ Energieniveaus bei Anlegen eines äußeren Magnetfeldes.
+
+Bei einem nicht-verschwindenden Kernspin kommt es zudem zu einer Aufspaltung in Hyperfeinstrukturniveaus.
+Der Gesamtdrehimpuls der Elektronenhülle $\vec{J}$ koppelt an den Drehimpuls des Kerns $\vec{I}$ zum Gesamtdrehimpuls des Atoms
+\begin{equation}
+  \vec{F} = \vec{J} + \vec{I}.
+\end{equation}
+Die Energiedifferenz benachbarter Zeeman-Niveaus ist dann
+\begin{equation}
+  U_\text{UF} = g_\text{F}\mu_\text{B}B.
+\end{equation}
+Der Lande-Faktor ist in diesem Fall
+\begin{equation}
+  g_\text{F} \approx g_\text{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
+\end{equation}
+
+\subsection{Optisches Pumpen}
+
+Energieniveaus der inneren Schalen der Elektronenhülle sind vollstandig besetzt, die Besetzung der äußeren Schalen ist
+temperaturabhängig. Im thermischen Gleichgewicht wird sie für zwei Niveaus mit den Energien $W_1$ und $W_2$ durch die
+Boltzannsche Gleichung
+\begin{align}
+  \frac{N_2}{N_1} = \frac{g_2}{g_1}\frac{\exp(-W_2/kT)}{\exp(-W_1/kT)}
+  \label{boltz}
+\end{align}
+beschrieben. $N_i$ sind die Besetzungszahlen der jeweiligen Zustände und die statistischen Gewichte $g_i$ sind ein Maß
+dafür, wie viele Zustände es pro Energie $W_i$ gibt.
+
+Der Begriff Optisches Pumpen bezeichnet eine Methode, mit der eine Abweichung von der in \autoref{boltz} gegebenen
+Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion, wo $N_2 > N_1$ ist.
+
+\subsection{Quadratischer Zeeman-Effekt}
+
+Wird die magnetische Flussdichte vergrößert, müssen bei der Berechnung der Übergangsenergie Terme höherer Ordnung von $B$
+berücksichtigt werden, da nun die Spin-Bahn-Wechselwirkung relevant wird. Die Zeeman-Übergänge haben eine unterschiedliche
+Energie und sind abhängig von $M_\text{F}$. Der Übergang von einem Zustand $M_\text{F}$ zu $M_\text{F}-1$ mit einer
+Hyperfeinstrukturaufspaltung $\Delta E_\text{Hy}$ wird durch die Breit-Rabi-Formel beschrieben:
+\begin{equation}
+  U_\text{HF} = g_\text{F}\mu_\text{B}B + {g_\text{F}}^2{\mu_\text{B}}^2B^2\frac{1-2M_\text{F}}{\Delta E_\text{Hy}}
+\end{equation}
