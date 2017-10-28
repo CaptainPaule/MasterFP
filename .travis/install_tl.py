@@ -32,4 +32,4 @@ if __name__ == '__main__':
         while not child.terminated:
             print(child.readline().decode().strip())
     except pexpect.EOF:
-print('Installation seems to be finished')
+        print('Installation seems to be finished')
