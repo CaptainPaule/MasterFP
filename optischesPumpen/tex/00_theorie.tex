@@ -13,7 +13,7 @@ Pumpens aufgrund der unterschiedlichen Enerdifferenzen sehr präzise gemessen we
 
 Quantenzahlen beschreiben Zustand eines Systems. Durch Kernspin und externes Magentfeld kommt es zu Hyperfeinstruktur-
 und Zeemann-Aufspaltung.
-Der Gesamtdrehimpuls der Elektronenhülle $\vec{J}$ ist über
+Der Gesamtdrehimpuls der Elektronenhülle \vec{J} ist über
 \begin{equation}
   \vec{\mu}_\text{J} = -g_\text{J}\mu_\text{B}\vec{J} \quad \text{bzw.} \quad |\vec{\mu}_\text{J}| = -g_\text{J}\mu_\text{B}\sqrt{J (J + 1)}
   \label{magnMom}
@@ -67,11 +67,11 @@ Der Lande-Faktor ist in diesem Fall
 \end{equation}
 $F$ läuft von $I+J$ bis $|I-J|$, jedes Hyperfeinniveau spaltet in einem äußeren Magnetfeld in weiter $2F+1$ Zeeman-Niveaus
 auf. Für $I=\frac{3}{2}$ ist dies in \autoref{aufspaltung} beispielhaft gezeigt.
-%\begin{figure}
-%  \includegraphics{aufspaltung.png}
-%  \caption{Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit $I=\frac{3}{2}$.}
-%  \label{aufspaltung}
-%\end{figure}
+\begin{figure}
+  \includegraphics{img/aufspaltung.pdf}
+  \caption{Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit $I=\frac{3}{2}$.}
+  \label{aufspaltung}
+\end{figure}
 
 \subsection{Optisches Pumpen}
 
@@ -105,7 +105,16 @@ Ein Elektron im angeregten Zustand kann durch spontane oder durch angeregte Emis
 Dabei ist letzteres bei Energien, die für Zeeman-Aufspaltung relevant sind, um 25 Größenordnungen wahrscheinlicher, da die
 Übergangswahrscheinlichkeit für spontane Emission $\propto \nu^3$ ist.
 Die Zeeman-Aufspaltung tritt nur bei angelgtem Magnetfeld auf, sodass auch nur bei externem Magnetfeld das optische Pumpen
-stattfinden kann.
+durch Einstrahlen einer geeigneten Lichtquelle in stattfinden kann. Wird ein Magnetfeld angelegt, dass das Erdmagnetfeld gerade ausgleicht, findet keine Aufspaltung statt,
+es tritt keine Inversion auf und der Transmissionskoeffizient sinkt.
+Ein solcher Einbruch in der Intensität des Lichts tritt auch auf, wenn ein frequenzvariables Hochfrequenzfeld an die
+Dampfzelle angelegt wird. Das Magnetfeld wird variiert und sobald es den Wert
+\begin{equation}
+  B_\text{m} = \frac{4\pi m_0}{\text{e}_0g_\text{J}}\nu
+\end{equation}
+erreicht, setzt induzierte Emission ein. Die Inversion wird aufgehoben, das eingestrahlte Licht kann wieder absorbiert werden
+und der Transmissionskoeffizient fällt ab. Die geschieht jeweils für die beiden Rubidiumisotope bei unterschiedlichem
+Magnetfeld.
 
 \subsection{Quadratischer Zeeman-Effekt}
 
@@ -115,4 +124,14 @@ Energie und sind abhängig von $M_\text{F}$. Der Übergang von einem Zustand $M_
 Hyperfeinstrukturaufspaltung $\Delta E_\text{Hy}$ wird durch die Breit-Rabi-Formel beschrieben:
 \begin{equation}
   U_\text{HF} = g_\text{F}\mu_\text{B}B + {g_\text{F}}^2{\mu_\text{B}}^2B^2\frac{1-2M_\text{F}}{\Delta E_\text{Hy}}
+\end{equation}
+
+\subsection{Transiente Effekte}
+
+Wird das Hochfrequenzfeld schnell ein- und ausgeschaltet, präzediert der Kernspin um das effektive Magnetfeld. Die
+Lamor-Frequenz $\\nu = \gamma B_\text{RF}$ mit dem gyromagnetischen Verhältnis $\gamma = g_\text{f}\frac{\mu_ß}{\text{h}}$
+ist vom Lande-Faktor abhängig und somit für die beiden Rubidiumisotope verschieden. Das Verhältnis der Relaxationsperioden
+$T = 1/\gamma B_\text{RF}$ ist dann
+\begin{equation}
+  \frac{T_{87}}{T_{85}} = \frac{\gamma_{85}}{\gamma_{87}}.
 \end{equation}
