@@ -25,4 +25,5 @@ plt.ylabel(r'B-Feld / $\mu$ T')
 
 plt.grid()
 plt.legend(loc='best')
-plt.show()
+plt.savefig('../img/plotLande.pdf')
+

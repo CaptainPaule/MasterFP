@@ -80,20 +80,8 @@
 \newcommand\secondcorrector[1]{\renewcommand\thesecondcorrector{#1}}
 
 % set title page elements
-\subject{Arbeit zur Erlangung des akademischen Grades\\ \thethesisclass}
-\publishers{\thechair \\ \thedivision \\ Technische Universität Dortmund}
 
-% page for the correctors
-\newcommand{\makecorrectorpage}{%
-  \thispagestyle{empty}
-  \vspace*{\fill}
-  \begin{tabular}{@{}l@{\hspace{2em}}l@{}}
-      Erstgutachter:  & \thefirstcorrector \\
-      Zweitgutachter: & \thesecondcorrector \\
-      Abgabedatum:    & \thesubmissiondate
-  \end{tabular}
-  \newpage
-}
+\publishers{\thechair \\ Technische Universität Dortmund}
 
 % add birthplace to author
 \let\oldauthor\author
