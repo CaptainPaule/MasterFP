@@ -1,2 +1,63 @@
-﻿\chapter{Struktur der Arbeit}
-Hier werden die Messwerte ausgewertet.
+﻿\section{Auswertung}
+Zu Beginn wird die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
+Dafür werden die verschiedenen Frequenzen gegen die magnetischen Feldstärken in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ als Steigung und die horizontal Komponente als Ordinate identifiziert.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/plotLande.pdf}
+\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
+\label{aufbau}
+\end{figure}
+
+Mit dem Ansatz
+\begin{equation}
+f(x) = Ax + B
+\end{equation}
+folgt aus der Ausgleichsrechnung folgende Werte für die Koeffizienten A und B.
+
+\input{../optischesPumpen/tex/isotopFitTable.tex}
+
+\newpage
+
+Durch Koeffizientenvergleich mit gleichung 0.10 folgt für die Lande Faktoren
+
+\input{../optischesPumpen/tex/resG1.tex}
+
+und
+
+\input{../optischesPumpen/tex/resG2.tex}
+
+Außerdem lässt sich aus der Ordinate die horizontalkomponente des Erdmagnetfeldes bestimmen,
+welche sich zu
+
+\input{../optischesPumpen/tex/resB.tex}
+
+errechnet.
+
+In Abbildung (?) ist das Signalbild dargestellt, welches die Resonanzen zu festen
+Feldstärken zeigt.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/TEK0002.JPG}
+\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
+\label{aufbau}
+\end{figure}
+
+
+Aus dem Amplitudenverhältnis der Resonanzen wird das Isotopenverhältnis in der
+Dampfzelle ermittelt. Dafür wird die Tiefe der Resonanzen in Pixel bestimmt.
+Eine Messung der Tiefe der Resonanzen mit gimp liefert für die erste Resonanz (von links)
+
+\input{../optischesPumpen/tex/ratioRes1.tex}
+
+für die zweite Resonanz
+
+\input{../optischesPumpen/tex/ratioRes2.tex}
+
+und für das Amplitudenverhältnis
+
+\input{../optischesPumpen/tex/ratio.tex}
+
+Bei der Kalkulation des Amplitudenverhältnisses wurde ein Ablesefehler von 1 Prozentpunkt
+angesetzt.
