@@ -1,4 +1,5 @@
 ﻿\section{Auswertung}
+\subsection{Bestimmung der g-Faktoren und Horizontalkomponente der Erdmagnetfeld}
 Zu Beginn wird die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
 Dafür werden die verschiedenen Frequenzen gegen die magnetischen Feldstärken in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ als Steigung und die horizontal Komponente als Ordinate identifiziert.
 
@@ -17,8 +18,6 @@ folgt aus der Ausgleichsrechnung folgende Werte für die Koeffizienten A und B.
 
 \input{../optischesPumpen/tex/isotopFitTable.tex}
 
-\newpage
-
 Durch Koeffizientenvergleich mit gleichung 0.10 folgt für die Lande Faktoren
 
 \input{../optischesPumpen/tex/resG1.tex}
@@ -34,10 +33,32 @@ welche sich zu
 
 errechnet.
 
+\subsection{Bestimmung der Kernspins}
+Zur bestimmung des Kernspins muss Gleichung (?) für die zwei berechneten g-Faktoren gelöst werden. Dafür werden beide Seiten der Gleichung in Abhängigkeit
+des Kernspins I aufgetragen. Der Punkt an den sich beide Kurven schneiden, zeigt den Kernspin des zu Untersuchenden Isotope an.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/coreSpin1.pdf}
+\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
+\label{aufbau}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/coreSpin2.pdf}
+\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
+\label{aufbau}
+\end{figure}
+
+Aus den errechneten g-Faktoren und Kernspins können wir Isotop 1 als Rb87 und Isotop 2 als Rb85 identifizieren.
+
+
+\subsection{Bestimmung des Isotopenverhältnisses}
 In Abbildung (?) ist das Signalbild dargestellt, welches die Resonanzen zu festen
 Feldstärken zeigt.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{./optischesPumpen/img/TEK0002.JPG}
 \caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
@@ -61,3 +82,8 @@ und für das Amplitudenverhältnis
 
 Bei der Kalkulation des Amplitudenverhältnisses wurde ein Ablesefehler von 1 Prozentpunkt
 angesetzt.
+
+\subsection{Abschätzung des quadratischen Zeemann-Effektes}
+Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B, um diese Abweichung zu berücksichtigen, ist es notwenig Terme höherer Ordnung zu betrachten.
+Im folgenden wird die größe des quadratischen Termes für die genutzen Feldstärken abgeschätzt. Wird der quadratische Term explizit ausgewertet zeigt sich, dass der quadratische Zeeman-Effekt
+in diesem Fall proportional zu $10^{-33}$ ist.
