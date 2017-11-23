@@ -6,7 +6,7 @@
 % angepasst von Paul Becker, <paul.becker@tu-dortmund.de>
 % ausgelegt für lualatex und Biblatex mit biber
 
-% Kompilieren mit 
+% Kompilieren mit
 % lualatex dateiname.tex
 % biber dateiname.bcf
 % lualatex dateiname.tex
@@ -67,7 +67,7 @@
 \setmathfont{Latin Modern Math}
 
 % nice, small fracs for the text with \sfrac{}{}
-\usepackage{xfrac}  
+\usepackage{xfrac}
 
 
 %------------------------------------------------------------------------------
@@ -121,7 +121,7 @@
                    % in the references.bib use langid={en} for english sources
 ]{biblatex}
 \addbibresource{references.bib}  % die Bibliographie einbinden
-\DefineBibliographyStrings{german}{andothers = {{et\,al\adddot}}} 
+\DefineBibliographyStrings{german}{andothers = {{et\,al\adddot}}}
 
 %------------------------------------------------------------------------------
 %------------------------------ Sonstiges: ------------------------------------
@@ -130,13 +130,17 @@
 \usepackage[pdfusetitle,unicode,linkbordercolor=tugreen]{hyperref}
 \usepackage{bookmark}
 \usepackage[shortcuts]{extdash}
+\def\equationautorefname{Gleichung}
+\def\figureautorefname{Abbildung}
+\def\chapterautorefname{Kapitel}
+\def\sectionautorefname{Abschnitt}
 
 %------------------------------------------------------------------------------
 %-------------------------    Angaben zur Arbeit   ----------------------------
 %------------------------------------------------------------------------------
 
-\author{Paul Becker u. Alina Esfani}
-\title{optisches Pumpen}
+\author{Paul Becker und Alina Esfani}
+\title{Optisches Pumpen}
 \date{2014}
 \chair{Physikalisches Praktikum}
 \submissiondate{31. September 2015}
@@ -144,7 +148,6 @@
 \begin{document}
 \frontmatter
 \maketitle
-
 
 \mainmatter
 % Hier beginnt der Inhalt mit Seite 1 in arabischen Ziffern
