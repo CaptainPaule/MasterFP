@@ -34,35 +34,35 @@ welche sich zu
 errechnet.
 
 \section{Bestimmung der Kernspins}
-Zur bestimmung des Kernspins muss Gleichung (?) für die zwei berechneten g-Faktoren gelöst werden. Dafür werden beide Seiten der Gleichung in Abhängigkeit
+Zur bestimmung des Kernspins muss Gleichung 2.8 für die zwei berechneten g-Faktoren gelöst werden. Dafür werden beide Seiten der Gleichung in Abhängigkeit
 des Kernspins I aufgetragen. Der Punkt an den sich beide Kurven schneiden, zeigt den Kernspin des zu Untersuchenden Isotope an.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{./optischesPumpen/img/coreSpin1.pdf}
-\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
-\label{aufbau}
+\caption{grafische Lösung zur berechnung des Kernspins von Isoptop 1}
+\label{LandeIso1}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{./optischesPumpen/img/coreSpin2.pdf}
-\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
-\label{aufbau}
+\caption{grafische Lösung zur berechnung des Kernspins von Isoptop 2}
+\label{LandeIso2}
 \end{figure}
 
 Aus den errechneten g-Faktoren und Kernspins können wir Isotop 1 als Rb87 und Isotop 2 als Rb85 identifizieren.
 
 
 \section{Bestimmung des Isotopenverhältnisses}
-In Abbildung (?) ist das Signalbild dargestellt, welches die Resonanzen zu festen
+In Abbildung \autoref{resonanz} ist das Signalbild dargestellt, welches die Resonanzen zu festen
 Feldstärken zeigt.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{./optischesPumpen/img/TEK0002.JPG}
-\caption{Ausgleichsrechnung zur Bestimmung der Lande Faktoren der Rb-Isotope und der lokalen horizontal Komponente des Erdmagnetfeldes}
-\label{aufbau}
+\caption{Abbildung der Resonanzen}
+\label{resonanz}
 \end{figure}
 
 
@@ -87,3 +87,68 @@ angesetzt.
 Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B, um diese Abweichung zu berücksichtigen, ist es notwenig Terme höherer Ordnung zu betrachten.
 Im folgenden wird die größe des quadratischen Termes für die genutzen Feldstärken abgeschätzt. Wird der quadratische Term explizit ausgewertet zeigt sich, dass der quadratische Zeeman-Effekt
 in diesem Fall proportional zu $10^{-33}$ ist.
+
+\section{transiente Effekte}
+Im folgenden werden die transienten Effekte betrachtet. Ein typisches Signalbild ist Abbildung \ref{sigPic} zu entnehmen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/TEK0019.JPG}
+\caption{Signalbild}
+\label{sigPic}
+\end{figure}
+
+Es wird die RF-Amplitude gegen die Periode aufgetragen und anschließend eine Ausgleichsrechnung mit Hilfe der Funktion
+
+\begin{equation}
+f(x) = A + \frac{B}{(C-1)^{-1}}
+\end{equation}
+
+durchgeführt.
+
+Es ergeben sich die Abbildungen \ref{trans1} und \ref{trans2}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/trans1.pdf}
+\caption{Ausgleichsrechnung Isotop 1}
+\label{trans1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{./optischesPumpen/img/trans2.pdf}
+\caption{Ausgleichsrechnung Isotop 2}
+\label{trans2}
+\end{figure}
+
+Die Ausgleichsrechnung liefert für \ref{trans1}
+\begin{table}
+\centering
+\begin{tabular}{cc} \toprule
+\centering
+A & -0,03 $\pm$ 0,03 \\
+B & 2,4 $\pm$ 0,1 \\
+C & -0,13 $\pm$ 0,03 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+und für \ref{trans2}
+
+\begin{table}
+\centering
+\begin{tabular}{cc} \toprule
+\centering
+A & 0,07 $\pm$ 0,01 \\
+B & 2,79 $\pm$ 0,07 \\
+C & 0,09 $\pm$ 0,02 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Der Quotient der Fitparameter B der beiden Ausgleichsrechnungen liefert
+
+\begin{equation}
+\frac{b_{2}}{b_{1}} = 1,17 \pm 0,06
+\end{equation}

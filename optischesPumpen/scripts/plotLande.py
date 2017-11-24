@@ -38,12 +38,15 @@ def fitfunction(x, A, B):
 # export latex table
 def exportLatexTable(table, fileName):
 	with open('../tex/' + fileName + '.tex', 'wb') as texfile:
+		texfile.write("\\begin{table}")
+		texfile.write("\\centering")
 		texfile.write("\\begin{tabular}{ccc} \\toprule \n")
 		texfile.write("\\centering\n")
 		texfile.write(" & A / $\\mu$T/kHz  & B / $\\mu$T \\\\ \\midrule\n")
 		texfile.write("Isotop 1 & " + str(round(table[0], 3)) + " $\pm$ " + str(round(table[2], 3)) + " & " + str(round(table[1], 1)) + " $\pm$ " + str(round(table[3], 1)) +  " " + "\\\\\n")
 		texfile.write("Isotop 2 & " + str(round(table[4], 3)) + " $\pm$ " + str(round(table[6], 3)) + " & " + str(round(table[5], 1)) + " $\pm$ " + str(round(table[7], 1)) +  " " + "\\\\\n")
 		texfile.write("\\bottomrule\n\\end{tabular}\n")
+		texfile.write("\\end{table}")
 
 # export result as latex equation
 def exportResultAsEquation(name, value, roundMean, roundStd, unit, fileName):
@@ -168,8 +171,8 @@ def rhs(I, F, J):
 	return (b*(b+1)+c*(c+1)-a*(a+1))/(2*b*(b+1))
 
 # plot Isotop 1 coreSpin
-plt.plot(I, rhs(I, F, J), 'bo', label="xxx")
-plt.plot(I, lhs1, 'rx', label="ddd")
+plt.plot(I, rhs(I, F, J), 'bo', label="rechte Seite")
+plt.plot(I, lhs1, 'rx', label="linke Seite")
 
 plt.axvline(x = (1.5), linewidth=2, color = 'k')
 plt.xlabel('I')
@@ -191,8 +194,8 @@ plt.clf()
 
 # plot Isotop 2 coreSpin
 F = 3
-plt.plot(I, rhs(I, F, J), 'bo', label="xxx")
-plt.plot(I, lhs2, 'rx', label="ddd")
+plt.plot(I, rhs(I, F, J), 'bo', label="rechte Seite")
+plt.plot(I, lhs2, 'rx', label="linke Seite")
 
 plt.axvline(x = 2.5, linewidth=2, color = 'k')
 plt.xlabel('I')
@@ -219,6 +222,7 @@ BohrMag = 10**(-24)
 
 UHqz = (g1.n)**2 * BohrMag**2 * B**2 / Ehyp
 
+print("")
 print("Abgeschätzte Größe des quadratischen Zeeman Effektes")
 print(UHqz)
 print("")
@@ -229,50 +233,67 @@ A2, P2, deltaT2 = np.genfromtxt('../data/messwertePeriodenResonanz2.txt', unpack
 
 # define function
 def hyp(x, a, b, c):
-	return a + b * np.power(x-c, -1)
+	return a + b * np.power(x+c, -1)
 
 # calc and plot fit isotop 1
-#params, cov = curve_fit(hyp, P1, A1)
-#errors = np.sqrt(np.diag(cov))
+params, cov = curve_fit(hyp, A1, deltaT1 / P1)
+errors = np.sqrt(np.diag(cov))
 
-#print("Fit Amplitude/Periode Isotop 1")
-#print('a =', params[0], '+/-', errors[0])
-#print('b =', params[1], '+/-', errors[1])
-#print("")
+print("Fit Amplitude/Periode Isotop 1")
+print('a =', params[0], '+/-', errors[0])
+print('b =', params[1], '+/-', errors[1])
+print('c =', -1 *params[2], '+/-', errors[2])
+print("")
 
-#x = np.linspace(0, 15, 50)
-#plt.plot(P1, A1, 'bo')
-#plt.plot(x, hyp(x, *params), 'r-')
+b1 = ufloat(params[1], errors[1])
+
+x = np.linspace(0.51, 10, 50)
+plt.xlim(0.51, 10)
+plt.plot(A1, deltaT1 / P1, 'bo')
+plt.plot(x, hyp(x, *params), 'r-')
+
+plt.xlabel("A \\ V")
+plt.ylabel("T \\ ms")
 
 # create grid and legend
-#plt.grid()
-#plt.legend(loc='best')
+plt.grid()
+plt.legend(loc='best')
 
 # save file
-#plt.savefig('../img/trans1.pdf')
+plt.savefig('../img/trans1.pdf')
 
 #clear plot
-#plt.clf()
+plt.clf()
 
 # calc and plot fit isotop 2
-#params, cov = curve_fit(hyp, P2, A2)
-#errors = np.sqrt(np.diag(cov))
+params, cov = curve_fit(hyp, A2, deltaT2 / P2)
+errors = np.sqrt(np.diag(cov))
 
-#print("Fit Amplitude/Periode Isotop 2")
-#print('a =', params[0], '+/-', errors[0])
-#print('b =', params[1], '+/-', errors[1])
-#print("")
+print("Fit Amplitude/Periode Isotop 2")
+print('a =', params[0], '+/-', errors[0])
+print('b =', params[1], '+/-', errors[1])
+print('c =', -1 *params[2], '+/-', errors[2])
+print("")
 
-#x = np.linspace(0, 15, 500)
-#plt.plot(P2, A2, 'bo')
-#plt.plot(x, hyp(x, *params), 'r-')
+b2 = ufloat(params[1], errors[1])
+
+x = np.linspace(1, 10.04, 500)
+plt.xlim(1, 10.04)
+plt.plot(A2, deltaT2 / P2, 'bo')
+plt.plot(x, hyp(x, *params), 'r-')
+
+plt.xlabel("A \\ V")
+plt.ylabel("T \\ ms")
 
 # create grid and legend
-#plt.grid()
-#plt.legend(loc='best')
+plt.grid()
+plt.legend(loc='best')
 
 # save file
-#plt.savefig('../img/trans1.pdf')
+plt.savefig('../img/trans2.pdf')
 
 #clear plot
-#plt.clf()
+plt.clf()
+
+resB = b2 /b1
+print(resB)
