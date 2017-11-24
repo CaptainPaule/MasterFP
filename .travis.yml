@@ -11,5 +11,6 @@ install:
   - tlmgr install koma-script polyglossia csquotes placeins enumitem biber biblatex ncctools filehook xpatch logreq xstring siunitx
 
 script:
-  python /optischesPumpen/scripts/plotLande.py
-  latexmk
+  - pwd
+  - python /optischesPumpen/scripts/plotLande.py
+  - latexmk
