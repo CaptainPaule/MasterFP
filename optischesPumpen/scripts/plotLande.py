@@ -6,10 +6,14 @@ import os
 import math
 import copy
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy import constants
 from uncertainties import ufloat
+
+# set matplotlib backend
+matplotlib.use('Agg')
 
 # read data
 f, m, b1, b2 = np.genfromtxt('../data/messwerteLandeFaktor.txt', unpack=True)
