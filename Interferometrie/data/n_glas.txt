@@ -1,0 +1,7 @@
+# Messung des Brechungsindexes von Glas
+# theta/° M_1 M_2 M_3
+2 8 8 6
+4 14  15  15
+6 20  21  21
+8 27  28  28
+10  34  35  36
