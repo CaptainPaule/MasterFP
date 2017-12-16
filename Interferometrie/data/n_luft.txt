@@ -1,7 +1,7 @@
 # Messung des Brechungsindexes von Luft
 # p/mbar  M_1 M_2 M_3
 0 0 0 0
-50 1  2 2
+50 1 2 2
 100 5 5 5
 150 7 7 7
 200 10  10  10
