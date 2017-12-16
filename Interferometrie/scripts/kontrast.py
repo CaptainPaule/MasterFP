@@ -12,7 +12,6 @@ def kontrast(x, a, b):
 def mse(y, y_hat):
     return np.sum((y-y_hat) ** 2)
 
-Phi = np.arange(0,195,15)*2*np.pi/360
 params, covariance_matrix = curve_fit(kontrast, phi, K, p0=[1.0, 0.0])
 errors = np.sqrt(np.diag(covariance_matrix))
 #errors = correlated_values(covariance_matrix)
