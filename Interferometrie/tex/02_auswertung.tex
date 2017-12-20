@@ -9,7 +9,7 @@ Fit nach der Funktion
 \[
 K = a \cdot | \sin (2 \cdot \phi + b) |
 \]
-liefert Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$
+liefert die Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$
 
 \begin{figure}[h]
 \centering
@@ -20,11 +20,8 @@ liefert Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$
 
 \subsection{Brechungsindex von Glas}
 
-Fit nach der Funktion
-\[
-N = a \cdot \theta + b
-\]
-liefert Fitparameter $a = 3.36 \pm 0.09$ und $b = 0.8 \pm 0.6$
+Fit nach der Funktion in Gleichung (\ref{glas})
+liefert den Fitparameter $a = 1.553 \pm 0.009$, was auch bereits der Brechungsindex von Glas ist.
 
 \begin{figure}[h]
 \centering
@@ -38,14 +35,15 @@ der Intensitätsmaxima.}
 
 Fit nach der Funktion
 \[
-N = a \cdot p + b
+n = \sqrt{a \cdot p + 1}
 \]
-liefert Fitparameter $a = 0.0478 \pm 0.0008$ und $b = -0.4 \pm 0.2$
+liefert den Fitparameter $a = 6.05 \cdot 10^{-7} \pm 4 \cdot 10^{-9}$
+
+Daraus ergibt sich für den Brechungsindex bei Normalbedingungen: $0.999547 \pm 0.000003$.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\linewidth]{img/n_luft.png}
-\caption{Lineare Ausgleichsrechnung für den Zusammenhang zwischen dem Druck $p$ und der Anzahl
-der Intensitätsmaxima.}
+\caption{Lineare Ausgleichsrechnung für den Zusammenhang zwischen dem Druck $p$ und dem Brechungsindex.}
 \label{n_luft}
 \end{figure}
