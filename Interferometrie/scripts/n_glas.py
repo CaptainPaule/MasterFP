@@ -15,7 +15,7 @@ errors = np.sqrt(np.diag(covariance_matrix))
 print('a =', params[0], '±', errors[0])
 print('b =', params[1], '±', errors[1])
 
-plt.errorbar(theta, M, yerr=M_error, fmt='+', label='Messwerte')
+plt.errorbar(theta, M, yerr=M_error, fmt='+', label='gemittelte Messwerte')
 plt.plot(theta, n_glas(theta, *params), label='Fit')
 plt.xlabel(r'$\theta/°$')
 plt.ylabel(r'#Intensitätsmaxima')
