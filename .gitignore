@@ -2,3 +2,7 @@
 *.toc
 *.log
 *.out
+*.bbl
+*.blg
+*.bcf
+*.xml

@@ -27,8 +27,16 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{german}
 
+\usepackage[
+  backend=biber,   % use modern biber backend
+  autolang=hyphen, % load hyphenation rules for if language of bibentry is not
+                   % german, has to be loaded with \setotherlanguages
+                   % in the references.bib use langid={en} for english sources
+]{biblatex}
+\addbibresource{references.bib}  % die Bibliographie einbinden
+
 % % % % % % % Sprache % % % % % % %
-\usepackage{ucs} % Umlaute + etc %
+\usepackage[autostyle]{csquotes} % Umlaute + etc %
 \usepackage{varioref} % Referenz für formeln usw. %
 
 % % % % % % % Referenzen und Links % % % % % % %
@@ -113,5 +121,6 @@
 \include{tex/01_aufbau}
 \include{tex/02_auswertung}
 \include{tex/03_diskussion}
+\printbibliography
 
 \end{document}
