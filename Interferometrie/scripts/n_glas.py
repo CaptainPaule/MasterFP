@@ -2,17 +2,18 @@ from scipy.optimize import curve_fit
 import numpy as np
 import matplotlib.pyplot as plt
 
-#Eigenschaften Glas
+# Eigenschaften Glas
 T = 0.001
 lamba = 633*10**(-9)
 alpha = 160*(20*np.pi)/360
 
+# Daten einlesen
 theta, M_1, M_2, M_3 = np.genfromtxt('../data/n_glas.txt', unpack=True)
 M = np.mean([M_1, M_2, M_3], axis=0)
 M_error = np.std([M_1, M_2, M_3], axis=0)
 
-nL = 1.00029499
-#Theoriekurve M(teta)
+nL = 0.999547
+# Theoriekurve M(teta)
 def n_glas(x, a):
     ta = (10 + x)/180*np.pi
     ta2 = (10 - x)/180*np.pi

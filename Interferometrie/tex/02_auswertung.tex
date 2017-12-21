@@ -5,11 +5,14 @@ Python durchgeführt.
 
 \subsection{Kontrast}
 
-Fit nach der Funktion
+Der Kontrast gibt das Verhältnis zwischen dem Intensitätsminimum und -maximum an, vgl. Gleichung
+\ref{kontra}. Ein Fit nach der Gleichung für den Kontrast
 \[
 K = a \cdot | \sin (2 \cdot \phi + b) |
 \]
-liefert die Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$
+liefert die Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$. Ein Plot der Messwerte und der
+Ausgleichsrechnung sind in Abbildung \ref{kontrast} zu sehen. Die Messwerte sind zudem in Tabelle
+zusammengefasst.
 
 \begin{figure}[h]
 \centering
@@ -20,8 +23,10 @@ liefert die Fitparameter $a = 1.06 \pm 0.05$ und $b = 1 \pm 2$
 
 \subsection{Brechungsindex von Glas}
 
-Fit nach der Funktion in Gleichung (\ref{glas})
+Die Ausgleichsrechnung nach der Funktion in Gleichung (\ref{glas})
 liefert den Fitparameter $a = 1.553 \pm 0.009$, was auch bereits der Brechungsindex von Glas ist.
+Der lineare zwischen dem Winkel $\theta$ der Anzahl der Intensitätsmaxima mit dem Brechungsindex $n$
+als Steigung ist zusammen mit den gemessenen Werten in Abbildung dargestellt.
 
 \begin{figure}[h]
 \centering
@@ -33,11 +38,13 @@ der Intensitätsmaxima.}
 
 \subsection{Brechungsindex von Luft}
 
-Fit nach der Funktion
+In Anlehnung an Gleichung \ref{n_gas} wird ein Fit der Form
 \[
 n = \sqrt{a \cdot p + 1}
 \]
-liefert den Fitparameter $a = 6.05 \cdot 10^{-7} \pm 4 \cdot 10^{-9}$
+mit $a = \frac{3A}{RT}$ durchgeführt. Dieser liefert den Fitparameter
+$a = 6.05 \cdot 10^{-7} \pm 4 \cdot 10^{-9}$. Dieser Faktor wird mit der gemessenen Temperatur
+$T = \SI{22.2}{\degreeCelsius}$ auf Normaltemperatur $T_0 = \SI{15}{\degreeCelsius}$ skaliert.
 
 Daraus ergibt sich für den Brechungsindex bei Normalbedingungen: $0.999547 \pm 0.000003$.
 
