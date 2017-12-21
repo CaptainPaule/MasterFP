@@ -52,13 +52,12 @@ genutzt.
 
 \subsection{Strahlengang durch ein Glasplättchen}
 
-% Abbildung noch nicht aktuell
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=0.8]{./optischesPumpen/img/aufbau.png}
-%\caption{Schematischer Aufbau der Versuchsapparatur [1]}
-%\label{aufbau}
-%\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{./Inteferometrie/img/glasPlatte.png}
+\caption{Strahlengang durch eine Glasplatte}
+\label{Glasplatte}
+\end{figure}
 
 Die Messung der Brechzahl von Quarzglas basiert auf dem Gangunterschied, welcher das Licht erfährt, wenn es durch das Medium propagiert.
 Der Gangunterschied hängt im wesentlichen von dem Brechzahlsprung an der Grenzfläche des Mediums und dem Auslenkungswinkel ab.
@@ -74,7 +73,35 @@ Der Kontrast eines Interferometers ist ein Maß für die Interferenzfähikeit de
 K = \frac{|I_{max} - I_{min}|}{|I_{max} + I_{min}|}
 \end{equation}
 
-Der Kontrast hängt maßgeblich vom Polarisationswinkel des Polarisators vor dem Interferometer ab.
+gegeben.
+
+Die maximale bzw minimale Intensität berechnet sich aus dem Mittelwert beider Polarisationen aus
+
 \begin{equation}
-K = C|\cos(\phi + \delta) * \sin(\phi + \delta)|
+I \approx  <|E_1 \cos{wt} + E_2 \cos{wt + \delta} |>.
 \end{equation}
+
+Für die Feldstärken $E_1$ und $E_2$ ergibt sich nach dem Polarisatior mit dem Winkel $\Phi$
+
+\begin{equation}
+E_1 = E \cos{\Phi}
+\end{equation} 
+
+\begin{equation}
+E_2 = E \sin{\Phi}.
+\end{equation}
+
+Wird die Rechnung ausgeführt folgt für die maximale bzw minimale Intensität
+
+\begin{equation}
+I_{max/min} \approx I_{Laser} \left( 1 \pm 2 \sin{\Phi} \cos{\Phi} \right).
+\end{equation}
+
+Hierfür wurde ein Phasenversatz zwischen den beiden Polarisationen von $0$ bzw $\pi$ angenommen.
+
+Wird $I_{max/min}$ in die Definition für den Kontrast eingesetzt folgt
+\begin{equation}
+K = C|\cos(\phi + \delta) * \sin(\phi + \delta)|.
+\end{equation}
+
+
