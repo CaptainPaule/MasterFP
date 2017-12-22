@@ -7,39 +7,39 @@ Der Brechungsindex $n$ eines Mediums bestimmt sich aus dem Verhältnis der Licht
 propagierende Welle.
 
 \begin{equation}
-n = \frac{c}{v_{ph}}
+n = \frac{c}{v_\text{ph}}
 \end{equation}
 
 wobei die Phasengeschwindigkeit einer Welle sich aus Kreisfrequenz $\omega$ und Wellenzahl $k$ bestimmt.
 
 \begin{equation}
-v_{ph} = \frac{\omega}{k}
+v_\text{ph} = \frac{\omega}{k}
 \end{equation}
 
 Im allgemeinen ist eine Welle ein Objekt, welches sich in Ort und Zeit periodisch ändert. Mathematisch wird dieses Verhalten durch eine komplexe
 e-Funktion beschrieben
 
 \begin{equation}
-f(x, t) = A\exp{i(kx - wt)} = A \exp{ikx} \exp{-iwt}
+f(x, t) = A\exp\{i(kx - wt)\} = A \exp\{ikx\} \exp\{-iwt\}
 \end{equation}
 
 wobei der erste Exponentialterm die Phasenänderung beschreibt und der zweite Exponentialterm, auch Phasor genannt, die zeitliche Änderung der Welle berücksichtigt.
 Wird zusätzlich die Kreisfrequenz durch die Wellenlänge im Vakuum ausgedrückt, können wir die Phasenänderung pro Länge durch die Brechzahl ausdrücken.
 
 \begin{equation}
-f(x, t) = A \exp{-i\omega t} \exp{2 \pi i \frac{n}{\lambda_{vac}} x}
+f(x, t) = A \exp\{-i\omega t\} \exp\left\{2 \pi i \frac{n}{\lambda_\text{vac}} x\right\}
 \end{equation}
 
 Die Phasendifferenz zweier Wellen, welche durch das Vakuum mit $n=1$ und einem Medium mit der Brechzahl $n$ und der Länge L propagiert, errechnet sich zu
 
 \begin{equation}
-\delta \phi = \frac{2 \pi}{\lambda_{vac}} \delta n L = \frac{2 \pi}{\lambda_{vac}} (n - 1)L.
+\delta \phi = \frac{2 \pi}{\lambda_\text{vac}} \delta n L = \frac{2 \pi}{\lambda_\text{vac}} (n - 1)L.
 \end{equation}
 
 Die Anzahl der Intensitätsmaxima N ergibt sich aus der Phasendifferenz
 
 \begin{equation}
-N=\frac{\delta \phi}{2 \pi} = \frac{n-1}{\lambda_{vac}} L.
+N=\frac{\delta \phi}{2 \pi} = \frac{n-1}{\lambda_\text{vac}} L.
 \end{equation}
 
 Um die Auswirkung von Druck oder Temperaturänderungen auf die Brechzahl berücksichtigen zu können, wird das Lorenz-Lorentz Gesetz
@@ -64,19 +64,23 @@ Die Messung der Brechzahl von Quarzglas basiert auf dem Gangunterschied, welcher
 Der Gangunterschied hängt im wesentlichen von dem Brechzahlsprung an der Grenzfläche des Mediums und dem Auslenkungswinkel ab.
 
 \begin{equation}
-\phi(\Phi) = \frac{2 \pi}{\lambda_{vac}} \left( \frac{n_2 - n_1 \cos(\Phi - \Phi')}{\cos(\Phi')} - \frac{n_2 - n_1}{n_1}\right)
+\phi(\Phi) = \frac{2 \pi}{\lambda_\text{vac}} \left( \frac{n_2 - n_1 \cos(\Phi - \Phi')}{\cos(\Phi')} - \frac{n_2 - n_1}{n_1}\right)
 \end{equation}
 
 Und für die Anzahl an Maxima $N$ folgt dann:
 \begin{equation}
-	N \left(\Theta\right) = \frac{L}{\lambda_\text{vac}} \left[\frac{n_2-n_1\cos\left(10^\circ + \Theta-\arcsin\left(\frac{n_1\sin\left(10^\circ+\Theta\right)}{n_2}\right)\right)}{\cos\left(\arcsin\left(\frac{n_1\sin\left(10^\circ+\Theta\right)}{n_2}\right)\right)} - \frac{n_2-n_1\cos\left(10^\circ - \Theta-\arcsin\left(\frac{n_1\sin\left(10^\circ-\Theta\right)}{n_2}\right)\right)}{\cos\left(\arcsin\left(\frac{n_1\sin\left(10^\circ-\Theta\right)}{n_2}\right)\right)}\right].
+	\begin{split}
+		N \left(\Theta\right) = &\frac{L}{\lambda_\text{vac}} \left[\frac{n_2-n_1\cos\left(10^\circ + \Theta-\arcsin\left(\frac{n_1\sin\left(10^\circ+\Theta\right)}{n_2}\right)\right)}{\cos\left(\arcsin\left(\frac{n_1\sin\left(10^\circ+\Theta\right)}{n_2}\right)\right)} \right.\\
+		& \left. - \frac{n_2-n_1\cos\left(10^\circ - \Theta-\arcsin\left(\frac{n_1\sin\left(10^\circ-\Theta\right)}{n_2}\right)\right)}{\cos\left(\arcsin\left(\frac{n_1\sin\left(10^\circ-\Theta\right)}{n_2}\right)\right)}\right].
+	\end{split}
+	\label{glas}
 \end{equation}
 
 \subsection{Kontrast}
 Der Kontrast eines Interferometers ist ein Maß für die Interferenzfähikeit des Lichtest. Der Kontrast ist durch
 
 \begin{equation}
-K = \frac{|I_{max} - I_{min}|}{|I_{max} + I_{min}|}
+K = \frac{|I_\text{max} - I_\text{min}|}{|I_\text{max} + I_\text{min}|}
 \label{kontra}
 \end{equation}
 
@@ -85,7 +89,7 @@ gegeben.
 Die maximale bzw minimale Intensität berechnet sich aus dem Mittelwert beider Polarisationen aus
 
 \begin{equation}
-I \approx  <|E_1 \cos{wt} + E_2 \cos{wt + \delta} |>.
+I \approx  \left< |E_1 \cos(wt) + E_2 \cos(wt + \delta) | \right>.
 \end{equation}
 
 Für die Feldstärken $E_1$ und $E_2$ ergibt sich nach dem Polarisatior mit dem Winkel $\Phi$
@@ -101,12 +105,12 @@ E_2 = E \sin{\Phi}.
 Wird die Rechnung ausgeführt folgt für die maximale bzw minimale Intensität
 
 \begin{equation}
-I_{max/min} \approx I_{Laser} \left( 1 \pm 2 \sin{\Phi} \cos{\Phi} \right).
+I_\text{max/min} \approx I_\text{Laser} \left( 1 \pm 2 \sin{\Phi} \cos{\Phi} \right).
 \end{equation}
 
 Hierfür wurde ein Phasenversatz zwischen den beiden Polarisationen von $0$ bzw $\pi$ angenommen.
 
-Wird $I_{max/min}$ in die Definition für den Kontrast eingesetzt folgt
+Wird $I_\text{max/min}$ in die Definition für den Kontrast eingesetzt folgt
 \begin{equation}
-K = C|\cos(\phi + \delta) * \sin(\phi + \delta)|.
+K = C|\cos(\phi + \delta) \cdot \sin(\phi + \delta)|.
 \end{equation}
