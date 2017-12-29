@@ -1,31 +1,30 @@
-\chapter{Zielsetzung}
-Durch Messung des Transmissionskoeffizienten von Rubidiumgas bei Anlegen eines externen Magnetfeldes wird die
+\section{Zielsetzung}
+Durch Messung der Transmission von Licht durch Rubidiumgas bei Anlegen eines externen Magnetfeldes werden die
 Stärke des Erdmagnetfeldes, die Lande-Faktoren und die Spins der Elektronenhülle und des Kerns der Rubidiumisotope
 Rb-85 und Rb-87 berechnet.
-
-\chapter{Theorie}
-
 Für die beiden verwendeten Rubidiumisotope sind Hyperfeinstruktur- und Zeeman-Aufspaltung unterschiedlich. Die damit
 verbundenen Kenngrößen - der Landefaktor, das gyromagnetische Verhältnis und der Spin - können mit Hilfe optischen
 Pumpens aufgrund der unterschiedlichen Enerdifferenzen sehr präzise gemessen werden.
 
-\section{Aufspaltung von Energieniveaus}
+\section{Theorie}
 
-Quantenzahlen beschreiben Zustand eines Systems. Durch Kernspin und externes Magentfeld kommt es zu Hyperfeinstruktur-
-und Zeemann-Aufspaltung.
+\subsection{Aufspaltung von Energieniveaus}
+
+Quantenzahlen beschreiben Zustand eines atomareb Systems.
+Das magnetische Moment der gesamten Elektronenhülle $\vec{J}$ setzt sich aus den magnetischen Momenten von
+Bahndrehimpuls $\vec{L}$ und Spin $\vec{S}$ zusammen:
+\begin{equation}
+  \vec{\mu}_\text{J} = \vec{\mu}_\text{L} + \vec{\mu}_\text{S} \quad \text{mit} \quad |\vec{\mu}_\text{J}| = \mu_\text{B}\sqrt{L (L + 1)} \quad \text{und}
+  \quad |\vec{\mu}_\text{S}| = g_\text{S}\mu_\text{B}\sqrt{S (S + 1)}.
+\end{equation}
 Der Gesamtdrehimpuls der Elektronenhülle $\vec{J}$ ist über
 \begin{equation}
   \vec{\mu}_\text{J} = -g_\text{J}\mu_\text{B}\vec{J} \quad \text{bzw.} \quad |\vec{\mu}_\text{J}| = -g_\text{J}\mu_\text{B}\sqrt{J (J + 1)}
   \label{magnMom}
 \end{equation}
-mit einem magnetischen Moment verknüpft, dabei ist $\mu_\text{B}$ das Bohrsche Magneton. Das magnetische Moment der gesamten
-Elektronenhülle setzt sich aus den magnetischen Momenten von Bahndrehimpuls $\vec{L}$ und Spin $\vec{S}$ zusammen:
-\begin{equation}
-  \vec{\mu}_\text{J} = \vec{\mu}_\text{L} + \vec{\mu}_\text{S} \quad \text{mit} \quad |\vec{\mu}_\text{J}| = \mu_\text{B}\sqrt{L (L + 1)} \quad \text{und}
-  \quad |\vec{\mu}_\text{S}| = g_\text{S}\mu_\text{B}\sqrt{S (S + 1)}.
-\end{equation}
-$g_\text{S}$ ist der Lande-Faktor des freien Elektrons, der Zusammenhang der magnetischen Momente wird durch den Lande-Faktor
-$g_\text{J}$ ausgedrückt.
+mit einem magnetischen Moment verknüpft, dabei ist $\mu_\text{B}$ das Bohrsche Magneton.
+$g_\text{S}$ ist der Lande-Faktor des freien Elektrons, der Zusammenhang der magnetischen Momente wird durch den
+Lande-Faktor $g_\text{J}$ ausgedrückt.
 %$\vec{\mu}_J$ präzediert um $\vec{J}$, sodass für den Betrag gilt:
 %\begin{align}
 %  \begin{split}
@@ -39,8 +38,10 @@ Dieser kann aus den Quantenzahlen über
 \end{equation}
 berechnet werden.
 
-Liegt ein äußeres Magnetfeld an, kommt es zu einer Aufspaltung der Energieniveaus, da das magnetische Moment mit dem Feld
-wechselwirkt; die Wechselwirkungsenergie ist
+Der sogenannte Zeeman-Effekt beschreibt die Aufspaltung in $2J+1$ Energieniveaus bei Anlegen eines äußeren
+Magnetfeldes. Liegt ein äußeres Magnetfeld $\vec{B}$ an, kommt es zu einer Aufspaltung der durch $L$, $S$ und
+$J$ definierten Feinstruktur-Energieniveaus, da das magnetische Moment $\vec{\mu}$ mit dem Feld wechselwirkt; die
+Wechselwirkungsenergie ist
 \begin{equation}
   U_\text{magn} = -\vec{\mu}_\text{J}\cdot\vec{B}.
 \end{equation}
@@ -49,10 +50,9 @@ der Energieniveaus gemäß
 \begin{equation}
   U_\text{magn} = M_\text{J}g_\text{J}\mu_\text{B}B,
 \end{equation}
-wobei $M_\text{J}$ ganzzahlig ist und aus $-J, -J+1, ..., J-1, J$ stammt. Der sogenannte Zeeman-Effekt beschreibt also die
-Aufspaltung in $2J+1$ Energieniveaus bei Anlegen eines äußeren Magnetfeldes.
+wobei $M_\text{J}$ ganzzahlig ist und aus $-J, -J+1, ..., J-1, J$ stammt.
 
-Bei einem nicht-verschwindenden Kernspin kommt es zudem zu einer Aufspaltung in Hyperfeinstrukturniveaus.
+Bei einem nicht-verschwindenden Kernspin $\vec{I}$ kommt es zudem zu einer Aufspaltung in Hyperfeinstrukturniveaus.
 Der Gesamtdrehimpuls der Elektronenhülle $\vec{J}$ koppelt an den Drehimpuls des Kerns $\vec{I}$ zum Gesamtdrehimpuls des Atoms
 \begin{equation}
   \vec{F} = \vec{J} + \vec{I}.
@@ -66,18 +66,20 @@ Der Lande-Faktor ist in diesem Fall
   g_\text{F} \approx g_\text{J}\frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}.
 \end{equation}
 $F$ läuft von $I+J$ bis $|I-J|$, jedes Hyperfeinniveau spaltet in einem äußeren Magnetfeld in weiter $2F+1$ Zeeman-Niveaus
-auf. Für $I=\frac{3}{2}$ ist dies in \autoref{aufspaltung} beispielhaft gezeigt.
+auf. Für ein Alkaöi-Atom mit $I=\frac{3}{2}$ ist dies in \autoref{aufspaltung} beispielhaft gezeigt.
 \begin{figure}
-  \includegraphics{./optischesPumpen/img/aufspaltung.pdf}
-  \caption{Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit $I=\frac{3}{2}$.}
+  \centering
+  \includegraphics[width=\textwidth]{./optischesPumpen/img/aufspaltung.pdf}
+  \caption{Feinstruktur-, Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit
+  $I=\frac{3}{2}$.}
   \label{aufspaltung}
 \end{figure}
 
-\section{Optisches Pumpen}
+\subsection{Optisches Pumpen}
 
 Die Energieniveaus der inneren Schalen der Elektronenhülle sind vollstandig besetzt, die Besetzung der äußeren Schalen ist
 temperaturabhängig. Im thermischen Gleichgewicht wird sie für zwei Niveaus mit den Energien $W_1$ und $W_2$ durch die
-Boltzannsche Gleichung
+Boltzmannsche Gleichung
 \begin{align}
   \frac{N_2}{N_1} = \frac{g_2}{g_1}\frac{\exp(-W_2/kT)}{\exp(-W_1/kT)}
   \label{boltz}
@@ -86,20 +88,23 @@ beschrieben. $N_i$ sind die Besetzungszahlen der jeweiligen Zustände und die st
 dafür, wie viele Zustände es pro Energie $W_i$ gibt.
 
 Der Begriff Optisches Pumpen bezeichnet eine Methode, mit der eine Abweichung von der in \autoref{boltz} gegebenen
-Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion, wo $N_2 > N_1$ ist.
+Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion, bei der $N_2 > N_1$ gilt.
 Dafür wird Licht eingestrahlt, das gerade die nötige Energie besitzt, um ein Hüllenelektron vom Grundzustand in einen
-angeregten Zustand zu versetzen. Für ein Alkali-Atom ist $J=\frac{1}{2}$, $M_\text{J}$ kann also nur $\pm \frac{1}{2}$
-werden. Aufgrund der Auswahlregeln sind nur Übergänge mit $\Delta M = 0,\pm 1$ möglich.
+angeregten Zustand zu versetzen. Für ein Alkali-Atom mit $J=\frac{1}{2}$ beispielsweise kann $M_\text{J}$ also nur
+$\pm \frac{1}{2}$ werden.
+Da bei der Absorption und Emission eines Photons Drehimpulserhaltung gelten muss, sind nur bestimmte Übergänge
+zwischen unterschiedlichen Energieniveaus möglich; Ddiese Übergänge sind über Auswahlregeln definiert.
+Aufgrund dieser Auswahlregeln sind nur Übergänge mit $\Delta M = 0,\pm 1$ möglich.
 Bei $\pi$-Übergangen mit $\Delta M = 0$ wird linear polarisiertes Licht emitiert und absorbiert, für $\sigma^\pm$-Übergänge
 mit $\Delta M = \pm 1$ ist es rechtszirkular- bzw. linkszirkular-polarisiertes Licht.
-Wird rechtszirkular-polarisiertes Licht in eine Zelle mit dem Dampf eines Alkali-Atom eingestrahlt, können aufgrund der
-Beschränkung $\Delta M_\text{J}$ nur Elektronen aus dem energetisch niedrigeren Grundzustand angeregt werden, durch spontane
-Emission aus dem angeregten Zustand, werden aber beide Grundzustände bevölkert. Das energieärmere Niveau wird fortlaufend
-durch Einstrahlung von Licht geleert, das energetisch höhere, aus dem keine Elektronen angeregt werden können, wird gesättigt.
-Als Resultat steigt der Transmissionskoeffizient asymptotisch gegen den Wert 1, da keine Elektronen mehr verfügbar sind, die
-angeregt werden können.
+Wird rechtszirkular-polarisiertes Licht in eine Zelle mit verdampftem Rubidium eingestrahlt, können aufgrund der
+Beschränkung $\Delta M_\text{J} = 1$ nur Elektronen aus dem energetisch niedrigeren Grundzustand angeregt werden.
+Durch spontane Emission aus dem angeregten Zustand, werden aber beide Grundzustände bevölkert. Das energieärmere
+Niveau wird fortlaufend durch Einstrahlung von Licht geleert, das energetisch höhere, aus dem keine Elektronen
+angeregt werden können, wird gesättigt. Als Resultat steigt die Transmission mit der Zeit asymptotisch gegen den
+Wert 1, da keine Elektronen mehr verfügbar sind, die angeregt werden können.
 
-\section{Messung der Zeeman-Aufspaltung}
+\subsection{Messung der Zeeman-Aufspaltung}
 
 Ein Elektron im angeregten Zustand kann durch spontane oder durch angeregte Emission in seinen Grundzustand zurückkehren.
 Dabei ist letzteres bei Energien, die für Zeeman-Aufspaltung relevant sind, um 25 Größenordnungen wahrscheinlicher, da die
@@ -116,7 +121,7 @@ erreicht, setzt induzierte Emission ein. Die Inversion wird aufgehoben, das eing
 und der Transmissionskoeffizient fällt ab. Die geschieht jeweils für die beiden Rubidiumisotope bei unterschiedlichem
 Magnetfeld.
 
-\section{Quadratischer Zeeman-Effekt}
+\subsection{Quadratischer Zeeman-Effekt}
 
 Wird die magnetische Flussdichte vergrößert, müssen bei der Berechnung der Übergangsenergie Terme höherer Ordnung von $B$
 berücksichtigt werden, da nun die Spin-Bahn-Wechselwirkung relevant wird. Die Zeeman-Übergänge haben eine unterschiedliche
@@ -126,7 +131,7 @@ Hyperfeinstrukturaufspaltung $\Delta E_\text{Hy}$ wird durch die Breit-Rabi-Form
   U_\text{HF} = g_\text{F}\mu_\text{B}B + {g_\text{F}}^2{\mu_\text{B}}^2B^2\frac{1-2M_\text{F}}{\Delta E_\text{Hy}}
 \end{equation}
 
-\section{Transiente Effekte}
+\subsection{Transiente Effekte}
 
 Wird das Hochfrequenzfeld schnell ein- und ausgeschaltet, präzediert der Kernspin um das effektive Magnetfeld. Die
 Lamor-Frequenz $\\nu = \gamma B_\text{RF}$ mit dem gyromagnetischen Verhältnis $\gamma = g_\text{f}\frac{\mu_ß}{\text{h}}$

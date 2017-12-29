@@ -1,0 +1,125 @@
+% % % % % % % % Festlegung der Dokumentenklasse % % % % % % % % % % %
+
+\documentclass[twoside, a4paper, parskip=half, captions=tableheading]{scrartcl}
+
+\usepackage{scrpage2} % weiter Einstellungen zur Kopf- und Fußzeile %
+\usepackage{mathrsfs} % Schreibschrift %
+\usepackage{upgreek} % verwendung durch setzen von up vor dem kleinen Grichischen Buchstaben % % kleine Grichische Buchstaben nicht kusiv %
+\usepackage{color} % Änderung der Farbe %
+\usepackage[usenames,dvipsnames]{xcolor} % Farb name
+\usepackage{lastpage} % Bei Seitenanzahl letzte Seite %
+\usepackage{amsmath,amssymb,amstext} % Mathe %
+\usepackage{geometry} % Seiten breite einrichten %
+\usepackage{gauss} % Gauss / Matrix %
+\usepackage{stmaryrd} % Weiter Symbole %
+\usepackage{dsfont} %  Mathe Symbole (z.B Mengen) %
+\usepackage{booktabs} %Tabellen%
+\usepackage{isotope} %Isotope darstellen
+\usepackage{mathtools}
+\usepackage{xfrac} %schräge Brüche in Text
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{siunitx}
+
+\geometry{top=25mm, bottom=30mm}
+
+\usepackage{fontspec} % Umlaute + etc %
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+\usepackage[
+  backend=biber,   % use modern biber backend
+  autolang=hyphen, % load hyphenation rules for if language of bibentry is not
+                   % german, has to be loaded with \setotherlanguages
+                   % in the references.bib use langid={en} for english sources
+]{biblatex}
+\addbibresource{references.bib}  % die Bibliographie einbinden
+
+% % % % % % % Sprache % % % % % % %
+\usepackage[autostyle]{csquotes} % Umlaute + etc %
+\usepackage{varioref} % Referenz für formeln usw. %
+
+% % % % % % % Referenzen und Links % % % % % % %
+
+\usepackage{hyperref}	% Verlinkungen innerhalb und außerhalb des PDF-Dokuments
+\usepackage{url}		% URL öffnen %
+\urlstyle{tt}			% Vordefenierter Style URL %
+
+% % % % % % % Bilder, Tabellen % % % % % % %
+
+\usepackage{graphicx}  		% zum Einbinden von Grafiken
+\usepackage{xcolor}			% Für die Verwendung von Farben
+\usepackage[font=small,		% kleine Schrift für Bildunterschriften
+     labelfont=bf,
+     position=top			% Fettgedruckte Bildunterschriften
+     ]
+     {caption}			% Für Bildunterschriften
+
+\usepackage[labelformat=empty]{subcaption}			% Für mehrere Objekte nebeneinander mit eigenen Bildunterschriften
+
+
+\usepackage{tabularx}			% Erweiterte Befehle für Tabellen
+\usepackage{booktabs}			% Für professionele Tabellen, siehe Manual
+\usepackage{longtable}			% Für Tabellen, die nicht mehr auf eine Seite passen.
+\usepackage{rotating}			% Zum Verdrehen von Objekten. Nur mäßig verwenden.
+\usepackage{placeins}			% Begrenzung für Tabellen/Abbildungen mit \FloatBarrier
+\usepackage{verbatim}
+
+% % % % % % % % Mathe % % % % % % % %
+
+\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
+\renewcommand\theequation{\thesubsection.\arabic{equation}}
+
+
+%\usepackage{gnuplottex}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\Datum}{16.10.2017}
+\newcommand{\Datumabgab}{22.12.2017}
+\newcommand{\Personenmit}{Paul Becker\\(paul.becker@udo.edu)\), \\ Alina Nasr-Esfahani\\(alina.esfahani@udo.edu\)}
+\newcommand{\Personen}{Paul Becker, \\ Alina Nasr-Esfahani}
+\newcommand{\Versuch}{Optisches Pumpen}
+\newcommand{\Nummer}{V21}
+
+\definecolor{hellgrau}{gray}{.45}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\title{\Versuch}
+\author{Paul Becker\\(paul.becker@udo.edu) \and Alina Nasr-Esfahani\\(alina.esfahani@udo.edu)}
+\date{Durchführung: \Datum, 2. Abgabe: \Datumabgab}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\pagestyle{scrheadings}
+\ihead[]{\small{\textcolor{hellgrau}{Versuchs Nummer:\\ \ \ \ \Nummer \\}}}
+\chead[]{\small{\textcolor{hellgrau}{\Versuch\\von \Personen}}}
+\ohead[]{\small{\textcolor{hellgrau}{Datum: \\ \Datum \\}}}
+
+\ifoot[]{}
+\cfoot[]{\thepage}
+%\cfoot[]{Seite \thepage \ von \pageref{LastPage}}
+\ofoot[]{}
+
+\footskip 15mm
+\headsep 15mm
+
+\newcommand{\ignore}[1]{}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+\newpage
+
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\include{tex/00_theorie}
+\include{tex/01_aufbau}
+\include{tex/02_auswertung}
+\include{tex/03_diskussion}
+
+\end{document}
