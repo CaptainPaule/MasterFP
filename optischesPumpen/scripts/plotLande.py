@@ -42,7 +42,7 @@ def fitfunction(x, A, B):
 
 # export latex table
 def exportLatexTable(table, fileName):
-	with open('../tex/' + fileName + '.tex', 'wb') as texfile:
+	with open('../tex/' + fileName + '.tex', 'w') as texfile:
 		texfile.write("\\begin{table}")
 		texfile.write("\\centering")
 		texfile.write("\\begin{tabular}{ccc} \\toprule \n")
@@ -55,7 +55,7 @@ def exportLatexTable(table, fileName):
 
 # export result as latex equation
 def exportResultAsEquation(name, value, roundMean, roundStd, unit, fileName):
-	with open('../tex/' + fileName + '.tex', 'wb') as texfile:
+	with open('../tex/' + fileName + '.tex', 'w') as texfile:
 		texfile.write("\\begin{equation} \n")
 		equation = name + " = " + str(round(value.n, roundMean)) + "\\pm" + str(round(value.s, roundMean)) + "\\," + unit
 		texfile.write(equation + "\n")
