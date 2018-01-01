@@ -71,7 +71,7 @@ auf. Für ein Alkali-Atom mit $I=\frac{3}{2}$ ist dies in \autoref{aufspaltung} 
   \centering
   \includegraphics[width=\textwidth]{img/aufspaltung.pdf}
   \caption{Feinstruktur-, Hyperfeinstruktur- und Zeeman-Aufspaltung, beispielhaft für ein Alkali-Atom mit
-  $I=\frac{3}{2}$.}
+  $I=\frac{3}{2}$\cite{FP}.}
   \label{aufspaltung}
 \end{figure}
 
@@ -84,42 +84,74 @@ Boltzmannsche Gleichung
   \frac{N_2}{N_1} = \frac{g_2}{g_1}\frac{\exp(-W_2/kT)}{\exp(-W_1/kT)}
   \label{boltz}
 \end{align}
-beschrieben. $N_i$ sind die Besetzungszahlen der jeweiligen Zustände und die statistischen Gewichte $g_i$ sind ein Maß
-dafür, wie viele Zustände es pro Energie $W_i$ gibt.
+beschrieben. $N_i$ sind die Besetzungszahlen der jeweiligen Zustände und die statistischen
+Gewichte $g_i$ sind ein Maß dafür, wie viele Zustände es pro Energie $W_i$ gibt.
 
-Der Begriff Optisches Pumpen bezeichnet eine Methode, mit der eine Abweichung von der in \autoref{boltz} gegebenen
-Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion, bei der $N_2 > N_1$ gilt.
-Dafür wird Licht eingestrahlt, das gerade die nötige Energie besitzt, um ein Hüllenelektron vom Grundzustand in einen
-angeregten Zustand zu versetzen. Für ein Alkali-Atom mit $J=\frac{1}{2}$ beispielsweise kann $M_\text{J}$ also nur
-$\pm \frac{1}{2}$ werden.
-Da bei der Absorption und Emission eines Photons Drehimpulserhaltung gelten muss, sind nur bestimmte Übergänge
-zwischen unterschiedlichen Energieniveaus möglich; Ddiese Übergänge sind über Auswahlregeln definiert.
-Aufgrund dieser Auswahlregeln sind nur Übergänge mit $\Delta M = 0,\pm 1$ möglich.
+Der Begriff Optisches Pumpen bezeichnet eine Methode, mit der eine Abweichung von der in
+\autoref{boltz} gegebenen Verteilung erzielt werden kann - zum Beispiel in Form einer Inversion,
+bei der $N_2 > N_1$ gilt. Dafür wird Licht eingestrahlt, das gerade die nötige Energie besitzt,
+um ein Hüllenelektron vom Grundzustand in einen angeregten Zustand zu versetzen. Für ein
+Alkali-Atom mit $J=\frac{1}{2}$ beispielsweise kann $M_\text{J}$ also nur $\pm \frac{1}{2}$
+werden. Da bei der Absorption und Emission eines Photons Drehimpulserhaltung gelten muss, sind
+nur bestimmte Übergänge zwischen unterschiedlichen Energieniveaus möglich; diese Übergänge sind
+über Auswahlregeln definiert. Aufgrund dieser Auswahlregeln sind nur Übergänge mit
+$\Delta M = 0,\pm 1$ möglich.
 Bei $\pi$-Übergangen mit $\Delta M = 0$ wird linear polarisiertes Licht emitiert und absorbiert, für $\sigma^\pm$-Übergänge
 mit $\Delta M = \pm 1$ ist es rechtszirkular- bzw. linkszirkular-polarisiertes Licht.
-Wird rechtszirkular-polarisiertes Licht in eine Zelle mit verdampftem Rubidium eingestrahlt, können aufgrund der
-Beschränkung $\Delta M_\text{J} = 1$ nur Elektronen aus dem energetisch niedrigeren Grundzustand angeregt werden.
-Durch spontane Emission aus dem angeregten Zustand, werden aber beide Grundzustände bevölkert. Das energieärmere
-Niveau wird fortlaufend durch Einstrahlung von Licht geleert, das energetisch höhere, aus dem keine Elektronen
-angeregt werden können, wird gesättigt. Als Resultat steigt die Transmission mit der Zeit asymptotisch gegen den
-Wert 1, da keine Elektronen mehr verfügbar sind, die angeregt werden können.
+
+Ein Alkali-Atom mit einem Hüllenelektron, bei dem der Kernspin vernachlässigt wird, besitzt
+den Grundzustand $\isotope[2]{S}_{\sfrac{1}{2}}$, also insgesamt die Quantenzahlen
+$S=\sfrac{1}{2}$, $L=0$ und $J=\sfrac{1}{2}$. Die ersten angeregten Zustände sind
+$\isotope[2]{P}_{\sfrac{1}{2}}$ ($S=\sfrac{1}{2}$, $L=1$, $J=\sfrac{1}{2}$) und
+$\isotope[2]{P}_{\sfrac{3}{2}}$ ($S=\sfrac{1}{2}$, $L=1$ und $J=\sfrac{3}{2}$). Diese drei
+Zustände bilden das $D_1D_2$-Dublett, im Folgenden wird nur der $D_1$-Übergang nach
+$\isotope[2]{P}_{\sfrac{1}{2}}$ betrachtet.
+Bei eingeschalteten Magnetfeld $\vec{B}$ findet eine Zeeman-Aufspaltung in Niveaus mit
+$M_\text{J}=\pm\sfrac{1}{2}$ statt, die Zustände sind in \autoref{uebergang} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics{img/uebergang.png}
+  \caption{Zustände des $D_1$-Überganges bei einem Alkali-Atom mit $S=\sfrac{1}{2}$ und
+  vernachlässigtem Kernspin\cite{FP}.}
+  \label{uebergang}
+\end{figure}
+
+Wird rechtszirkular-polarisiertes $D_1$-Licht in eine Zelle mit verdampftem Rubidium eingestrahlt,
+können aufgrund der Beschränkung $\Delta M_\text{J} = 1$ nur Elektronen aus dem energetisch
+niedrigeren Grundzustand mit $M_\text{J}=-\sfrac{1}{2}$ angeregt werden. Durch spontane Emission
+aus dem angeregten Zustand, werden aber beide Grundzustände bevölkert. Das energieärmere Niveau
+wird fortlaufend durch Einstrahlung von Licht geleert, das energetisch höhere mit
+$M_\text{J}=+\sfrac{1}{2}$, aus dem keine Elektronen angeregt werden können, wird gesättigt.
+Als Resultat steigt die Transmission mit der Zeit asymptotisch gegen den Wert 1, da keine
+Elektronen mehr verfügbar sind, die angeregt werden können. Durch induzierte Emission können
+höhere Niveaus durch Einstrahlen der passenden Energie wieder entvölkert werden. Stimmt die
+eingestrahlte Energie mit der Energiedifferenz überein, wird ein Photon gleicher Energie
+emittiert und das Atom befindet sich in einem energetisch niedrigeren Zustand.
 
 \subsection{Messung der Zeeman-Aufspaltung}
 
-Ein Elektron im angeregten Zustand kann durch spontane oder durch angeregte Emission in seinen Grundzustand zurückkehren.
-Dabei ist letzteres bei Energien, die für Zeeman-Aufspaltung relevant sind, um 25 Größenordnungen wahrscheinlicher, da die
-Übergangswahrscheinlichkeit für spontane Emission $\propto \nu^3$ ist.
-Die Zeeman-Aufspaltung tritt nur bei angelgtem Magnetfeld auf, sodass auch nur bei externem Magnetfeld das optische Pumpen
-durch Einstrahlen einer geeigneten Lichtquelle in stattfinden kann. Wird ein Magnetfeld angelegt, dass das Erdmagnetfeld gerade ausgleicht, findet keine Aufspaltung statt,
-es tritt keine Inversion auf und der Transmissionskoeffizient sinkt.
-Ein solcher Einbruch in der Intensität des Lichts tritt auch auf, wenn ein frequenzvariables Hochfrequenzfeld an die
-Dampfzelle angelegt wird. Das Magnetfeld wird variiert und sobald es den Wert
+Ein Elektron im angeregten Zustand kann durch spontane oder durch induzierte Emission von einem
+Photon in seinen Grundzustand zurückkehren. Spontane Emission geschieht ohne äußere Einflüsse,
+bei der induzierten Emission wird ein Photon eingestraht und und ein zweites Photon mit gleicher
+Energie, Ausbreitungsrichtung und Polarisation wird emittiert.
+Die Übergangswahrscheinlichkeit für spontane Emission ist proportional zu der dritten Potenz
+der Frequenz der absorbierten und emittierten Photonen, während sie bei der induzierte Emission
+in diesem Fall als konstant angenommen werden kann. Spontane Emission ist bei höheren Energien
+wahrscheinlicher, die Energiedifferenz zwischen den hier betrachteten Zeeman-Niveaus in Rubidium
+liegen jedoch im MHz-Bereich, in dem induzierte Emission den dominierenden Effekt darstellt.
+Die Zeeman-Aufspaltung tritt nur bei angelgtem Magnetfeld auf, sodass auch nur bei externem
+Magnetfeld das optische Pumpen stattfinden kann. Wird ein Magnetfeld angelegt, dass das
+Erdmagnetfeld gerade ausgleicht, findet keine Aufspaltung statt, es tritt keine Inversion auf
+und die Transmission sinkt. Ein solcher Einbruch in der Intensität des Lichts tritt
+auch auf, wenn ein frequenzvariables Hochfrequenzfeld an die Dampfzelle angelegt wird. Das
+Magnetfeld wird variiert und sobald es den Wert
 \begin{equation}
   B_\text{m} = \frac{4\pi m_0}{\text{e}_0g_\text{J}}\nu
 \end{equation}
-erreicht, setzt induzierte Emission ein. Die Inversion wird aufgehoben, das eingestrahlte Licht kann wieder absorbiert werden
-und der Transmissionskoeffizient fällt ab. Die geschieht jeweils für die beiden Rubidiumisotope bei unterschiedlichem
-Magnetfeld.
+erreicht, setzt induzierte Emission ein. Die Inversion wird aufgehoben, das eingestrahlte Licht
+kann wieder absorbiert werden und die Transmission fällt ab. Die geschieht jeweils für die
+beiden Rubidiumisotope bei unterschiedlichen Magnetfeldern.
 
 \subsection{Quadratischer Zeeman-Effekt}
 
