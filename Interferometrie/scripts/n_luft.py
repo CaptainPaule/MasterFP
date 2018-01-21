@@ -32,7 +32,7 @@ F = ufloat(params, errors)
 T0 = ufloat(15, 0)
 T = ufloat(22.2, 0)
 F_norm = F * T / T0
-n_norm = unp.sqrt(1 - F_norm * 1013)
+n_norm = unp.sqrt(1 + F_norm * 1013)
 print('Brechungsindex bei Normalbedingungen: ', n_norm)
 
 plt.errorbar(druck, M, yerr=M_error, fmt='+', label='gemittelte Messwerte')
