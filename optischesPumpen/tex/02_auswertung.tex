@@ -1,7 +1,15 @@
-﻿\section{Auswertung}
+\section{Auswertung}
 \subsection{Bestimmung der g-Faktoren und Horizontalkomponente der Erdmagnetfeld}
-Zu Beginn wird die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
-Dafür werden die verschiedenen Frequenzen gegen die magnetischen Feldstärken in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ als Steigung und die horizontal Komponente als Ordinate identifiziert.
+Zu Beginn werden die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
+Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ aus der Steigung errechnet und die horizontal Komponente als Ordinate identifiziert.
+
+Um die gemessenen Stromstärken in ein Magnetfeld umzurechnen, wurde der bekannte Zusammenhang für Helmholzspulen
+
+\begin{equation}
+B = \mu_0 \frac{8NI}{\sqrt{125} r}
+\end{equation}
+
+genutzt.
 
 \begin{figure}[h]
 \centering
@@ -12,13 +20,14 @@ Dafür werden die verschiedenen Frequenzen gegen die magnetischen Feldstärken i
 
 Mit dem Ansatz
 \begin{equation}
-f(x) = Ax + B
+B(\nu) = A\nu + B_{Erd}
 \end{equation}
-folgt aus der Ausgleichsrechnung folgende Werte für die Koeffizienten A und B.
+
+folgt aus der Ausgleichsrechnung folgende Werte für die Koeffizienten $A$ und $B_{Erd}$:
 
 \input{tex/isotopFitTable.tex}
 
-Durch Koeffizientenvergleich mit gleichung 0.10 folgt für die Lande Faktoren
+Durch Koeffizientenvergleich mit Gleichung \ref{eq:ausgleich} folgt für die Lande Faktoren
 
 \input{tex/resG1.tex}
 
@@ -31,28 +40,15 @@ welche sich zu
 
 \input{tex/resB.tex}
 
-errechnet.
+errechnet. Für das abschließende Ergebnis der Horizontalkomponente des Erdmagnetfeldes, wurde der Mittelwert über beide Einzelergebnisse der Ausgleichsrechnung berechnet.
 
 \subsection{Bestimmung der Kernspins}
-Zur bestimmung des Kernspins muss Gleichung 2.8 für die zwei berechneten g-Faktoren gelöst werden. Dafür werden beide Seiten der Gleichung in Abhängigkeit
-des Kernspins I aufgetragen. Der Punkt an den sich beide Kurven schneiden, zeigt den Kernspin des zu Untersuchenden Isotope an.
+Für die Kernspins der Rb-Isotioe gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I - J$ und $g_e = 2.0023$. Ferner wird
+der Zusammenhang dieser Größen durch \ref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt, vereinfacht sich \ref{eq:g} zu
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.8]{img/coreSpin1.pdf}
-\caption{grafische Lösung zur berechnung des Kernspins von Isoptop 1}
-\label{LandeIso1}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.8]{img/coreSpin2.pdf}
-\caption{grafische Lösung zur berechnung des Kernspins von Isoptop 2}
-\label{LandeIso2}
-\end{figure}
-
-Aus den errechneten g-Faktoren und Kernspins können wir Isotop 1 als Rb87 und Isotop 2 als Rb85 identifizieren.
-
+\begin{equation}
+I = \frac{g_e}{g_F}
+\end{equation}
 
 \subsection{Bestimmung des Isotopenverhältnisses}
 In Abbildung \autoref{resonanz} ist das Signalbild dargestellt, welches die Resonanzen zu festen
