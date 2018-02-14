@@ -1,7 +1,7 @@
 \section{Auswertung}
 \subsection{Bestimmung der g-Faktoren und Horizontalkomponente der Erdmagnetfeld}
 Zu Beginn werden die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
-Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ aus der Steigung errechnet und die horizontal Komponente als Ordinate identifiziert.
+Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ aus der Steigung errechnet und die horizontal Komponente des Erdmagnetfeldes als Ordinate identifiziert.
 
 Um die gemessenen Stromstärken in ein Magnetfeld umzurechnen, wurde der bekannte Zusammenhang für Helmholzspulen
 
@@ -19,6 +19,7 @@ genutzt.
 \end{figure}
 
 Mit dem Ansatz
+
 \begin{equation}
 B(\nu) = A\nu + B_{Erd}
 \end{equation}
@@ -35,24 +36,41 @@ und
 
 \input{tex/resG2.tex}
 
-Außerdem lässt sich aus der Ordinate die horizontalkomponente des Erdmagnetfeldes bestimmen,
+Außerdem lässt sich aus der Ordinate die Horizontalkomponente des Erdmagnetfeldes bestimmen,
 welche sich zu
 
 \input{tex/resB.tex}
 
-errechnet. Für das abschließende Ergebnis der Horizontalkomponente des Erdmagnetfeldes, wurde der Mittelwert über beide Einzelergebnisse der Ausgleichsrechnung berechnet.
+errechnet. Für das abschließende Ergebnis der Horizontaltkomponente des Erdmagnetfeldes, wurde der Mittelwert über beide Einzelergebnisse der Ausgleichsrechnung berechnet.
 
 \subsection{Bestimmung der Kernspins}
-Für die Kernspins der Rb-Isotioe gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I - J$ und $g_e = 2.0023$. Ferner wird
-der Zusammenhang dieser Größen durch \ref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt, vereinfacht sich \ref{eq:g} zu
+Für die Kernspins der Rb-Isotope gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I - J$ und $g_e = 2.0023$ \cite{landeE-}. Ferner wird
+der Zusammenhang dieser Größen durch \ref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt vereinfacht sich \ref{eq:g} zu
 
 \begin{equation}
-I = \frac{g_e}{g_F}
+I = \frac{g_e}{g_F}.
 \end{equation}
 
+Unter Verwendung von \ref{eq:resG1} und \ref{eq:resG2} berechnen sich die Kernspins der Isotope zu
+
+\begin{equation}
+I_{Isotop1} = yyy
+label{eq:result1}
+\end{equation}
+
+und
+
+\begin{equation}
+I_{Isotop2} = yyy.
+label{eq:result2}
+\end{equation}
+
+Die errechneten Kernspins werden mit den Kernspins der Rubidiumisotope von \cite{coreSpin} verglichen. Dieser Vergleich lässt den Schluss zu,
+dass es sich bei \ref{eq:result1} um ... und bei \ref{eq:result2} um ... handelt.
+
 \subsection{Bestimmung des Isotopenverhältnisses}
-In Abbildung \autoref{resonanz} ist das Signalbild dargestellt, welches die Resonanzen zu festen
-Feldstärken zeigt.
+In Abbildung \ref{resonanz} ist das Signalbild dargestellt, welches die Resonanzen zu festen
+HF-Frequenzen und variablen B-Feld zeigt.
 
 \begin{figure}[h]
 \centering
@@ -63,7 +81,7 @@ Feldstärken zeigt.
 
 
 Aus dem Amplitudenverhältnis der Resonanzen wird das Isotopenverhältnis in der
-Dampfzelle ermittelt. Dafür wird die Tiefe der Resonanzen in Pixel bestimmt.
+Dampfzelle ermittelt. Dafür wird die Tiefe h der Resonanzen in Pixel bestimmt.
 Eine Messung der Tiefe der Resonanzen mit gimp liefert für die erste Resonanz (von links)
 
 \input{tex/ratioRes1.tex}
@@ -80,9 +98,8 @@ Bei der Kalkulation des Amplitudenverhältnisses wurde ein Ablesefehler von 1 Pr
 angesetzt.
 
 \subsection{Abschätzung des quadratischen Zeemann-Effektes}
-Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B, um diese Abweichung zu berücksichtigen, ist es notwenig Terme höherer Ordnung zu betrachten.
-Im folgenden wird die größe des quadratischen Termes für die genutzen Feldstärken abgeschätzt. Wird der quadratische Term explizit ausgewertet zeigt sich, dass der quadratische Zeeman-Effekt
-in diesem Fall proportional zu $10^{-33}$ ist.
+Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B. Um diese Abweichung zu berücksichtigen, ist es notwendig Terme höherer Ordnung zu betrachten.
+Im folgenden wird die Größe des quadratischen Terms für die genutzen Feldstärken abgeschätzt. Wird der quadratische Term explizit ausgewertet zeigt sich, dass der quadratische Zeeman-Effekt in diesem Fall proportional zu $10^{-33}$ ist.
 
 \subsection{transiente Effekte}
 Im folgenden werden die transienten Effekte betrachtet. Ein typisches Signalbild ist Abbildung \ref{sigPic} zu entnehmen.
