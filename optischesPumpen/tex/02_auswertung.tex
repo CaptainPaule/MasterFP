@@ -54,19 +54,19 @@ I = \frac{g_e}{2g_F} - \frac{1}{2}.
 Unter Verwendung von \ref{eq:resG1} und \ref{eq:resG2} berechnen sich die Kernspins der Isotope zu
 
 \begin{equation}
-I_{Isotop1} = yyy
+I_{Isotop1} = 1.55 \pm 0.02 
 label{eq:result1}
 \end{equation}
 
 und
 
 \begin{equation}
-I_{Isotop2} = yyy.
+I_{Isotop2} = 2.53 \pm 0.02
 label{eq:result2}
 \end{equation}
 
 Die errechneten Kernspins werden mit den Kernspins der Rubidiumisotope von \cite{coreSpin} verglichen. Dieser Vergleich lässt den Schluss zu,
-dass es sich bei \ref{eq:result1} um ... und bei \ref{eq:result2} um ... handelt.
+dass es sich bei \ref{eq:result1} um $Rb_{87}$ und bei \ref{eq:result2} um $Rb_{85}$ handelt.
 
 \subsection{Bestimmung des Isotopenverhältnisses}
 In Abbildung \ref{resonanz} ist das Signalbild dargestellt, welches die Resonanzen zu festen
@@ -99,11 +99,20 @@ angesetzt.
 
 \subsection{Abschätzung des quadratischen Zeemann-Effektes}
 Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B. Um diese Abweichung zu berücksichtigen, ist es notwendig Terme höherer Ordnung zu betrachten.
-Im folgenden wird die Größe des quadratischen Terms für die genutzen Feldstärken abgeschätzt und mit dem linearen Term ins Verhältnis gesetzt.
+Für das Magnetfeld wird eine Feldstärke von $B = 200 \mu T$ angesetzt. Außerdem wird $g_F = 0,25$, $M_F = 0$ und $EHyp = 10^{-24}$ \cite{FP} verwendet. Mit Hilfe dieser Werte wird \ref{eq:qze} ausgewertet.
+Für den linearen Teil folgt
 
 \begin{equation}
-	content...
+	U_{lin} \proportional 10^{-28} J
 \end{equation}
+
+und für den quadratischen
+
+\begin{equation}
+	U_{qu} \proportional 10^{-31} J
+\end{equation}
+.
+
 
 \subsection{transiente Effekte}
 Im folgenden werden die transienten Effekte betrachtet. Ein typisches Signalbild ist Abbildung \ref{sigPic} zu entnehmen.
@@ -115,10 +124,10 @@ Im folgenden werden die transienten Effekte betrachtet. Ein typisches Signalbild
 \label{sigPic}
 \end{figure}
 
-Es wird die RF-Amplitude gegen die Periode aufgetragen und anschließend eine Ausgleichsrechnung mit Hilfe der Funktion
+Es wird die Periode gegen die RF-Amplitude aufgetragen und anschließend eine Ausgleichsrechnung mit Hilfe der Funktion
 
 \begin{equation}
-f(x) = A + \frac{B}{(C-1)^{-1}}
+f(x) = A + \frac{B}{(x+C)^{-1}}
 \end{equation}
 
 durchgeführt.
@@ -167,5 +176,5 @@ C & 0,09 $\pm$ 0,02 \\
 Der Quotient der Fitparameter B der beiden Ausgleichsrechnungen liefert
 
 \begin{equation}
-\frac{b_{2}}{b_{1}} = 1,17 \pm 0,06
+\frac{b_{87}}{b_{85}} = 1,17 \pm 0,06
 \end{equation}
