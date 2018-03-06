@@ -40,9 +40,67 @@ fällt auf, dass in diesem einfachen Fall bereits drei Frequenzen beteiligt sind
 
 Die Frequenz bei $\omega_T$ nennt man Trägerfrequenz, diese Trägt keine Information und stellt einen dissipativen Anteil dar, welcher in der Praxis unerwünscht ist. Auch beschreiben die beiden Seitenbänder bei $\omega_T - \omega_M$ und $\omega_T + \omega_M$ die gleichen Informationen. Somit ist es üblich eines der Beiden Seitenbänder durch geeignete Filter zu unterdrücken.
 Wird die Trägerfrequenz und ein Seitenband unterdrückt wird auch von Einseitenbandmodulation mit Trägerunterdrückung gesprochen.
-
 Die großen Nachteile der Amplitudenmodulation besteht in ihrer geringen Störsicherheit und geringen Verzerrungsfreiheit.
 
 \subsection{Frequenzmodulation}
+Anders als bei der Amplitudenmodulation wird bei der Frequenzmodulation die momentane Schwingungsfrequenz im Rythmus des Modulationssignales varriert.
+
+\begin{equation}
+U(t)= U\sin(\omega_T t + m \frac{\omega_T}{\omega_M} \cos(\omega_M t))
+\end{equation}
+
+Durch Differentation des Arguments des Sinues ergibt sich die Momentanfrequenz
+
+\begin{equation}
+f(t) = \frac{\omega_T}{2\pi}(1-m\sin(\omega_M t))
+\end{equation}
+
+der Schwingung. Wobei m wieder den Modulationsgrad und $\frac{m\omega_T}{2|pi}$ den Frequenzhub geschreibt. Der Frequenzhub ist es Maß dafür, wie Stark die Schwinungsfrequenz varriert. Im folgenden ist eine Schmalbald-Frequenzmoduation zu sehen, welche sich durch
+
+\begin{equation}
+m\frac{\omega_T}{\omega_M} << 1
+\end{equation}
+
+auszeichnet.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Zeitlicher Verauf einer frequenzmodulierten Schwindung}
+\end{figure}
+
+Durch geeignete Umformung oder Fouriertransfromation ist ersichtlich, dass auch das Frequenzspektrum der Frequenzmodulation sich aus drei
+Frequenzen zusammensetzt.
+
+\begin{equation}
+U(t) = U(\sin(\omega_T t) + \frac{m\omega_T}{2\omega_M}\cos(\omega_T + \omega_M) t \frac{m\omega_T}{2\omega_M}\cos(\omega_T - \omega_M) t)
+\end{equation}
+
+Es fällt auf, dass die beiden Seitenbänder im Fall der Frequenzmodulation um $\frac{\pi}{2}$ gegebüber der Trägerschwingung vershoben sind. Es ist anzumerken, dass das o.g. Frequenzspektrum nur im Fall der schwach frequenzmodulierten Schwingung
+
+\begin{equation}
+\frac{m\omega_T}{\omega_M} << 1
+\end{equation}
+
+gültigkeit besitzt. Im Fall der starken Frequenzmodulation
+
+\begin{equation}
+m\omega_T \approx \omega_M
+\end{equation}
+
+besitzt das Frequenzspektrum eine komplexere Darstellung der Form
+
+\begin{equation}
+U(t) = U \sum_{n=-\inf}^{+\inf} J_{n}(\frac{m\omega_T}{\omega_M})\sin(\omega_T + n\omega_M)t 
+\end{equation}
+
+wobei $J_n$ die Besselsche Funktion n-ter Ordnung ist. Es zeigt sich, dass für hohe Modulationsgrade das Frequenzspektrum im prinzip bis zu beliebig hohen Frequenzen reicht. Es reicht jedoch in der Praxis nur Frequenzen in der Nähe der Trägerfrequenz zu berücksichtigen, da
+
+\begin{equation}
+J_{\pm n}(x) \approx \frac{1}{\sqrt{2\pi n}}(\frac{ex}{2n})^n
+\end{equation}
+
+mit wachsender Ordnungszahl n und $x <= 1$ schnell gegen null geht.
+
 \subsection{Modulationsschaltungen}
 \subsection{Demodulationsschaltungen}
