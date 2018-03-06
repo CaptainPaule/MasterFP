@@ -108,4 +108,24 @@ J_{\pm n}(x) \approx \frac{1}{\sqrt{2\pi n}}(\frac{ex}{2n})^n
 mit wachsender Ordnungszahl n und $x <= 1$ schnell gegen null geht.
 
 \subsection{Modulationsschaltungen}
+Um die Amplitude einer Trägerschwingung zu modulieren \ref{eq:AmMod} wird ein Bauteil benötigt, welches das Produkt aus zwei Eingagspannungen bilden kann. Grundsätzlich ist das mit jedem Bauteil möglich, welches eine nichtlineare Kennlinie besitzt.
+Eine solche Schaltung kann z.B. mit Hilfe einer Diode gemäß \ref{abb:simpleMod} realisiert werden.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:simpleMod}
+\end{figure}
+
+Wird die Summe von Träger- und Modulatorspannung für die Spannung in die Potzenreihenentwicklung der Diodenkennlinie eingesetzt
+
+\begin{equation}
+I(U_T + U_M) = a_0 + a_1(U_T + U_M) + a_2(U_T^2 + U_M^2) + 2a_2 U_T U_M + ...
+\end{equation}
+
+liefert das vierte Reihenglied das geforderte Produkt. Es fällt auf das zusätzliche Störterme aufreten, dessen Frequenzen  $\omega_M, 2\omega_M und 2\omega_T$ allerdings weit außerhalb des zu übertragenden Frequenzbandes $\omega_T - \omega_M$ bis $\omega_T + \omega_M$ liegen, sodass diese mit einem geeigneten Bandfilter unterdückt werden können.
+Durch das Erzeugen der vielen nicht genutzten Frequenzen ist so eine Schaltung sehr unökonomisch. Es ist wünschenswert das die Störenden Frequenzanteile erst garnicht erzeugt werden.
+
+\subsubsection{Der Ringmodulator}
 \subsection{Demodulationsschaltungen}
