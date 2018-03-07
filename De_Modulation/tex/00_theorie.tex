@@ -201,3 +201,13 @@ $4\omega_T$ u.v.m. lassen sich mit einem Tiefpass unterdrücken, so dass am Ausg
 Problematisch ist jedoch, dass die Diode eine exponentielle Kennline besitzt. Die Abweichung vom gewünschten linearen Verhalten begründet Verzerrungen in der Rückgewinnung des Modulationssignales. Dieses Problemm lässt sich in den Griff bekommen indem mit geringen Modulationsgraden, also kleinen Auslenkungen gearbeitet wird oder eine Gegentaktschaltung verwendet wird.
 
 \subsubsection{Demodulation frequenzmodulierter Schwingungen}
+Um das Modulationssignal aus einer frequenzmodulierten Schwingung gewinnen zu können bietet sich ein so.g Flankenmodulator an.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Der Flankenmodulator besteht im wesentlichen aus einem Schwingkreis, in welchem die Frequenzabhängigkeit der Kondensatorspannung im Falle erzungener Schwingung ausgenutzt wird. Hierfür wird die Resonanzfrequenz des Schwingkreises so eingestellt, dass die Trägerfrequenz $\omega_T$ mitten in der steilen Flanke der Resonanzkurve liegt. Ändert sich nun in Folge der Frequenzmodulation die Momentanfrequenz der modulierten Schwingung, so entsteht am Ausgang des Schwingkreises eine hochfrequente Spannung, deren Amplitude im Rhytmus der Modulation schwangt. Somit wurde die Frequenzmodulation in eine Amplitudenmodulation überführt, welche bereites behandelt wurde.
