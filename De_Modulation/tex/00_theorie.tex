@@ -128,4 +128,30 @@ liefert das vierte Reihenglied das geforderte Produkt. Es fällt auf das zusätz
 Durch das Erzeugen der vielen nicht genutzten Frequenzen ist so eine Schaltung sehr unökonomisch. Es ist wünschenswert das die Störenden Frequenzanteile erst garnicht erzeugt werden.
 
 \subsubsection{Der Ringmodulator}
+Der Ringmodulator besteht, wie der Name bereits andeutet, aus einem Ring von vier zusammengeschaltet Dioden.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Diese Schaltung ist in der Lage das Produkt von Träger und Modulationssignal zu bilden ohne störende parasitäre Frequenzanteile zu erzeugen. Die abgenommene Spannung ist direkt proportional zum Produkt der Eingangsspannungen.
+
+\begin{equation}
+U_R(t) = \gamma U_M(t) \cdot U_T(t)
+\label{eq:ringMod}
+\end{equation}
+
+Es ist anzumerken, dass $\gamma$ die Einehit $\frac{1}{V}$ besitzt. Es ist direkt ersichtich, dass der Ringmodulator die Trägerabstrahlung unterdrückt. Werden zwei Cosinus-Signale für $U_T$ und $U_M$ mit den Frequenzen $\omega_T$ und $\omega_M$ in \ref{eq:ringMod} eingesetzt folgt
+
+\begin{equation}
+U_R(t) = \gamma U_T U_M \frac{1}{2}\cos((\omega_T + \omega_M)t + \phi) + \gamma U_T U_M \frac{1}{2} \cos((\omega_T - \omega_M)t - \phi)
+\end{equation}
+.
+
+Wie bereits angesprochen fehlt in diesem Frequenzspektrum der Trägeranteil $\omega_T$.
+
+\subsubsection{Frequenzmodulator mit geringem Frequenzhub}
 \subsection{Demodulationsschaltungen}
