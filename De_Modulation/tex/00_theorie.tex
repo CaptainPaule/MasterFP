@@ -154,4 +154,50 @@ U_R(t) = \gamma U_T U_M \frac{1}{2}\cos((\omega_T + \omega_M)t + \phi) + \gamma 
 Wie bereits angesprochen fehlt in diesem Frequenzspektrum der Trägeranteil $\omega_T$.
 
 \subsubsection{Frequenzmodulator mit geringem Frequenzhub}
+Um einen Frequenzmodulator mit geringem Frequenzhub zu realisieren wird ein Ringmodulator genutzt, jedoch wird wie aus \ref{eq:FreqFreqMod} ersichtlich ist ein $\frac{\pi}{2}$ Phasenschieber notwendig. Dieser wird mit Hilfe eines Iso-T Leistungsteiler parallel neben dem Ringmodulator angeordnet.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Der Phasenschieber wird mit Hilfe eines Laufzeitkabels realsiert.
+
 \subsection{Demodulationsschaltungen}
+\subsubsection{Demodulation amplitudenmodulierter Schwingungen}
+Mit Demodulatorschaltungen ist es möglich aus einem modulierten Signal die Modulationsfrequenz $\omega_M$ zurück zu gewinnen.
+Wird am einen Eingang eines Ringmodulators ein Signal mit den Frequenzen $\omega_T - \omega_M$ und $\omega_T + \omega_M$ angelegt und am anderen Eingang das Trägersignal mit $\omega_T$, so liefert der Ausgang der Schaltung ein Signal mit
+$\omega_M$, $2\omega_T - \omega_M$ und $2\omega_T + \omega_M$. Alle von der Modulationsfrequenz abweichenden Signalanteile lassen sich mit Hilfe eines geeigneten Bandpasses gut unterdrücken, so dass am Ausgang nurnoch ein Signal mit der Modulationsfrequenz $\omega_M$ anliegt. Ein Problem welches sich bei der Demodulation stellt ist, dass ein Trägersignal benötigt wird, welches Phasenstarr mit dem Trägersignal des Senders gekoppelt sein muss. Um eine solche Kopplung zu gewährleisten wird i.A. ein Phasenregelkreis oder PLL-Schaltung verwendet. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Es ist möglich die Problematik der festen Phasenbeziehung zwischen der Signal und Referenzspannung mit Hilfe einer Gleichrichter-Diode 
+zu vermeiden.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Die Gleichrichter-Diode schneidet sämtliche negative Halbwellen ab, sodass nach der Diode eine Gleichgerichtete modulierte Hochfrequenz-Spannung abgegeriffen werden kann. Die enthaltenen hochfrequenten Anteile mit den Frequenzen $\omega_T$, $2\omega_T$,
+$4\omega_T$ u.v.m. lassen sich mit einem Tiefpass unterdrücken, so dass am Ausgang die Modulationsspannung abgegriffen werden kann.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Aufgabenteil_b.jpg}
+	\caption{Primitive Modulatorschaltung}
+	\label{abb:ringMod}
+\end{figure}
+
+Problematisch ist jedoch, dass die Diode eine exponentielle Kennline besitzt. Die Abweichung vom gewünschten linearen Verhalten begründet Verzerrungen in der Rückgewinnung des Modulationssignales. Dieses Problemm lässt sich in den Griff bekommen indem mit geringen Modulationsgraden, also kleinen Auslenkungen gearbeitet wird oder eine Gegentaktschaltung verwendet wird.
+
+\subsubsection{Demodulation frequenzmodulierter Schwingungen}
