@@ -1,4 +1,8 @@
 \section{Auswertung}
+Im Folgenden werden alle Fehler mit Hilfe der \texttt{python}-Bibliothek
+\texttt{uncertainties}\cite{py-uncertainties} berechnet, die eine Gaußsche
+Fehlerfortpflanzung implementiert.
+
 \subsection{Bestimmung der g-Faktoren und Horizontalkomponente der Erdmagnetfeld}
 Zu Beginn werden die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_\text{F}$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
 Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_\text{F}$ aus der Steigung errechnet und die horizontal Komponente des Erdmagnetfeldes als Ordinate identifiziert.
@@ -42,7 +46,7 @@ und
 
 \input{tex/resG2.tex}
 
-wobei $m_0$ die Ruhemasse des Elektrons und $e_0$ die Elementarladung ist.
+wobei $m_0$ die Ruhemasse des Elektrons und $e_0$ die Elementarladung ist \cite{elec}.
 
 Außerdem lässt sich aus der Ordinate die Horizontalkomponente des Erdmagnetfeldes bestimmen,
 welche sich zu
@@ -52,11 +56,11 @@ welche sich zu
 errechnet. Für das abschließende Ergebnis der Horizontaltkomponente des Erdmagnetfeldes, wurde der Mittelwert über beide Einzelergebnisse der Ausgleichsrechnung berechnet.
 
 \subsection{Bestimmung der Kernspins}
-Für die Kernspins der Rb-Isotope gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I - J$ und $g_e = 2.0023$ \cite{landeE-}. Ferner wird
+Für die Kernspins der Rb-Isotope gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I + J$ und $g_\text{f} = g_\text{e} = 2.0023$ \cite{landeE-}. Ferner wird
 der Zusammenhang dieser Größen durch \autoref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt vereinfacht sich \autoref{eq:g} zu
 
 \begin{equation}
-I = \frac{g_e}{2g_\text{F}} - \frac{1}{2}.
+    I = \frac{g_\text{J}}{2g_\text{F}} - \frac{1}{2}
 \end{equation}
 
 Unter Verwendung von \autoref{eq:resG1} und \autoref{eq:resG2} berechnen sich die Kernspins der Isotope zu
