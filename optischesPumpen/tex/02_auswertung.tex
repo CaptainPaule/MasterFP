@@ -1,9 +1,9 @@
 \section{Auswertung}
 \subsection{Bestimmung der g-Faktoren und Horizontalkomponente der Erdmagnetfeld}
-Zu Beginn werden die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_F$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
-Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_F$ aus der Steigung errechnet und die horizontal Komponente des Erdmagnetfeldes als Ordinate identifiziert.
+Zu Beginn werden die lokale horizontal Komponente des Erdmagnetfeldes und die Lande-Faktoren $g_\text{F}$ der Rb-Isotope, welche in der Dampfzelle enthalten sind, ermittelt.
+Dafür werden die an der HF-Spule angelegten Frequenzen $\nu$ gegen die magnetischen Feldstärken $B$ in der jeweiligen Resonanz aufgetragen. Mittels einer linearen Ausgleichsrechnung werden die $g_\text{F}$ aus der Steigung errechnet und die horizontal Komponente des Erdmagnetfeldes als Ordinate identifiziert.
 
-Um die gemessenen Stromstärken in ein Magnetfeld umzurechnen, wurde der bekannte Zusammenhang für Helmholzspulen
+Um die gemessenen Stromstärken in ein Magnetfeld umzurechnen, wird der bekannte Zusammenhang für Helmholzspulen
 
 \begin{equation}
 B = \mu_0 \frac{8NI}{\sqrt{125} r}
@@ -24,7 +24,7 @@ Mit dem Ansatz
 B(\nu) = A\nu + B_\text{Erd}
 \end{equation}
 
-folgt aus der Ausgleichsrechnung gemäß \autoref{abb:gfak} folgende Werte für die Koeffizienten $A$ und $B_\text{Erd}$:
+folgen aus der Ausgleichsrechnung gemäß \autoref{abb:gfak} folgende Werte für die Koeffizienten $A$ und $B_\text{Erd}$:
 
 \input{tex/isotopFitTable.tex}
 
@@ -45,23 +45,23 @@ errechnet. Für das abschließende Ergebnis der Horizontaltkomponente des Erdmag
 
 \subsection{Bestimmung der Kernspins}
 Für die Kernspins der Rb-Isotope gelten folgende Zusammenhänge: $S = J = \frac{1}{2} , L = 0$ sowie $F = I - J$ und $g_e = 2.0023$ \cite{landeE-}. Ferner wird
-der Zusammenhang dieser Größen durch \ref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt vereinfacht sich \ref{eq:g} zu
+der Zusammenhang dieser Größen durch \autoref{eq:g} bestimmt. Werden o.g. Annahmen berücksichtigt vereinfacht sich \autoref{eq:g} zu
 
 \begin{equation}
-I = \frac{g_e}{2g_F} - \frac{1}{2}.
+I = \frac{g_e}{2g_\text{F}} - \frac{1}{2}.
 \end{equation}
 
-Unter Verwendung von \ref{eq:resG1} und \ref{eq:resG2} berechnen sich die Kernspins der Isotope zu
+Unter Verwendung von \autoref{eq:resG1} und \autoref{eq:resG2} berechnen sich die Kernspins der Isotope zu
 
 \begin{equation}
-I_{Isotop1} = 1.55 \pm 0.02 
+I_\text{Isotop1} = 1.55 \pm 0.02 
 \label{eq:result1}
 \end{equation}
 
 und
 
 \begin{equation}
-I_{Isotop2} = 2.53 \pm 0.02
+I_\text{Isotop2} = 2.53 \pm 0.02
 \label{eq:result2}
 \end{equation}
 
@@ -74,7 +74,7 @@ HF-Frequenzen und variablen B-Feld zeigt.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.8]{img/TEK0002.JPG}
+\includegraphics[width=\textwidth]{img/TEK0002.JPG}
 \caption{Abbildung der Resonanzen}
 \label{resonanz}
 \end{figure}
@@ -98,27 +98,27 @@ Bei der Kalkulation des Amplitudenverhältnisses wurde ein Ablesefehler von 1 Pr
 angesetzt.
 
 \subsection{Abschätzung des quadratischen Zeemann-Effektes}
-Für starke Magnetfelder verhält sich die Übergangsenergie $U_{HF}$ nicht mehr proportional zu B. Um diese Abweichung zu berücksichtigen, ist es notwendig Terme höherer Ordnung zu betrachten.
-Für das Magnetfeld wird eine Feldstärke von $B = 200 \mu T$ angesetzt. Außerdem wird $g_{F,85} = 0,488$, $g_{F,87} = 0,331$, $M_F = 0$, 
-$EHyp_{85} = 2,01 \cdot 10^{-24}$ und $EHyp_{87} = 4,53 \cdot 10^{-24}$ \cite{FP} verwendet. Mit Hilfe dieser Werte wird \ref{eq:qze} ausgewertet. Für $Rb_{85}$ folgt
+Für starke Magnetfelder verhält sich die Übergangsenergie $U_\text{HF}$ nicht mehr proportional zu B. Um diese Abweichung zu berücksichtigen, ist es notwendig Terme höherer Ordnung zu betrachten.
+Für das Magnetfeld wird eine Feldstärke von $B = 200 \mu T$ angesetzt. Außerdem wird $g_\text{F,85} = 0,488$, $g_\text{F,87} = 0,331$, $M_\text{F} = 0$, 
+$\text{EHyp}_{85} = 2,01 \cdot 10^{-24}$ und $\text{EHyp}_{87} = 4,53 \cdot 10^{-24}$ \cite{FP} verwendet. Mit Hilfe dieser Werte wird \ref{eq:qze} ausgewertet. Für $\text{Rb}_{85}$ folgt
 
 \begin{equation}
-U_{HF,85} = 9,05 \cdot 10^{-28} + 4,08 \cdot 10^{-31}
+U_\text{HF,85} = 9,05 \cdot 10^{-28} + 4,08 \cdot 10^{-31}
 \end{equation}
 
-und für $Rb_{87}$ folgt
+und für $\text{Rb}_{87}$ folgt
 
 \begin{equation}
-U_{HF,87} = 6,14 \cdot 10^{-28} + 8,32 \cdot 10^{-32}
+U_\text{HF,87} = 6,14 \cdot 10^{-28} + 8,32 \cdot 10^{-32}.
 \end{equation}
-.
 
-\subsection{transiente Effekte}
+
+\subsection{Transiente Effekte}
 Im folgenden werden die transienten Effekte betrachtet. Ein typisches Signalbild ist Abbildung \ref{sigPic} zu entnehmen.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.8]{img/TEK0019.JPG}
+\includegraphics[width=\textwidth]{img/TEK0019.JPG}
 \caption{Signalbild}
 \label{sigPic}
 \end{figure}
@@ -136,14 +136,14 @@ Es ergeben sich die Abbildungen \ref{trans1} und \ref{trans2} mit den dazugehör
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{img/trans1.pdf}
-\caption{Ausgleichsrechnung zum transienten Verhalten von $Rb_{85}$}
+\caption{Ausgleichsrechnung zum transienten Verhalten von $\text{Rb}_{85}$}
 \label{trans1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{img/trans2.pdf}
-\caption{Ausgleichsrechnung zum transienten Verhalten von $Rb_{87}$}
+\caption{Ausgleichsrechnung zum transienten Verhalten von $\text{Rb}_{87}$}
 \label{trans2}
 \end{figure}
 
@@ -157,7 +157,7 @@ C & -0,13 $\pm$ 0,03 \\
 \bottomrule
 \end{tabular}
 \label{x}
-\caption{Ausgleichsrechnung für $Rb_{85}$}
+\caption{Ausgleichsrechnung für $\text{Rb}_{85}$}
 \end{table}
 
 \begin{table}[h!]
@@ -170,7 +170,7 @@ C & 0,09 $\pm$ 0,02 \\
 \bottomrule
 \end{tabular}
 \label{y}
-\caption{Ausgleichsrechnung für $Rb_{87}$}
+\caption{Ausgleichsrechnung für $\text{Rb}_{87}$}
 \end{table}
 
 Der Quotient der Fitparameter B der beiden Ausgleichsrechnungen liefert
