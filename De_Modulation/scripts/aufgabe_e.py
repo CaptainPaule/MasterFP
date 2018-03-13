@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 omega_T, U, U_0 = np.genfromtxt('../data/aufgabe_e.txt', unpack=True)
 
