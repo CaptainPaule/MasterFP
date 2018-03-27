@@ -1,9 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 
+def fit(x, A, B):
+	return A*x + B
+
+# import data
 omega_T, U, U_0 = np.genfromtxt('../data/aufgabe_e.txt', unpack=True)
 
-plt.plot(omega_T, U, 'C0')
-plt.plot(omega_T, U_0, 'C1')
+# linear fit
+params, cov = curve_fit(fit, omega_T, np.arccos(U/U_0))
+errors = np.sqrt(np.diag(cov))
+
+print("Fit Function")
+print('A =', params[0], '+/-', errors[0])
+print('B =', params[1], '+/-', errors[1])
+
+plt.plot(omega_T, np.arccos(U/U_0), 'kx', label="data")
+plt.plot(omega_T, fit(omega_T, *params), 'r-', label="fit")
 plt.show()
