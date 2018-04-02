@@ -19,4 +19,7 @@ print('B =', params[1], '+/-', errors[1])
 
 plt.plot(omega_T, np.arccos(U/U_0), 'kx', label="data")
 plt.plot(omega_T, fit(omega_T, *params), 'r-', label="fit")
+plt.xlabel(r'$\omega_T$')
+plt.ylabel(r'$\arccos(U/U_0)$')
+plt.legend()
 plt.show()

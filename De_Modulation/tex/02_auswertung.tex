@@ -1,5 +1,7 @@
 \section{Auswertung}
 
+Fehler und Ausgleichsrechnungen werden mit dem Python-Paket ScyPy \cite{scypy} berechnet.
+
 \subsection{Amplitudenmodulation mit Ringmodulator}
 
 Mit dem Ringmodulator wird die Amplitude eines Signals moduliert. Das Eingans- und Ausgangssignal sind in \autoref{a} zu sehen. Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{980}{\milli\volt}$ und die Frequenz $\omega_\text{T}=\SI{1}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{116}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{50}{\kilo\hertz}$. Es entsteht eine Schwebung, die Trägerfrequenz ist hier nicht zu erkennen. Die prominentesten Linien in dem Frequenzspektrum in \autoref{b} sind die der Modulationsfrequenz. Dazwischen ist als kleinerer Peak auch die Trägerfrequenz zu sehen, die mit dem Ringmodulator nicht komplett unterdrückt wird, aber signifikant kleiner als die Seitenbänder ist.
@@ -58,22 +60,44 @@ Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/d_scope_234.png}
-		\caption{Frequenzmodulation - Detailansicht}
+		\caption{Frequenzmodulation -- Detailansicht zur Bestimmung der Breite der Verschmierung}
 	\end{subfigure}
-	\caption{}
+	\caption{Frequenzmodulation eines sinusförmigen Trägersignals.}
 	\label{d1}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/Aufgabenteil_d.jpg}
-	\caption{Frequenzmodulation - Frequenzspektrum}
+	\caption{Frequenzmodulation -- Frequenzspektrum}
 	\label{d2}
 \end{figure}
 
-\subsection{Demodulation mit Ringmodulator}
+\subsection{Proportionalität zwischen Gleichspannung und Phase der Wechselspannung am Ringmodulator}
 
-%Tabelle \autoref{tab:e} mit Messwerten und Ausgleichsrechnung \autoref{fig:e}
+Die Annahme ist, dass eine Proportionalität zwischen Gleichspannung und Phase der Wechselspannung am Ringmodulator besteht. Um diesen Zusammenhang zu überprüfen, wird die Gleichspannung in Abhängikeit des Arguments des Cosinus gemessen. Es kann entweder die Laufzeit oder die Frequenz des Trägersignals variiert werden. In diesem Fall wird die Frequenz verändert, sodass
+
+\begin{align}
+\begin{split}
+	U &= U_0 \cos(\omega_T \cdot t + \varphi)\\
+	\arccos \frac{U}{U_0} &= \omega_T \cdot t + \varphi
+\end{split}
+\end{align}
+
+gelten muss.
+
+\input{tex/aufgabe_e.tex}
+
+Eine lineare Ausgleichsrechnung der Form $U/U_0 = A \cdot \omega_\text{T} + B$ an die Messwerte in \autoref{tab:e} ergibt die Parameter $A = -0.35 \pm 0.02$ und $B = 3.37 \pm 0.09$ und ist in \autoref{fig:e} dargestellt. Die geringen Fehler des linearen Fits von 5.7\% für die Steigung bzw. 2.8\% für den y-Achsenabschnitt zeigen, dass die Annahme eines ein linearen Zusammenhangs gerechtfertig ist.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/linear_fit.png}
+	\caption{Lineare Ausgleichsrechnung zur Veranschaulichung des linearen Zusammenhangs zwischen $\cos\varphi$ und $U$.}
+	\label{fig:e}
+\end{figure}
+
+\subsection{Demodulation einer amplitudenmodulierten Schwingung mit Ringmodulator}
 
 In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Amplitude zunächst moduliert und daraufhin wieder demoduliert wird. In gelb ist das Eingangssignal, die grüne Kurve ist das um einen festen Faktor phasenverschobene und in der Amplitude reduzierte Signal.
 
@@ -85,43 +109,55 @@ In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Ampli
 \end{figure}
 
 \subsection{Demodulation mit Gleichrichterdiode}
+\label{De-AM}
+
+Die Diode in der Schaltung in \ref{blub} schneidet die negativen Halbwellen ab, wie in \autoref{nachDiode} zu sehen und das RC-Element filtert als Tiefpass die hohen Frequenzen aus dem Signal, dies ist in \autoref{nachRC} zu sehen. Wie zu erwarten ist die Amplitude des Ausgangsignal nach dem Tiefpass stark reduziert, die negativen Halbwellen sind nun aufgrund der Gleichrichterdiode positiv und das Ausgangssignal ist gegenüber dem Eingangssignal phasenverschoben.
 
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/g_scope_243.png}
-		\caption{Frequenzmodulation}
+		\caption{Das Eingangssignal ist in grün abgebildet, in gelb das Signal nach der Diode in der Schaltung in \autoref{blub}.}
+		\label{nachDiode}
 	\end{subfigure}%
 	~
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/g_scope_242.png}
-		\caption{Frequenzmodulation - Detailansicht}
+		\caption{Das Einganssignal ist wieder in grün, in gelb das demodulierte Ausgangssignal nach dem Tiefpass.}
+		\label{nachRC}
 	\end{subfigure}
+	\caption{Demodulation eines amplitudenmodulierten Signals mit einer Gleichrichterdiode.}
 \end{figure}
 
 \subsection{Demodulation einer frequenzmodulierten Schwingung}
+
+In \autoref{amp} ist mit der Schaltung in \autoref{blub} aus dem frequenzmodulierten Signal eine Amplitudenmodulation gemacht worden. \autoref{De-FM} und \autoref{De-FM-RC} zeigen die anschließende Demodulation mit einer Gleichrichterdiode und einem RC-Tiefpass wie bereits in \autoref{De-AM} durchgeführt.
 
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/h_scope_239.png}
-		\caption{Amplitudenmodulation - Amplitudenmodulation - moduliertes  Signal in grün, Eingangssignal in gelb}
+		\caption{In gelb ist das Eingangssignal gezeigt, in grün das modulierte Signal -- durch den LC-Kreis wird aus der frequenzmodierten Spannung ein amplitudenmoduliertes Signal.}
+		\label{amp}
 	\end{subfigure}%
 	~
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/h_scope_238.png}
-		\caption{Amplitudenmodulation - moduliertes und dann demoduliertes Signal in grün, Eingangssignal in gelb}
+		\caption{Mit einer Gleichrichterdiode werden die negativen Halbwellen abgeschnitten.}
+		\label{De-FM}
 	\end{subfigure}
 	\\
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/h_scope_237.png}
-		\caption{Amplitudenmodulation - moduliertes und dann demoduliertes Signal nach Hochpass in grün, Eingangssignal in gelb}
+		\caption{Das in grün dargestellte Signal ist demoduliert und wurde nach dem Tiefpass abgegriffen.}
+		\label{De-FM-RC}
 	\end{subfigure}
+	\caption{Demodulation einer frequenzmodulierten Schwingung.}
 \end{figure}
 
 \FloatBarrier

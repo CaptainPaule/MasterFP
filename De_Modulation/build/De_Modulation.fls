@@ -429,6 +429,11 @@ INPUT img/d_scope_234.png
 INPUT ./img/Aufgabenteil_d.jpg
 INPUT ./img/Aufgabenteil_d.jpg
 INPUT img/Aufgabenteil_d.jpg
+INPUT ./tex/aufgabe_e.tex
+INPUT ./tex/aufgabe_e.tex
+INPUT ./img/linear_fit.png
+INPUT ./img/linear_fit.png
+INPUT img/linear_fit.png
 INPUT ./img/f_scope_235.png
 INPUT ./img/f_scope_235.png
 INPUT img/f_scope_235.png

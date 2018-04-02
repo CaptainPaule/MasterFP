@@ -1,10 +1,10 @@
 # Fdb version 3
-["bibtex De_Modulation"] 1520949335 "De_Modulation.aux" "De_Modulation.bbl" "De_Modulation" 1521131007
+["bibtex De_Modulation"] 1520949335 "De_Modulation.aux" "De_Modulation.bbl" "De_Modulation" 1522694360
   "De_Modulation.bcf" 0 -1 0 ""
   (generated)
   "De_Modulation.blg"
   "De_Modulation.bbl"
-["pdflatex"] 1521131004 "De_Modulation.tex" "build/De_Modulation.pdf" "De_Modulation" 1521131007
+["pdflatex"] 1522694356 "De_Modulation.tex" "build/De_Modulation.pdf" "De_Modulation" 1522694360
   "/home/robert/.local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/home/robert/.local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/home/robert/.local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm" 1246382020 1228 9be37fdf0dc0e1f4df4af3594876d628 ""
@@ -216,10 +216,10 @@
   "/home/robert/.local/texlive/2016/texmf-var/web2c/luatex/lualatex.fmt" 1481537228 1246142 fe6f83fb4073a522a5c5b02e8756da9d ""
   "De_Modulation.bbl" 1520947444 466 87c763802318ca007e475d2fb9c40fb5 "bibtex De_Modulation"
   "De_Modulation.tex" 1521121911 4304 1cb400b898aa9bc98125b786cef8b762 ""
-  "build/De_Modulation.aux" 1521131007 8756 987a98d985467edbe0bb08589583a573 ""
-  "build/De_Modulation.out" 1521131007 1295 8dc82554bf0913baba5bb5fea8280bc6 ""
-  "build/De_Modulation.run.xml" 1521131007 2367 48f8ec860ddcc5ceac7f476834bd267f ""
-  "build/De_Modulation.toc" 1521131007 2202 9e097d78b9fd49e242f034c57eabaabc ""
+  "build/De_Modulation.aux" 1522694360 12329 4879ac89835268b317427d532c5aad37 ""
+  "build/De_Modulation.out" 1522694360 1540 642184cd5c90358dbb813b73210a8959 ""
+  "build/De_Modulation.run.xml" 1522694360 2367 b07e27d2dd49678a6ba9986938d06a3d ""
+  "build/De_Modulation.toc" 1522694360 2479 aa9cf3c2f7ad4dda589d02e622c03b34 ""
   "img/Aufgabenteil_b.jpg" 1519721244 180290 9b1279b4b7efe8361f8183b274b12a05 ""
   "img/Aufgabenteil_c1.jpg" 1519721244 174833 edc7e7f333d0e84646b6341bb1c5cd1b ""
   "img/Aufgabenteil_d.jpg" 1519721244 169854 88568b518efb58a33c828fd394478bc8 ""
@@ -233,16 +233,18 @@
   "img/h_scope_237.png" 1519721244 50748 47c18620c83d816f7fe7bb3a5c5fbd2f ""
   "img/h_scope_238.png" 1519721244 72784 55358898bb56daa6d575a1c0989d5cdb ""
   "img/h_scope_239.png" 1519721244 54089 52cd2df33ff3dc6cbafafebb67072598 ""
+  "img/linear_fit.png" 1522680768 22087 648a3d16282c29a77f38457f150fbb68 ""
   "tex/00_theorie.tex" 1520500307 11454 8a3c68449d6f1acfac2b81d2dc863f00 ""
   "tex/01_aufbau.tex" 1520500307 1560 5292909d09c48225168f0dd6e1569be1 ""
-  "tex/02_auswertung.tex" 1521131001 5239 4ee669a41525f81a537d81778ffcae4b ""
+  "tex/02_auswertung.tex" 1522694354 8944 f8a3e2f36b7e12d55ff6336d8286b8ac ""
   "tex/03_diskussion.tex" 1519925651 35 e79b1100f2f055c56691a666742b3fa5 ""
+  "tex/aufgabe_e.tex" 1522691642 547 5567f41f624e8c3e52c14233bd95b6a6 ""
   (generated)
-  "build/De_Modulation.toc"
-  "build/De_Modulation.log"
-  "build/De_Modulation.run.xml"
-  "/home/robert/.local/texlive/2016/texmf-var/m_t_x_t_e_s_t.tmp"
-  "build/De_Modulation.aux"
   "build/De_Modulation.out"
-  "build/De_Modulation.bcf"
+  "build/De_Modulation.log"
   "build/De_Modulation.pdf"
+  "build/De_Modulation.run.xml"
+  "build/De_Modulation.aux"
+  "build/De_Modulation.bcf"
+  "build/De_Modulation.toc"
+  "/home/robert/.local/texlive/2016/texmf-var/m_t_x_t_e_s_t.tmp"
