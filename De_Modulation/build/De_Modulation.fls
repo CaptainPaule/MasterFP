@@ -282,9 +282,9 @@ INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/latex/beamer/translator/di
 INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 OUTPUT build/De_Modulation.bcf
-INPUT ./De_Modulation.bbl
-INPUT ./De_Modulation.bbl
-INPUT ./De_Modulation.bbl
+INPUT build/De_Modulation.bbl
+INPUT build/De_Modulation.bbl
+INPUT build/De_Modulation.bbl
 INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /home/robert/.local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -454,6 +454,7 @@ INPUT ./img/h_scope_237.png
 INPUT img/h_scope_237.png
 INPUT ./tex/03_diskussion.tex
 INPUT ./tex/03_diskussion.tex
+INPUT /home/robert/.local/texlive/2016/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
 INPUT build/De_Modulation.aux
 INPUT build/De_Modulation.out
 INPUT build/De_Modulation.run.xml
@@ -463,6 +464,7 @@ INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /home/robert/.local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb

@@ -1,6 +1,6 @@
 \section{Auswertung}
 
-Fehler und Ausgleichsrechnungen werden mit dem Python-Paket ScyPy \cite{scypy} berechnet.
+Fehler und Ausgleichsrechnungen werden mit dem Python-Paket SciPy \cite{scipy} berechnet.
 
 \subsection{Amplitudenmodulation mit Ringmodulator}
 
@@ -24,12 +24,17 @@ Mit dem Ringmodulator wird die Amplitude eines Signals moduliert. Das Eingans- u
 
 In \autoref{c1} ist das Fequenzspektrum einer amplitudenmodulierten Schwingung mit Trägerabstrahlung zu sehen. Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. \autoref{c2} zeigt von dem gleichen Signal eine Oszilloskop-Aufnahme. In \autoref{c2} lässt sich der Modulationsgrad aus dem Verhältnis der Amplitude der Maxima und der Minima bestimmen. Da die Amplitude zwischen $U_\text{min} = U_\text{T}(1 - m)$ und $U_\text{max} = U_\text{T}(1 + m)$ schwankt, ist der Modulationsgrad
 \[
-	m =\frac{U_\text{max} - U_\text{min}}{U_\text{max} + U_\text{min}} = \frac{\SI{52}{\milli\volt} - \SI{26}{\milli\volt}}{\SI{52}{\milli\volt} + \SI{26}{\milli\volt}} = 0.33.
+	m =\frac{U_\text{max} - U_\text{min}}{U_\text{max} + U_\text{min}} = \frac{\SI{54}{\milli\volt} - \SI{24}{\milli\volt}}{\SI{54}{\milli\volt} + \SI{24}{\milli\volt}} = 0.38.
 \]
-Eine andere Methode, den Modulationsgrad zu bestimmen, ist mit der Pulshöhe der Träger- und Modulationsfrequenz im Frequenzanalysator. Dazu wird die Pulshöhe, die in der Einheit eines Leistungspegels angegeben wird, mit $P = 10^{L_P/10} \cdot \SI{1}{\watt}$ in eine Leistung umgerechet. Dann ist der Modulationsgrad $m = 4 \cdot \frac{P_\text{M}}{P_\text{T}}$
+Eine andere Methode, den Modulationsgrad zu bestimmen, ist mit der Pulshöhe der Träger- und Modulationsfrequenz im Frequenzanalysator. Dazu wird die Pulshöhe, die in der Einheit eines Leistungspegels angegeben wird, mit $P = 10^{L_P/10} \cdot \SI{1}{\watt}$ in eine Leistung umgerechet. Die Leistung hängt mit der Spannung über $P = \frac{U^2}{2R}$ zusammen. Die Leistung des Trägersignals $P_\text{T}$ und der Seitenbänder $P_\text{S}$ ist
 \[
-	m_1 = 4 \cdot \frac{10^{-44.62/10}}{10^{-33.68/10}} = 0.322, \quad m_2 = 4 \cdot \frac{10^{-44.7/10}}{10^{-33.68/10}} = 0.316
+P_\text{T} = \frac{U_\text{T}^2}{2R} \quad \text{und} \quad P_\text{S} = \frac{\left(\frac{m \cdot U_\text{T}}{2}\right)^2}{2R} = \frac{m^2 \cdot {U_\text{T}^2}}{8R}.
 \]
+Dann ist der Modulationsgrad $m = \sqrt{4 \cdot \frac{P_\text{M}}{P_\text{T}}}$
+\[
+	m_1 = \sqrt{4 \cdot \frac{10^{-44.62/10}}{10^{-33.68/10}}} = 0.57, \quad m_2 = \sqrt{4 \cdot \frac{10^{-44.7/10}}{10^{-33.68/10}}} = 0.56
+\]
+Der Unterschied zwischen dem berechneten Modulationsgrad mit beiden Methoden beträgt 68\%.
 
 \begin{figure}
 	\centering
@@ -47,7 +52,7 @@ Eine andere Methode, den Modulationsgrad zu bestimmen, ist mit der Pulshöhe der
 
 \subsection{Frequenzmodulation}
 
-Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Aus der Trägerfrequenz und der gemittelten Verschmierung ergibt sich eine Periodendauer von $T_\text{min} = \SI{645.2}{\nano\second} - \frac{\SI{196}{\nano\second}}{5} = \SI{606}{\nano\second}$ bzw. $T_\text{max} = \SI{645.2}{\nano\second} + \frac{\SI{196}{\nano\second}}{5} = \SI{684.4}{\nano\second}$.
+Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Dies verteilt sich auf fünf Perioden, also $\Delta \bar{t} = \SI{39.2}{\nano\second}$ und die halbe Momentanfrequenz $f_\text{mom/2} = \SI{25.5}{\mega\hertz}$. Integration der Momentanfrequenz \autoref{blub} in den Grenzen von $0$ bis $T_\text{M}/2$ ergibt für die maximale ($\varphi = \pi$) bzw. minimale ($\varphi = 0$) Phasenverschiebung $f_\text{T}\left(1 + \frac{m}{\pi}\right)$ bzw. $f_\text{T}\left(1 - \frac{m}{\pi}\right)$. Die Differenz beider geteilt durch zwei ist der Frequenzhub $\Delta f = f_\text{T} \frac{m}{\pi}$. Damit ist der Modulationsfaktor $m = \SI{25.5}{\mega\hertz} \cdot \pi / \SI{1.55}{\mega\hertz} = 51.7$.
 
 \begin{figure}[t!]
 	\centering
