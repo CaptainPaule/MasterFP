@@ -52,7 +52,7 @@ Der Unterschied zwischen dem berechneten Modulationsgrad mit beiden Methoden bet
 
 \subsection{Frequenzmodulation}
 
-Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Dies verteilt sich auf fünf Perioden, also $\Delta \bar{t} = \SI{39.2}{\nano\second}$ und die halbe Momentanfrequenz $f_\text{mom/2} = \SI{25.5}{\mega\hertz}$. Integration der Momentanfrequenz \autoref{blub} in den Grenzen von $0$ bis $T_\text{M}/2$ ergibt für die maximale ($\varphi = \pi$) bzw. minimale ($\varphi = 0$) Phasenverschiebung $f_\text{T}\left(1 + \frac{m}{\pi}\right)$ bzw. $f_\text{T}\left(1 - \frac{m}{\pi}\right)$. Die Differenz beider geteilt durch zwei ist der Frequenzhub $\Delta f = f_\text{T} \frac{m}{\pi}$. Damit ist der Modulationsfaktor $m = \SI{25.5}{\mega\hertz} \cdot \pi / \SI{1.55}{\mega\hertz} = 51.7$.
+Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Dies verteilt sich auf fünf Perioden, also $\Delta \bar{t} = \SI{39.2}{\nano\second}$ und die halbe Momentanfrequenz $f_\text{mom/2} = \SI{25.5}{\mega\hertz}$. Integration der Momentanfrequenz aus \autoref{eq:momFreq} in den Grenzen von $0$ bis $T_\text{M}/2$ ergibt für die maximale ($\varphi = \pi$) bzw. minimale ($\varphi = 0$) Phasenverschiebung $f_\text{T}\left(1 + \frac{m}{\pi}\right)$ bzw. $f_\text{T}\left(1 - \frac{m}{\pi}\right)$. Die Differenz beider geteilt durch zwei ist der Frequenzhub $\Delta f = f_\text{T} \frac{m}{\pi}$. Damit ist der Modulationsfaktor $m = \SI{25.5}{\mega\hertz} \cdot \pi / \SI{1.55}{\mega\hertz} = 51.7$.
 
 \begin{figure}[t!]
 	\centering
@@ -116,14 +116,14 @@ In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Ampli
 \subsection{Demodulation mit Gleichrichterdiode}
 \label{De-AM}
 
-Die Diode in der Schaltung in \ref{blub} schneidet die negativen Halbwellen ab, wie in \autoref{nachDiode} zu sehen und das RC-Element filtert als Tiefpass die hohen Frequenzen aus dem Signal, dies ist in \autoref{nachRC} zu sehen. Wie zu erwarten ist die Amplitude des Ausgangsignal nach dem Tiefpass stark reduziert, die negativen Halbwellen sind nun aufgrund der Gleichrichterdiode positiv und das Ausgangssignal ist gegenüber dem Eingangssignal phasenverschoben.
+Die Diode in der Schaltung in \autoref{fig:9} schneidet die negativen Halbwellen ab, wie in \autoref{nachDiode} zu sehen und das RC-Element filtert als Tiefpass die hohen Frequenzen aus dem Signal, dies ist in \autoref{nachRC} zu sehen. Wie zu erwarten ist die Amplitude des Ausgangsignal nach dem Tiefpass stark reduziert, die negativen Halbwellen sind nun aufgrund der Gleichrichterdiode positiv und das Ausgangssignal ist gegenüber dem Eingangssignal phasenverschoben.
 
 \begin{figure}[t!]
 	\centering
 	\begin{subfigure}[t]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{img/g_scope_243.png}
-		\caption{Das Eingangssignal ist in grün abgebildet, in gelb das Signal nach der Diode in der Schaltung in \autoref{blub}.}
+		\caption{Das Eingangssignal ist in grün abgebildet, in gelb das Signal nach der Diode in der Schaltung in \autoref{fig:9}.}
 		\label{nachDiode}
 	\end{subfigure}%
 	~
@@ -138,7 +138,7 @@ Die Diode in der Schaltung in \ref{blub} schneidet die negativen Halbwellen ab, 
 
 \subsection{Demodulation einer frequenzmodulierten Schwingung}
 
-In \autoref{amp} ist mit der Schaltung in \autoref{blub} aus dem frequenzmodulierten Signal eine Amplitudenmodulation gemacht worden. \autoref{De-FM} und \autoref{De-FM-RC} zeigen die anschließende Demodulation mit einer Gleichrichterdiode und einem RC-Tiefpass wie bereits in \autoref{De-AM} durchgeführt.
+In \autoref{amp} ist mit der Schaltung in \autoref{gleichrichter} aus dem frequenzmodulierten Signal eine Amplitudenmodulation gemacht worden. \autoref{De-FM} und \autoref{De-FM-RC} zeigen die anschließende Demodulation mit einer Gleichrichterdiode und einem RC-Tiefpass wie bereits in \autoref{De-AM} durchgeführt.
 
 \begin{figure}[t!]
 	\centering
