@@ -1,6 +1,6 @@
 \section{Auswertung}
 
-Fehler und Ausgleichsrechnungen werden mit dem Python-Paket SciPy \cite{scipy} berechnet.
+Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy} und uncertainties \cite{uncertain} berechnet.
 
 \subsection{Amplitudenmodulation mit Ringmodulator}
 
@@ -27,14 +27,14 @@ In \autoref{c1} ist das Fequenzspektrum einer amplitudenmodulierten Schwingung m
 \[
 	m = \frac{U_\text{max} - U_\text{min}}{U_\text{max} + U_\text{min}}
 \]
-mit $U_\text{min} = \SI{24}{\milli\volt}$ und $U_\text{max} = \SI{54}{\milli\volt}$, wobei die Spannungswerte mit einer Unsicherheit von $\pm \SI{2}{\milli\volt}$ angegeben werden, $m = 0.38 \pm Fehler$.\par
-\indent Der Modulationsgrad kann auch mit der Pulshöhe der Träger- und Modulationsfrequenz bestimmt werden, welche an dem Frequenzanalysator abgelesen werden kann. Dazu wird die Pulshöhe, die in der Einheit eines Leistungspegels $L_P$ angegeben wird, mit $P = 10^{L_P/10} \cdot \SI{1}{\milli\watt}$ in eine Leistung umgerechet. Die Leistung hängt mit der Spannung über $P = U^2/2R$ zusammen. Die Leistung des Trägersignals $P_\text{T}$ und der Seitenbänder $P_\text{S}$ ist
+mit $U_\text{min} = \SI{24}{\milli\volt}$ und $U_\text{max} = \SI{54}{\milli\volt}$, wobei die Spannungswerte mit einer Unsicherheit von $\pm \SI{2}{\milli\volt}$ angegeben werden, $m = 0.38 \pm 0.04$.\par
+\indent Der Modulationsgrad kann auch mit der Pulshöhe der Träger- und Modulationsfrequenz bestimmt werden, welche an dem Frequenzanalysator abgelesen werden kann. Dazu wird die Pulshöhe, die in der Einheit eines Leistungspegels $L_P$ angegeben wird, mit $P = 10^{L_P/10} \cdot \SI{1}{\milli\watt}$ in eine Leistung umgerechet. $L_P$ wird mit einer Genauigkeit von $\SI{0.01}{\dBm}$ gemessen. Die Leistung hängt mit der Spannung über $P = U^2/2R$ zusammen. Die Leistung des Trägersignals $P_\text{T}$ und der Seitenbänder $P_\text{S}$ ist
 \[
 P_\text{T} = \frac{U_\text{T}^2}{2R} \quad \text{und} \quad P_\text{S} = \frac{\left(\frac{m \cdot U_\text{T}}{2}\right)^2}{2R} = \frac{m^2 \cdot {U_\text{T}^2}}{8R}.
 \]
-Dann ist der Modulationsgrad $m = \sqrt{4 \cdot \frac{P_\text{M}}{P_\text{T}}}$
+Dann ist der Modulationsgrad $m = \sqrt{4 \cdot P_\text{M}/P_\text{T}}$ mit $P_\text{M,1} = \SI{-44.62}{\dBm}$, $P_\text{M,2} = \SI{-44.70}{\dBm}$ und $P_\text{T} = \SI{-33.68}{\dBm}$
 \[
-	m_1 = \sqrt{4 \cdot \frac{10^{-44.62/10}}{10^{-33.68/10}}} = 0.57, \quad m_2 = \sqrt{4 \cdot \frac{10^{-44.7/10}}{10^{-33.68/10}}} = 0.56
+	m_1 = \sqrt{4 \cdot \frac{10^{-44.62/10}}{10^{-33.68/10}}} = 0.5676 \pm 0.0009, \quad m_2 = \sqrt{4 \cdot \frac{10^{-44.7/10}}{10^{-33.68/10}}} = 0.5624 \pm 0.0009
 \]
 Der Unterschied zwischen dem berechneten Modulationsgrad mit beiden Methoden beträgt 68\%.
 
