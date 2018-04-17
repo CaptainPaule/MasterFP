@@ -93,14 +93,14 @@ wobei nur die positive Lösung als physikalisch sinnvoll betrachtet wird. Daraus
 	\label{d2}
 \end{figure}
 
-\subsection{Proportionalität zwischen Gleichspannung und Phase der Wechselspannung am Ringmodulator}
+\subsection{Proportionalität zwischen Gleichspannung am Ausgang und Phase der Wechselspannung zwischen den Eingängen am Ringmodulator}
 
-Die Annahme ist, dass eine Proportionalität zwischen Gleichspannung und Phase der Wechselspannung am Ringmodulator besteht. Um diesen Zusammenhang zu überprüfen, wird die Gleichspannung in Abhängikeit des Arguments des Cosinus gemessen. Es kann entweder die Laufzeit oder die Frequenz des Trägersignals variiert werden. In diesem Fall wird die Frequenz verändert, sodass
+Die Annahme ist, dass eine Proportionalität zwischen der Gleichspannung am Ausgang X des Ringmodulators in \autoref{Abb14} und der Phase der Wechselspannung an den Eingängen R und L des Ringmodulators besteht. Um diesen Zusammenhang zu überprüfen, wird die Gleichspannung in Abhängikeit des Arguments des Cosinus gemessen. Es kann entweder die Laufzeit oder die Frequenz des Trägersignals variiert werden. In diesem Fall wird die Frequenz verändert, sodass
 
 \begin{align}
 \begin{split}
-	U &= U_0 \cos(\omega_T \cdot t + \varphi)\\
-	\arccos \frac{U}{U_0} &= \omega_T \cdot t + \varphi
+	U &= \gamma U_0 \cos(\omega_T \cdot \Delta T + \varphi_0)\\
+	\arccos \frac{U}{\gamma U_0} &= \omega_T \cdot \Delta T + \varphi_0
 \end{split}
 \end{align}
 
@@ -108,7 +108,7 @@ gelten muss.
 
 \input{tex/aufgabe_e.tex}
 
-Eine lineare Ausgleichsrechnung der Form $U/U_0 = A \cdot \omega_\text{T} + B$ an die Messwerte in \autoref{tab:e} ergibt die Parameter $A = -0.35 \pm 0.02$ und $B = 3.37 \pm 0.09$ und ist in \autoref{fig:e} dargestellt. Die geringen Fehler des linearen Fits von 5.7\% für die Steigung bzw. 2.8\% für den y-Achsenabschnitt zeigen, dass die Annahme eines ein linearen Zusammenhangs gerechtfertig ist.
+Eine lineare Ausgleichsrechnung der Form $\hat{U} = A \cdot \omega_\text{T} + \varphi_0$ an die Messwerte in \autoref{tab:e} ergibt die Parameter $A = -0.35 \pm 0.02$ und $B = 3.37 \pm 0.09$ und ist in \autoref{fig:e} dargestellt. Die geringen Fehler des linearen Fits von 5.7\% für die Steigung bzw. 2.8\% für den y-Achsenabschnitt zeigen, dass die Annahme eines ein linearen Zusammenhangs gerechtfertig ist.
 
 \begin{figure}
 	\centering
@@ -124,7 +124,7 @@ In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Ampli
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/f_scope_235.png}
-	\caption{Amplituden(de-)modulation - gelb das Eingangssignal, grün das amplitudenmodulierte und daraufhin mit einem Ringmodulator demodulierte Signal}
+	\caption{Amplituden(de-)modulation -- gelb das Eingangssignal, grün das amplitudenmodulierte und daraufhin mit einem Ringmodulator demodulierte Signal}
 	\label{f}
 \end{figure}
 
