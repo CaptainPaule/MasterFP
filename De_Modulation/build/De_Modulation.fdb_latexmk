@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber build/De_Modulation"] 1523797339 "build/De_Modulation.bcf" "build/De_Modulation.bbl" "build/De_Modulation" 1523797350
-  "build/De_Modulation.bcf" 1523797350 89379 c5d754d72e3c76d19cf87713271c03ea ""
+["biber build/De_Modulation"] 1523897650 "build/De_Modulation.bcf" "build/De_Modulation.bbl" "build/De_Modulation" 1523968218
+  "build/De_Modulation.bcf" 1523968217 89379 c5d754d72e3c76d19cf87713271c03ea ""
   "references.bib" 1523797325 906 54f3a73293e346b849f08c9d0d378fdf ""
   (generated)
   "build/De_Modulation.blg"
   "build/De_Modulation.bbl"
-["lualatex"] 1523797345 "De_Modulation.tex" "build/De_Modulation.pdf" "De_Modulation" 1523797350
+["lualatex"] 1523968210 "De_Modulation.tex" "build/De_Modulation.pdf" "De_Modulation" 1523968218
   "/home/alina/.local/texlive/2017/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf" 1480098679 64684 15a2082c8e31f411875a86ea2d29a0ee ""
   "/home/alina/.local/texlive/2017/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1480098679 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
   "/home/alina/.local/texlive/2017/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1480098679 118828 4d461c73423fe2666dad2ff0dfc3ca68 ""
@@ -243,11 +243,11 @@
   "/home/alina/.local/texlive/2017/texmf-var/tex/generic/config/language.dat.lua" 1523636145 17237 b1f9a78b5680717e9a0e52b2ff339d6e ""
   "/home/alina/.local/texlive/2017/texmf-var/web2c/luatex/lualatex.fmt" 1523636180 1349933 e99693afa1154fbc5be85a5cfec98aeb ""
   "De_Modulation.tex" 1523790564 4480 88ddc4af009bf05cf1cdd0590e28264a ""
-  "build/De_Modulation.aux" 1523797350 14253 811db561ecbdf9eee8f8d33f2215a3c8 ""
-  "build/De_Modulation.bbl" 1523797340 4405 ae7022fc8dc66eead6e5481a34b710b2 "biber build/De_Modulation"
-  "build/De_Modulation.out" 1523797350 1540 642184cd5c90358dbb813b73210a8959 ""
-  "build/De_Modulation.run.xml" 1523797350 2402 daf25f73edccd158289ffdf3f08b71f6 ""
-  "build/De_Modulation.toc" 1523797350 2478 f1816515716e1566597c856b1d3e3943 ""
+  "build/De_Modulation.aux" 1523968217 14349 b42648ddcd9a8aa0f08095185bb5a04d ""
+  "build/De_Modulation.bbl" 1523897651 4405 ae7022fc8dc66eead6e5481a34b710b2 "biber build/De_Modulation"
+  "build/De_Modulation.out" 1523968217 1540 642184cd5c90358dbb813b73210a8959 ""
+  "build/De_Modulation.run.xml" 1523968217 2402 daf25f73edccd158289ffdf3f08b71f6 ""
+  "build/De_Modulation.toc" 1523968217 2478 c44403466d63f65620175c676d1d196a ""
   "img/Abb1.png" 1520500307 53782 50f36d7c396dc3444408bd3ecc8c3faf ""
   "img/Abb12.png" 1520500307 30863 f3995a87b888a9d0e8c60741d632792f ""
   "img/Abb13.png" 1520500307 35658 2e3fdd847987e642b8e01386aefcac94 ""
@@ -275,14 +275,14 @@
   "img/linear_fit.png" 1522680768 22087 648a3d16282c29a77f38457f150fbb68 ""
   "tex/00_theorie.tex" 1522928706 11818 1afa6eb3ba7d545f3cdf8232d7c4471c ""
   "tex/01_aufbau.tex" 1522929659 1786 8d097e32f18c00c00b9b08ae5a802b9c ""
-  "tex/02_auswertung.tex" 1523797121 10680 8868cdd3dba4065503de5f69f7713aad ""
+  "tex/02_auswertung.tex" 1523968200 11992 3aa6e0f14616b023cf35c512e33f0ac2 ""
   "tex/03_diskussion.tex" 1522876068 1250 2f0d7249dc5b3c1c8e6440bd12d3145a ""
   "tex/aufgabe_e.tex" 1522691642 547 5567f41f624e8c3e52c14233bd95b6a6 ""
   (generated)
-  "build/De_Modulation.log"
-  "build/De_Modulation.run.xml"
   "build/De_Modulation.out"
-  "build/De_Modulation.aux"
+  "build/De_Modulation.log"
   "build/De_Modulation.pdf"
-  "build/De_Modulation.bcf"
+  "build/De_Modulation.run.xml"
   "build/De_Modulation.toc"
+  "build/De_Modulation.bcf"
+  "build/De_Modulation.aux"

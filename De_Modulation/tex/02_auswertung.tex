@@ -5,7 +5,7 @@ Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy}
 \subsection{Amplitudenmodulation mit Ringmodulator}
 
 Mit dem Ringmodulator wird die Amplitude eines Signals moduliert. Das Eingans- und Ausgangssignal sind in \autoref{a} zu sehen. Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{980}{\milli\volt}$ und die Frequenz $\omega_\text{T}=\SI{1}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{116}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{50}{\kilo\hertz}$. Es entsteht eine Schwebung, es wird also keine Leistung zur Übertragung des Trägersignals verbraucht; die Trägerfrequenz ist ist als hochfrequenter Anteil im gelben Signal zu erkennen. \par
-\indent Die prominentesten Linien in dem Frequenzspektrum in \autoref{b} sind die der Modulationsfrequenz $f_\text{T} \pm f_\text{M}$. Sie liegen bei $f_\text{T} - f_\text{M} = \SI{951.9}{\kilo\hertz}$ und $f_\text{T} + f_\text{M} = \SI{1.0521}{\mega\hertz}$. Dazwischen ist als kleinerer Peak auch die Trägerfrequenz $f_\text{T} = \SI{1.002}{\mega\hertz}$ zu sehen, die mit dem Ringmodulator nicht komplett unterdrückt wird, aber signifikant kleiner als die Seitenbänder ist. Die Werte werden mit größerer Genauigkeit gemessen, als sie eingestellt werden konnten und stimmen gut mit den jeweils eingestellten Frequenzen überein. \par
+\indent Die prominentesten Linien in dem Frequenzspektrum in \autoref{b} sind die der Modulationsfrequenz $f_\text{T} \pm f_\text{M}$. Sie liegen bei $f_\text{T} - f_\text{M} = \SI{951.9}{\kilo\hertz}$ und $f_\text{T} + f_\text{M} = \SI{1.0521}{\mega\hertz}$. Erwartet werden $f_\text{T} - f_\text{M} = \SI{950}{\kilo\hertz}$ und $f_\text{T} + f_\text{M} = \SI{1.05}{\mega\hertz}$. Dazwischen ist als kleinerer Peak auch die Trägerfrequenz $f_\text{T} = \SI{1.002}{\mega\hertz}$ zu sehen, die mit dem Ringmodulator nicht komplett unterdrückt wird, aber signifikant kleiner als die Seitenbänder ist. Die Werte werden mit größerer Genauigkeit gemessen, als sie eingestellt werden konnten und stimmen gut mit den jeweils eingestellten Frequenzen überein. \par
 
 \begin{figure}
 	\centering
@@ -32,10 +32,11 @@ mit $U_\text{min} = \SI{24}{\milli\volt}$ und $U_\text{max} = \SI{54}{\milli\vol
 \[
 P_\text{T} = \frac{U_\text{T}^2}{2R} \quad \text{und} \quad P_\text{S} = \frac{\left(\frac{m \cdot U_\text{T}}{2}\right)^2}{2R} = \frac{m^2 \cdot {U_\text{T}^2}}{8R}.
 \]
-Dann ist der Modulationsgrad $m = \sqrt{4 \cdot P_\text{M}/P_\text{T}}$ mit $P_\text{M,1} = \SI{-44.62}{\dBm}$, $P_\text{M,2} = \SI{-44.70}{\dBm}$ und $P_\text{T} = \SI{-33.68}{\dBm}$
+Dann ist der Modulationsgrad
 \[
-	m_1 = \sqrt{4 \cdot \frac{10^{-44.62/10}}{10^{-33.68/10}}} = 0.5676 \pm 0.0009, \quad m_2 = \sqrt{4 \cdot \frac{10^{-44.7/10}}{10^{-33.68/10}}} = 0.5624 \pm 0.0009
+	m = \sqrt{4 \cdot \frac{P_\text{M}}{P_\text{T}}} = \sqrt{4 \cdot \frac{10^{L_{P,\text{M}}/10}}{10^{L_{P,\text{T}}/10}}}
 \]
+mit $P_\text{M,1} = \SI{-44.62}{\dBm}$, $P_\text{M,2} = \SI{-44.70}{\dBm}$ und $P_\text{T} = \SI{-33.68}{\dBm}$ $m_1 = 0.5676 \pm 0.0009$ bzw. $m_2 = 0.5624 \pm 0.0009$.
 Der Unterschied zwischen dem berechneten Modulationsgrad mit beiden Methoden beträgt 68\%.
 
 \begin{figure}
@@ -48,13 +49,26 @@ Der Unterschied zwischen dem berechneten Modulationsgrad mit beiden Methoden bet
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/c_scope_247.png}
-	\caption{Amplitudenmodulation - Bestimmung des Modulationsgrades}
+	\caption{Amplitudenmodulation mit Trägerabstrahlung -- Bestimmung des Modulationsgrades}
 	\label{c2}
 \end{figure}
 
 \subsection{Frequenzmodulation}
 
-Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{320}{\milli\volt}$ und die Frequenz $\omega_\text{T}=\SI{875}{\kilo\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{320}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{180}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Dies verteilt sich auf fünf Perioden, also $\Delta \bar{t} = \SI{39.2}{\nano\second}$ und die halbe Momentanfrequenz $f_\text{mom/2} = \SI{25.5}{\mega\hertz}$. Integration der Momentanfrequenz aus \autoref{eq:momFreq} in den Grenzen von $0$ bis $T_\text{M}/2$ ergibt für die maximale ($\varphi = \pi$) bzw. minimale ($\varphi = 0$) Phasenverschiebung $f_\text{T}\left(1 + \frac{m}{\pi}\right)$ bzw. $f_\text{T}\left(1 - \frac{m}{\pi}\right)$. Die Differenz beider geteilt durch zwei ist der Frequenzhub $\Delta f = f_\text{T} \frac{m}{\pi}$. Damit ist der Modulationsfaktor $m = \SI{25.5}{\mega\hertz} \cdot \pi / \SI{1.55}{\mega\hertz} = 51.7$.
+Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{320}{\milli\volt}$ und die Frequenz $\omega_\text{T}=\SI{875}{\kilo\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{320}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{180}{\kilo\hertz}$. Die Breite der Verschmierung in \autoref{d1} ist an der maximalen Stelle $\Delta t = \SI{196}{\nano\second}$. Dies verteilt sich auf fünf Perioden, also $\Delta \bar{t} = \SI{39.2}{\nano\second}$.
+Die Integration der Momentanfrequenz aus \autoref{eq:momFreq} in den Grenzen von $0$ bis $T_\text{M}/2$ geteilt durch die Länge des Integrationsintervalls ergibt für die Phase $\varphi = \pi$ bzw. $\varphi = 0$ jeweils die extremalen, über eine halbe Periode gemittelte Momentanfrequenz
+\[
+	\bar{f}_\text{mom} = \frac{2}{T_\text{M}} \cdot f_\text{T}\int_0^{T_\text{M}/2} 1 - m \cdot \sin (\omega_\text{M} t + \varphi) \,dt = f_\text{T}\left( 1 \pm \frac{2m}{\pi} \right).
+\]
+Aus der Differenz des Kehrwerts der beiden gemittelten Momentanfrequenzen ergibt sich die mittlere Verschmierung $\Delta \bar{t}$
+\[
+	\frac{1}{f_1} - \frac{1}{f_2} = \Delta \bar{t}.
+\]
+Dies lässt sich umformen zu
+\[
+	m(\Delta \bar{t}) = \frac{\pi}{2f_\text{t}\Delta \bar{t}} \left( -1 \pm \sqrt{ 1 + {f_\text{T}}^2 \Delta \bar{t}^2} \right),
+\]
+wobei nur die positive Lösung als physikalisch sinnvoll betrachtet wird. Daraus ergibt sich der Modulationsgrad $m = 0.134 \pm 0.003$. Für $\Delta \bar{t}$ wurde eine Unsicherheit von $\SI{5}{\nano\second}$ angenommen und für $f_\text{T}$ eine Unsicherheit von $\SI{2}{\kilo\hertz}$.
 
 \begin{figure}[t!]
 	\centering
@@ -105,19 +119,19 @@ Eine lineare Ausgleichsrechnung der Form $U/U_0 = A \cdot \omega_\text{T} + B$ a
 
 \subsection{Demodulation einer amplitudenmodulierten Schwingung mit Ringmodulator}
 
-In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Amplitude zunächst moduliert und daraufhin wieder demoduliert wird. In gelb ist das Eingangssignal, die grüne Kurve ist das um einen festen Faktor phasenverschobene und in der Amplitude reduzierte Signal.
+In \autoref{f} ist die Oszilloskop-Aufnahme eines Signals zu sehen, dessen Amplitude zunächst moduliert und daraufhin wieder demoduliert wird. Das in gelb dargestellte Signal ist das Eingangssignal, die grüne Kurve ist das um einen festen Faktor phasenverschobene und in der Amplitude reduzierte demodulierte Signal. Das Eingangssignal wurde mit einem Ringmodulator gemäß der Schaltung in \autoref{iso-t} demoduliert.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/f_scope_235.png}
-	\caption{Amplituden(de-)modulation - gelb das Eingangssignal, grün das amplitudenmodulierte und daraufhin demodulierte Signal}
+	\caption{Amplituden(de-)modulation - gelb das Eingangssignal, grün das amplitudenmodulierte und daraufhin mit einem Ringmodulator demodulierte Signal}
 	\label{f}
 \end{figure}
 
 \subsection{Demodulation mit Gleichrichterdiode}
 \label{De-AM}
 
-Die Diode in der Schaltung in \autoref{fig:9} schneidet die negativen Halbwellen ab, wie in \autoref{nachDiode} zu sehen und das RC-Element filtert als Tiefpass die hohen Frequenzen aus dem Signal, dies ist in \autoref{nachRC} zu sehen. Wie zu erwarten ist die Amplitude des Ausgangsignal nach dem Tiefpass stark reduziert, die negativen Halbwellen sind nun aufgrund der Gleichrichterdiode positiv und das Ausgangssignal ist gegenüber dem Eingangssignal phasenverschoben.
+Die Diode in der Schaltung in \autoref{fig:9} schneidet die negativen Halbwellen ab, wie in \autoref{nachDiode} zu sehen und das RC-Element filtert als Tiefpass die hohen Frequenzen aus dem Signal, dies ist in \autoref{nachRC} zu sehen. Wie zu erwarten ist die Amplitude des Ausgangsignal nach dem Tiefpass stark reduziert und das Ausgangssignal ist gegenüber dem Eingangssignal phasenverschoben. Es ist außerdem durch die Modulation eine Verdopplung der Frequenz zustande gekommen, da bei dieser eine Schwebung entsteht, von der durch die Diode die untere Einhüllende abgeschnitten wird.
 
 \begin{figure}[t!]
 	\centering
@@ -139,6 +153,7 @@ Die Diode in der Schaltung in \autoref{fig:9} schneidet die negativen Halbwellen
 \subsection{Demodulation einer frequenzmodulierten Schwingung}
 
 In \autoref{amp} ist mit der Schaltung in \autoref{gleichrichter} aus dem frequenzmodulierten Signal eine Amplitudenmodulation gemacht worden. \autoref{De-FM} und \autoref{De-FM-RC} zeigen die anschließende Demodulation mit einer Gleichrichterdiode und einem RC-Tiefpass wie bereits in \autoref{De-AM} durchgeführt.
+Anhand der Schwebung wird deutlich, dass die Umwandlung von Frequenz- zu Amplitudenmodulation erfolgreich war. Mit der Gleichrichterdiode wrden die negativen Halbwellen abgeschnitten, es sind allerdings noch hochfrequente Störungen im Signal vorhanden. Diese werden mit einem Tiefpass herausgefiltert, was jedoch zu einer starken Abnahme der Amplitude führt.
 
 \begin{figure}[t!]
 	\centering
