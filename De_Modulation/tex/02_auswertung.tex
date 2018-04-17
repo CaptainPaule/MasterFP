@@ -21,7 +21,7 @@ Mit dem Ringmodulator wird die Amplitude eines Signals moduliert. Das Eingans- u
 	\label{b}
 \end{figure}
 
-\subsection{Amplitudenmodulation mit Trägerabstrahlung}
+\subsection{Amplitudenmodulation mit Tr\"{a}gerabstrahlung}
 
 In \autoref{c1} ist das Fequenzspektrum einer amplitudenmodulierten Schwingung mit Trägerabstrahlung zu sehen. Das Trägersignal hatte eine Amplitude von $U_\text{T}=\SI{1.17}{\volt}$ und die Frequenz $\omega_\text{T}=\SI{1.55}{\mega\hertz}$, das Modulationssignal hatte eine Amplitude von $U_\text{M}=\SI{159}{\milli\volt}$ und die Frequenz $\omega_\text{M}=\SI{63}{\kilo\hertz}$. \autoref{c2} zeigt von dem gleichen Signal eine Oszilloskop-Aufnahme. In \autoref{c2} lässt sich der Modulationsgrad aus dem Verhältnis der Amplitude der Maxima und der Minima bestimmen. Da die Amplitude zwischen $U_\text{min} = U_\text{T}(1 - m)$ und $U_\text{max} = U_\text{T}(1 + m)$ schwankt, ist der Modulationsgrad nach
 \[
@@ -93,22 +93,20 @@ wobei nur die positive Lösung als physikalisch sinnvoll betrachtet wird. Daraus
 	\label{d2}
 \end{figure}
 
-\subsection{Proportionalität zwischen Gleichspannung am Ausgang und Phase der Wechselspannung zwischen den Eingängen am Ringmodulator}
+\subsection{Proportionalit\"{a}t zwischen Gleichspannung am Ausgang und Phase der Wechselspannung zwischen den Eing\"{a}ngen am Ringmodulator}
 
-Die Annahme ist, dass eine Proportionalität zwischen der Gleichspannung am Ausgang X des Ringmodulators in \autoref{Abb14} und der Phase der Wechselspannung an den Eingängen R und L des Ringmodulators besteht. Um diesen Zusammenhang zu überprüfen, wird die Gleichspannung in Abhängikeit des Arguments des Cosinus gemessen. Es kann entweder die Laufzeit oder die Frequenz des Trägersignals variiert werden. In diesem Fall wird die Frequenz verändert, sodass
+Die Annahme ist, dass eine Proportionalität zwischen der Gleichspannung $U_\text{A}$ am Ausgang X des Ringmodulators in \autoref{Abb14} und der Phase $\varphi$ der Wechselspannung an den Eingängen R und L des Ringmodulators besteht. Um diesen Zusammenhang zu überprüfen, wird die Gleichspannung in Abhängikeit des Arguments des Cosinus gemessen. Es kann entweder die Laufzeit $\Delta T$ oder die Frequenz des Trägersignals $\omega_\text{T}$ variiert werden. In diesem Fall wird die Frequenz verändert, sodass
 
 \begin{align}
 \begin{split}
-	U &= \gamma U_0 \cos(\omega_T \cdot \Delta T + \varphi_0)\\
-	\arccos \frac{U}{\gamma U_0} &= \omega_T \cdot \Delta T + \varphi_0
+	U_\text{A} &= \gamma U_0 \cos(\omega_T \cdot \Delta T + \varphi_0)\\
+	\arccos \frac{U_\text{A}}{\gamma U_0} &= \omega_T \cdot \Delta T + \varphi_0
 \end{split}
 \end{align}
 
 gelten muss.
 
-\input{tex/aufgabe_e.tex}
-
-Eine lineare Ausgleichsrechnung der Form $\hat{U} = A \cdot \omega_\text{T} + \varphi_0$ an die Messwerte in \autoref{tab:e} ergibt die Parameter $A = -0.35 \pm 0.02$ und $B = 3.37 \pm 0.09$ und ist in \autoref{fig:e} dargestellt. Die geringen Fehler des linearen Fits von 5.7\% für die Steigung bzw. 2.8\% für den y-Achsenabschnitt zeigen, dass die Annahme eines ein linearen Zusammenhangs gerechtfertig ist.
+Eine lineare Ausgleichsrechnung der Form $\arccos (\hat{U}) = A \cdot \omega_\text{T} \cdot \Delta T + \varphi_0$ an die Messwerte in \autoref{tab:e} ergibt die Parameter $A = -1.41 \pm 0.07$ und $\varphi_0 = 3.37 \pm 0.09$ und ist in \autoref{fig:e} dargestellt. In $A$ werden Effekte zusammengefasst, die sich auf Frequenz und Laufzeit auswirken und nicht identifizierbar sind, $\varphi_0$ ist ein konstanter Phasenoffset. Die geringen Fehler des linearen Fits von 5.0\% für die Steigung bzw. 2.8\% für den y-Achsenabschnitt zeigen, dass die Annahme eines ein linearen Zusammenhangs gerechtfertig ist.
 
 \begin{figure}
 	\centering

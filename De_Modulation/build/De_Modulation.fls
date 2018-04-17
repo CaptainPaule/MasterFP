@@ -457,8 +457,6 @@ INPUT img/d_scope_234.png
 INPUT ./img/Aufgabenteil_d.jpg
 INPUT ./img/Aufgabenteil_d.jpg
 INPUT img/Aufgabenteil_d.jpg
-INPUT ./tex/aufgabe_e.tex
-INPUT ./tex/aufgabe_e.tex
 INPUT ./img/linear_fit.png
 INPUT ./img/linear_fit.png
 INPUT img/linear_fit.png
@@ -483,6 +481,8 @@ INPUT img/h_scope_237.png
 INPUT ./tex/03_diskussion.tex
 INPUT ./tex/03_diskussion.tex
 INPUT /home/alina/.local/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
+INPUT ./tex/aufgabe_e.tex
+INPUT ./tex/aufgabe_e.tex
 INPUT build/De_Modulation.aux
 INPUT build/De_Modulation.run.xml
 OUTPUT build/De_Modulation.run.xml
