@@ -1,31 +1,29 @@
 \section{Theorie}
 Um Informationen mit Hilfe von elektromagnetischen Wellen übertragen zu können, werden Verfahren benötigt um diesen Wellen Informationen aufprägen zu können. Solche Verfahren werden Modulationsverfahren genannt; das Rückgewinnen der Informationen aus der modulierten Welle nennt man Demodulation.
-
 Die Hochfrequenztechnik kennt eine Reihe von Modulationsverfahren, welche unter Ausnutzung einer periodischen Änderung von Amplitude, Frequenz oder Phase einer Trägerwelle dieser Informationen aufprägen.
 
 \subsection{Amplitudenmodulation}
-Die einfachste Form der Amplitudenmodulation lässt die Amplitude einer hochfrequenten Trägerwelle $U_T(t)$ im Rythmus einer niederfrequenten Modulationswelle $U_M(t)$ variieren. Die Trägerwelle besitzt die Frequenz $\omega_T$ und die Modulationswelle die \\
-Frequenz $\omega_\text{M}$.
+Die einfachste Form der Amplitudenmodulation lässt die Amplitude einer hochfrequenten Trägerwelle $U_T(t)$ im Rythmus einer niederfrequenten Modulationswelle $U_M(t)$ variieren. 
 
-Die amplitudenmodulierte Schwingung soll dann eine mit $\omega_M$ varrierende Amplitude
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{img/Abb1.png}
+	\caption{Zeitabhängigkeit der Signalspannung eines Amplitudenmodulierten Signals \cite{FP}}
+\end{figure}
+
+\noindent Die Trägerwelle besitzt die Frequenz $\omega_T$ und die Modulationswelle die \\
+Frequenz $\omega_\text{M}$. Die amplitudenmodulierte Schwingung soll dann eine mit $\omega_M$ varrierende Amplitude
+besitzen, wobei $m = \gamma U_\text{M}$ den  Modulationsgrad der Schwingung beschreibt.
 
 \begin{equation}
 U_{3}(t) = U_\text{T} \left[1 + m \cos( \omega_\text{M} t)\right]\cos(\omega_\text{T} t)
 \label{eq:AmMod}
 \end{equation} 
 
-besitzen, wobei $m = \gamma U_\text{M}$ den  Modulationsgrad der Schwingung beschreibt.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{img/Abb1.png}
-	\caption{Zeitabhängigkeit der Signalspannung eines Amplitudenmodulierten Signals \cite{FP}}
-\end{figure}
-
 Wird durch geeignete Umformung oder Fouriertransformation das Frequenzspektrum der Schwinung analysiert, fällt auf, dass in diesem einfachen Fall bereits drei Frequenzen beteiligt sind:
 
 \begin{equation}
-U_{3}(t) = U_\text{T} \left[ \cos( \omega_\text{T} t ) + \frac{1}{2} m \cos( \omega_\text{T} + \omega_\text{M} ) t + \frac{1}{2} m \cos( \omega_\text{T} - \omega_\text{M} ) t \right].
+U_{3}(t) = U_\text{T} \left[ \cos( \omega_\text{T} t) + \frac{1}{2} m \cos(\omega_\text{T} + \omega_\text{M}) t + \frac{1}{2} m \cos(\omega_\text{T} - \omega_\text{M}) t \right].
 \label{eq:FreqAmMod}
 \end{equation}
 
@@ -35,7 +33,7 @@ U_{3}(t) = U_\text{T} \left[ \cos( \omega_\text{T} t ) + \frac{1}{2} m \cos( \om
 	\caption{Frequenzspektrum einer Amplitudenmodulierten Schwingung \cite{FP}}
 \end{figure}
 
-Die Frequenz bei $\omega_T$ nennt man Trägerfrequenz, diese trägt keine Information und stellt einen parasitären Anteil dar, welcher in der Praxis unerwünscht ist. Auch beschreiben die beiden Seitenbänder bei $\omega_T - \omega_M$ und $\omega_T + \omega_M$die gleichen Informationen. Somit ist es üblich, eines der beiden Seitenbänder durch geeignete Filter zu unterdrücken.
+\noindent Die Frequenz bei $\omega_T$ nennt man Trägerfrequenz, diese trägt keine Information und stellt einen parasitären Anteil dar, welcher in der Praxis unerwünscht ist. Auch beschreiben die beiden Seitenbänder bei $\omega_T - \omega_M$ und $\omega_T + \omega_M$die gleichen Informationen. Somit ist es üblich, eines der beiden Seitenbänder durch geeignete Filter zu unterdrücken.
 Wird ein Seitenband und die Trägerfrequenz unterdrückt, wird auch von Einseitenbandmodulation mit Trägerunterdrückung gesprochen.
 Die großen Nachteile der Amplitudenmodulation bestehen in ihrer geringen Störsicherheit und geringen Verzerrungsfreiheit.
 
@@ -47,20 +45,20 @@ U(t)= U \sin \left[\omega_\text{T} t + m \frac{\omega_\text{T}}{\omega_\text{M}}
 \label{eq:FreqMod}
 \end{equation}
 
-Durch Differentiation des Arguments des Sinuses ergibt sich die Momentanfrequenz
+\noindent Durch Differentiation des Arguments des Sinuses ergibt sich die Momentanfrequenz
 
 \begin{equation}
 f(t) = \frac{\omega_T}{2\pi}\left[1-m\sin(\omega_\text{M} t)\right]
 \label{eq:momFreq}
 \end{equation}
 
-der Schwingung, wobei $m$ wieder den Modulationsgrad und $m\omega_\text{T}$ / $2\pi$ den Frequenzhub geschreibt. Der Frequenzhub ist es Maß dafür, wie Stark die Schwinungsfrequenz varriert. Im folgenden ist eine Schmalband-Frequenzmoduation zu sehen, welche sich durch
+\noindent der Schwingung, wobei $m$ wieder den Modulationsgrad und $m\omega_\text{T}$ / $2\pi$ den Frequenzhub geschreibt. Der Frequenzhub ist es Maß dafür, wie Stark die Schwinungsfrequenz varriert. Im folgenden ist eine Schmalband-Frequenzmoduation zu sehen, welche sich durch \ref{eq:m} auszeichnet.
 
 \begin{equation}
 m\frac{\omega_T}{\omega_M} << 1
+\label{eq:m}
 \end{equation}
 
-auszeichnet.
 
 \begin{figure}
 	\centering
@@ -71,35 +69,35 @@ auszeichnet.
 Durch geeignete Umformung oder Fouriertransfromation wird deutlich, das auch das Frequenzspektrum der Frequenzmodulation aus drei Frequenzen zusammensetzt.
 
 \begin{equation}
-U(t) = U \left( \sin( \omega_\text{T} t) + \frac{m\omega_\text{T}}{2\omega_\text{M}}\cos(\omega_\text{T} + \omega_\text{M}) t \frac{m \omega_\text{T}}{2\omega_\text{M}} \cos( \omega_\text{T} - \omega_\text{M} ) t \right)
+U(t) = U \left( \sin( \omega_\text{T} t) + \frac{m\omega_\text{T}}{2\omega_\text{M}}\cos(\omega_\text{T} + \omega_\text{M}) t + \frac{m \omega_\text{T}}{2\omega_\text{M}} \cos( \omega_\text{T} - \omega_\text{M} ) t\right)
 \label{eq:FreqFreqMod}
 \end{equation}
 
-Es fällt auf, dass die beiden Seitenbänder im Fall der Frequenzmodulation um $\pi$ / $2$ gegebüber der Trägerschwingung verschoben sind. Es ist anzumerken, dass das o.g. Frequenzspektrum nur im Fall der schwach frequenzmodulierten Schwingung
+\noindent Es fällt auf, dass die beiden Seitenbänder im Fall der Frequenzmodulation um $\pi$ / $2$ gegebüber der Trägerschwingung verschoben sind. Es ist anzumerken, dass das o.g. Frequenzspektrum nur im Fall der schwach frequenzmodulierten Schwingung
 
 \begin{equation}
 \frac{m\omega_T}{\omega_M} << 1
 \end{equation}
 
-Gültigkeit besitzt. Im Fall der starken Frequenzmodulation
+\noindent Gültigkeit besitzt. Im Fall der starken Frequenzmodulation
 
 \begin{equation}
 m\omega_T \approx \omega_M
 \end{equation}
 
-besitzt das Frequenzspektrum eine komplexere Darstellung der Form
+\noindent besitzt das Frequenzspektrum eine komplexere Darstellung der Form
 
 \begin{equation}
 U(t) = U \sum_{n=-\infty}^{+\infty} J_{n}\left(\frac{m\omega_\text{T}}{\omega_\text{M}})\sin(\omega_\text{T} + n\omega_\text{M}\right)t,
 \end{equation}
 
-wobei $J_n$ die Besselsche Funktion n-ter Ordnung ist. Es zeigt sich, dass für hohe Modulationsgrade das Frequenzspektrum im Prinzip bis zu beliebig hohen Frequenzen reicht. Es reicht jedoch in der Praxis nur Frequenzen in der Nähe der Trägerfrequenz zu berücksichtigen, da
+\noindent wobei $J_n$ die Besselsche Funktion n-ter Ordnung ist. Es zeigt sich, dass für hohe Modulationsgrade das Frequenzspektrum im Prinzip bis zu beliebig hohen Frequenzen reicht. Es reicht jedoch in der Praxis nur Frequenzen in der Nähe der Trägerfrequenz zu berücksichtigen, da
 
 \begin{equation}
 J_{\pm n}(x) \approx \frac{1}{\sqrt{2\pi n}}(\frac{ex}{2n})^n
 \end{equation}
 
-mit wachsender Ordnungszahl $n$ und $x \leq 1$ schnell gegen null geht.
+\noindent mit wachsender Ordnungszahl $n$ und $x \leq 1$ schnell gegen null geht.
 
 \subsection{Modulationsschaltungen}
 Um die Amplitude einer Trägerschwingung wie in \autoref{eq:AmMod} zu modulieren, wird ein Bauteil benötigt, welches das Produkt aus zwei Eingangspannungen bilden kann. Grundsätzlich ist das mit jedem Bauteil möglich, welches eine nichtlineare Kennlinie besitzt.
@@ -116,11 +114,11 @@ Eine solche Schaltung kann z.B. mit Hilfe einer Diode gemäß \autoref{abb:simpl
 I(U_\text{T} + U_\text{M}) = a_0 + a_1(U_\text{T} + U_\text{M}) + a_2(U_\text{T}^2 + U_\text{M}^2) + 2a_2 U_\text{T} U_\text{M} + ...
 \end{equation}
 
-liefert das vierte Reihenglied das geforderte Produkt. Es fällt auf, dass zusätzliche Störterme aufreten, deren Frequenzen  $\omega_\text{M}$, $\omega_\text{M}$, $2\omega_\text{T}$, etc. allerdings weit außerhalb des zu übertragenden Frequenzbandes $\omega_\text{T} - \omega_\text{M}$ bis $\omega_\text{T} + \omega_\text{M}$ liegen, sodass diese mit einem geeigneten Bandfilter unterdückt werden können.
+\noindent liefert das vierte Reihenglied das geforderte Produkt. Es fällt auf, dass zusätzliche Störterme aufreten, deren Frequenzen  $\omega_\text{M}$, $\omega_\text{M}$, $2\omega_\text{T}$, etc. allerdings weit außerhalb des zu übertragenden Frequenzbandes $\omega_\text{T} - \omega_\text{M}$ bis $\omega_\text{T} + \omega_\text{M}$ liegen, sodass diese mit einem geeigneten Bandfilter unterdückt werden können.
 Durch das Erzeugen der vielen nicht genutzten Frequenzen ist so eine Schaltung sehr unökonomisch. Es ist wünschenswert das die störenden Frequenzanteile erst gar nicht erzeugt werden.
 
 \subsubsection{Der Ringmodulator}
-Der Ringmodulator besteht, wie der Name bereits andeutet, aus einem Ring von vier zusammengeschaltet Dioden.
+Der Ringmodulator besteht, wie der Name bereits andeutet, aus einem Ring von vier zusammengeschaltet Dioden. Die Schaltung in \ref{abb:ringMod} ist in der Lage, das Produkt von Träger und Modulationssignal zu bilden, ohne störende parasitäre Frequenzanteile zu erzeugen. Die abgenommene Spannung ist direkt proportional zum Produkt der Eingangsspannungen.
 
 \begin{figure}
 	\centering
@@ -129,23 +127,21 @@ Der Ringmodulator besteht, wie der Name bereits andeutet, aus einem Ring von vie
 	\label{abb:ringMod}
 \end{figure}
 
-Die Schaltung in \ref{abb:ringMod} ist in der Lage, das Produkt von Träger und Modulationssignal zu bilden, ohne störende parasitäre Frequenzanteile zu erzeugen. Die abgenommene Spannung ist direkt proportional zum Produkt der Eingangsspannungen.
-
 \begin{equation}
 U_R(t) = \gamma U_M(t) \cdot U_T(t)
 \label{eq:ringMod}
 \end{equation}
 
-Es ist anzumerken, dass $\gamma$ die Einehit $1 / \text{V}$ besitzt. Es ist direkt ersichtich, dass der Ringmodulator die Trägerabstrahlung unterdrückt. Werden zwei Cosinus-Signale für $U_\text{T}$ und $U_\text{M}$ mit den Frequenzen $\omega_\text{T}$ und $\omega_\text{M}$ in \ref{eq:ringMod} eingesetzt, folgt
+\noindent Es ist anzumerken, dass $\gamma$ die Einehit $1 / \text{V}$ besitzt. Es ist direkt ersichtich, dass der Ringmodulator die Trägerabstrahlung unterdrückt. Werden zwei Cosinus-Signale für $U_\text{T}$ und $U_\text{M}$ mit den Frequenzen $\omega_\text{T}$ und $\omega_\text{M}$ in \ref{eq:ringMod} eingesetzt, folgt
 
 \begin{equation}
 U_R(t) = \frac{1}{2} \gamma U_\text{T} U_\text{M}  \left( \cos\left[(\omega_\text{T} + \omega_\text{M})t + \phi\right] + \cos\left[(\omega_\text{T} - \omega_\text{M})t - \phi \right] \right).
 \end{equation}
 
-Wie bereits angesprochen, fehlt in diesem Frequenzspektrum der Trägeranteil $\omega_\text{T}$.
+\noindent Wie bereits angesprochen, fehlt in diesem Frequenzspektrum der Trägeranteil $\omega_\text{T}$.
 
 \subsubsection{Frequenzmodulator mit geringem Frequenzhub}
-Um einen Frequenzmodulator mit geringem Frequenzhub zu realisieren, wird ein Ringmodulator genutzt, jedoch wird, wie aus \autoref{eq:FreqFreqMod} ersichtlich ist, ein $\pi$ / $2$ Phasenschieber notwendig. Dieser wird mit Hilfe eines Iso-T Leistungsteiler parallel neben dem Ringmodulator angeordnet. Die Schaltung ist in \autoref{gering_f-hub} abgebildet.
+Um einen Frequenzmodulator mit geringem Frequenzhub zu realisieren, wird ein Ringmodulator genutzt, jedoch wird, wie aus \autoref{eq:FreqFreqMod} ersichtlich ist, ein $\pi$ / $2$ Phasenschieber notwendig. Dieser wird mit Hilfe eines Iso-T Leistungsteiler parallel neben dem Ringmodulator angeordnet. Die Schaltung ist in \autoref{gering_f-hub} abgebildet. Der Phasenschieber wird mit Hilfe eines Laufzeitkabels realsiert.
 
 \begin{figure}
 	\centering
@@ -153,8 +149,6 @@ Um einen Frequenzmodulator mit geringem Frequenzhub zu realisieren, wird ein Rin
 	\caption{Frequenzmodulator mit geringem Frequenzhub \cite{FP}}
 	\label{gering_f-hub}
 \end{figure}
-
-Der Phasenschieber wird mit Hilfe eines Laufzeitkabels realsiert.
 
 \subsection{Demodulationsschaltungen}
 \subsubsection{Demodulation amplitudenmodulierter Schwingungen}
