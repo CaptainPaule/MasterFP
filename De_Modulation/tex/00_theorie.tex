@@ -3,7 +3,7 @@ Um Informationen mit Hilfe von elektromagnetischen Wellen übertragen zu können
 Die Hochfrequenztechnik kennt eine Reihe von Modulationsverfahren, welche unter Ausnutzung einer periodischen Änderung von Amplitude, Frequenz oder Phase einer Trägerwelle dieser Informationen aufprägen.
 
 \subsection{Amplitudenmodulation}
-Die einfachste Form der Amplitudenmodulation lässt die Amplitude einer hochfrequenten Trägerwelle $U_T(t)$ im Rythmus einer niederfrequenten Modulationswelle $U_M(t)$ variieren. 
+Die einfachste Form der Amplitudenmodulation lässt die Amplitude einer hochfrequenten Trägerwelle $U_T(t)$ im Rythmus einer niederfrequenten Modulationswelle $U_M(t)$ variieren.
 
 \begin{figure}[h]
 	\centering
@@ -11,19 +11,18 @@ Die einfachste Form der Amplitudenmodulation lässt die Amplitude einer hochfreq
 	\caption{Zeitabhängigkeit der Signalspannung eines Amplitudenmodulierten Signals \cite{FP}}
 \end{figure}
 
-\noindent Die Trägerwelle besitzt die Frequenz $\omega_T$ und die Modulationswelle die \\
-Frequenz $\omega_\text{M}$. Die amplitudenmodulierte Schwingung soll dann eine mit $\omega_M$ varrierende Amplitude
+\noindent Die Trägerwelle besitzt die Frequenz $\omega_T$ und die Modulationswelle die Frequenz $\omega_\text{M}$. Die amplitudenmodulierte Schwingung soll dann eine mit $\omega_M$ varrierende Amplitude
 besitzen, wobei $m = \gamma U_\text{M}$ den  Modulationsgrad der Schwingung beschreibt.
 
 \begin{equation}
 U_{3}(t) = U_\text{T} \left[1 + m \cos( \omega_\text{M} t)\right]\cos(\omega_\text{T} t)
 \label{eq:AmMod}
-\end{equation} 
+\end{equation}
 
 Wird durch geeignete Umformung oder Fouriertransformation das Frequenzspektrum der Schwinung analysiert, fällt auf, dass in diesem einfachen Fall bereits drei Frequenzen beteiligt sind:
 
 \begin{equation}
-U_{3}(t) = U_\text{T} \left[ \cos( \omega_\text{T} t) + \frac{1}{2} m \cos(\omega_\text{T} + \omega_\text{M}) t + \frac{1}{2} m \cos(\omega_\text{T} - \omega_\text{M}) t \right].
+U_{3}(t) = U_\text{T} \left{ \cos( \omega_\text{T} t) + \frac{1}{2} m \cos\left[(\omega_\text{T} + \omega_\text{M}) t\right] + \frac{1}{2} m \cos\left[(\omega_\text{T} - \omega_\text{M}) t \right] \right}.
 \label{eq:FreqAmMod}
 \end{equation}
 
@@ -69,7 +68,7 @@ m\frac{\omega_T}{\omega_M} << 1
 Durch geeignete Umformung oder Fouriertransfromation wird deutlich, das auch das Frequenzspektrum der Frequenzmodulation aus drei Frequenzen zusammensetzt.
 
 \begin{equation}
-U(t) = U \left( \sin( \omega_\text{T} t) + \frac{m\omega_\text{T}}{2\omega_\text{M}}\cos(\omega_\text{T} + \omega_\text{M}) t + \frac{m \omega_\text{T}}{2\omega_\text{M}} \cos( \omega_\text{T} - \omega_\text{M} ) t\right)
+U(t) = U \left{ \sin( \omega_\text{T} t) + \frac{m\omega_\text{T}}{2\omega_\text{M}}\cos\left[(\omega_\text{T} + \omega_\text{M}) t\right] + \frac{m \omega_\text{T}}{2\omega_\text{M}} \cos\left[( \omega_\text{T} - \omega_\text{M} ) t\right]\right}
 \label{eq:FreqFreqMod}
 \end{equation}
 
@@ -154,8 +153,8 @@ Um einen Frequenzmodulator mit geringem Frequenzhub zu realisieren, wird ein Rin
 \subsubsection{Demodulation amplitudenmodulierter Schwingungen}
 Mit Demodulationsschaltungen ist es möglich aus einem modulierten Signal die Modulationsfrequenz $\omega_M$ zurück zu gewinnen.
 Wird am einen Eingang eines Ringmodulators ein Signal mit den Frequenzen $\omega_T - \omega_M$ und $\omega_T + \omega_M$ angelegt und am anderen Eingang das Trägersignal mit $\omega_T$, so liefert der Ausgang der Schaltung ein Signal mit
-$\omega_M$, $2\omega_T - \omega_M$ und $2\omega_T + \omega_M$. Alle von der Modulationsfrequenz abweichenden Signalanteile lassen sich mit Hilfe eines geeigneten Bandpasses gut unterdrücken, sodass am Ausgang nur noch ein Signal mit der Modulationsfrequenz $\omega_M$ anliegt. Ein Problem,welches sich bei der Demodulation stellt, ist das ein Trägersignal benötigt wird, welches phasenstarr mit dem Trägersignal des Senders gekoppelt sein muss. Um eine solche Kopplung zu gewährleisten wird i.A. ein Phasenregelkreis oder eine PLL-Schaltung verwendet. 
-Es ist möglich die Problematik der festen Phasenbeziehung zwischen der Signal- und Referenzspannung mit Hilfe einer Gleichrichter-Diode 
+$\omega_M$, $2\omega_T - \omega_M$ und $2\omega_T + \omega_M$. Alle von der Modulationsfrequenz abweichenden Signalanteile lassen sich mit Hilfe eines geeigneten Bandpasses gut unterdrücken, sodass am Ausgang nur noch ein Signal mit der Modulationsfrequenz $\omega_M$ anliegt. Ein Problem,welches sich bei der Demodulation stellt, ist das ein Trägersignal benötigt wird, welches phasenstarr mit dem Trägersignal des Senders gekoppelt sein muss. Um eine solche Kopplung zu gewährleisten wird i.A. ein Phasenregelkreis oder eine PLL-Schaltung verwendet.
+Es ist möglich die Problematik der festen Phasenbeziehung zwischen der Signal- und Referenzspannung mit Hilfe einer Gleichrichter-Diode
 zu vermeiden.
 
 \begin{figure}
@@ -194,4 +193,4 @@ Um das Modulationssignal aus einer frequenzmodulierten Schwingung gewinnen zu k�
 	\label{resonanzkurve}
 \end{figure}
 
-Der Flankenmodulator besteht im wesentlichen aus einem Schwingkreis, in welchem die Frequenzabhängigkeit der Kondensatorspannung im Falle erzungener Schwingung ausgenutzt wird. Hierfür wird die Resonanzfrequenz des Schwingkreises so eingestellt, dass die Trägerfrequenz $\omega_\text{T}$ mitten in der steilen Flanke der Resonanzkurve liegt (\autoref{resonanzkurve}). Außerdem wird $\omega_text{M}$ so gewählt, dass für jede mögliche Auslenkung ein linearer Zusammenhang bestehen bleibt. Ändert sich nun in Folge der Frequenzmodulation die Momentanfrequenz der modulierten Schwingung, so entsteht am Ausgang des Schwingkreises eine hochfrequente Spannung, deren Amplitude im Rhytmus der Modulation schwangt. Somit wurde die Frequenzmodulation in eine Amplitudenmodulation überführt, welche bereites behandelt wurde.
+Der Flankenmodulator besteht im wesentlichen aus einem Schwingkreis, in welchem die Frequenzabhängigkeit der Kondensatorspannung im Falle erzungener Schwingung ausgenutzt wird. Hierfür wird die Resonanzfrequenz des Schwingkreises so eingestellt, dass die Trägerfrequenz $\omega_\text{T}$ mitten in der steilen Flanke der Resonanzkurve liegt (\autoref{resonanzkurve}). Außerdem wird $\omega_\text{M}$ so gewählt, dass für jede mögliche Auslenkung ein linearer Zusammenhang bestehen bleibt. Ändert sich nun in Folge der Frequenzmodulation die Momentanfrequenz der modulierten Schwingung, so entsteht am Ausgang des Schwingkreises eine hochfrequente Spannung, deren Amplitude im Rhytmus der Modulation schwangt. Somit wurde die Frequenzmodulation in eine Amplitudenmodulation überführt, welche bereites behandelt wurde.
