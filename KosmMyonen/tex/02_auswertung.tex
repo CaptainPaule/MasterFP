@@ -1,4 +1,5 @@
 \section{Auswertung}
+\label{sec:evaluation}
 In diesem Abschnitt wird die Lebensdauer komischer Myonen aus den Messdaten gewonnen.
 Um dieses Ziel zu erreichen, ist es erforderlich die Messapparatur zu kalbibrieren. Außerdem
 ist es erforderlich aus der Variation der Verzögerungsleitungen die 
@@ -7,3 +8,14 @@ des \texttt{python}-Paktes \texttt{uncertainties} brechnet, welches eine automat
 Gauß'sche Fehlerfortpflanzung bereitstellt.
 
 \subsection{Kalibrierung der Messapparatur}
+\label{sec:calibration}
+Die Daten über die Lebensdauer wird mit Hilfe eines Vielkanalanalysators (VKA) gewonnen.
+Der VKA teilt die gemessenen Lebensdauern in \num{512} Kanäle (Bins) eines Histogrammes ein.
+Dabei ist zu berücksichtigen, das der Zusammenghang zwischen gemessener Lebensdauer und
+Kanal linear zusammenhängt.
+
+Somit ist es Sinnvoll dieses Zusammenhang über eine lineare Funktion
+
+\begin{equation}
+t(c) = A \cdot t + B
+\end{equation} 
