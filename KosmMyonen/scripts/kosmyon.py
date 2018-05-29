@@ -17,7 +17,7 @@ def unbinned_array(binned_array, start=0, end=None,
         raw_data.extend([calibration_func(x)] * binned_array[x])
     return np.array(raw_data)
 
-data = np.genfromtxt('myons.txt', unpack=True)
+data = np.genfromtxt('../data/Messung.txt', unpack=True)
 unbinned_data = unbinned_array(data)
 bins = 50
 y, binEdges = np.histogram(unbinned_data, bins=bins)
