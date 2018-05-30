@@ -40,5 +40,15 @@ sich die Auflösungszeit $\Delta t_\text{K}$ der Koinzidenzschaltung als Breite 
 \subsection{Untergrundrate}
 \label{subsec:underground}
 
+Um die Untergrundrate $N_\text{B}$ abschätzen zu können, wird die Wahrscheinlichkeit betrachtet, mit der ein Myon im bei gestarteter Messung in
+einem Zeitintervall von $T_\text{S} = \SI{10}{\micro \second}$ ein Stopp-Signal erzeugt. Unter der Annahme das dass Auftreten von Myonen Normalverteilt ist,
+lässt sich die Wahrscheinlichkeit $p_i$ einer Messung von $i$ Myonen durch eine Poissonverteilung abschätzen:
+
+\begin{equation*}
+p_i = \frac{\lambda^i}{i!}\mathrm{e}^{-\lambda}\,.
+\end{equation*}
+
+Wobei der Erwarungswert der Messung eines Myons mit $\lambda$ bezeichnet wird. Dieser Erwarungswert wird mit der Myonenzählrate identifiziert. Somit liefert die Poissonverteilung die Wahrscheinlichkeit
+für diee Messung eines Myons 
 \subsection{Bestimmung der Lebensdauer}
-\label{subsec:livetime}
+\label{subsec:lifetime}
