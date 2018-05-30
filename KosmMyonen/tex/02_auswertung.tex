@@ -8,7 +8,7 @@ des \texttt{python}-Paktes \texttt{uncertainties} brechnet, welches eine automat
 Gauß'sche Fehlerfortpflanzung bereitstellt.
 
 \subsection{Kalibrierung der Messapparatur}
-\label{sec:calibration}
+\label{subsec:calibration}
 Die Daten über die Lebensdauer wird mit Hilfe eines Vielkanalanalysators (VKA) gewonnen.
 Der VKA teilt die gemessenen Lebensdauern in \num{512} Kanäle (Bins) eines Histogrammes ein.
 Dabei ist zu berücksichtigen, das der Zusammenghang zwischen gemessener Lebensdauer und
@@ -18,4 +18,27 @@ Somit ist es Sinnvoll dieses Zusammenhang über eine lineare Funktion
 
 \begin{equation}
 t(c) = A \cdot t + B
-\end{equation} 
+\end{equation}
+
+anzunehmen. Die Software des VKA \texttt{Maestro V6.06} führt die Ausgleichrechnung von selbst aus
+und liefert
+
+\begin{align*}
+	a &= \SI{-2.32}{\micro \second} \\
+	\text{und} \quad b &= \SI[per-mode=fraction]{8.86}{\micro \second \per {Kanal}} \,.
+\end{*align}
+
+Im der weiteren Auswertung ist lediglich der Prameter $b$ von Interesse.
+
+\subsection{Zeitauflösung der Messapparatur}
+\label{subsec:timeresolution}
+Um verschiedene Signallaufzeiten zwischen den SEV's und der Koinzidenz ausgleichen zu können, werden Verzögerungsleitunge
+benutzt um weitere Verzögerungen in das System einbringen zu können. Durch Messung der Myonen-Zählrate unter Variation der Verzögerungszeiten lässt
+sich die Auflösungszeit $\Delta t_\text{K}$ der Koinzidenzschaltung als Breite einer Gaußglocke bestimmen.
+
+
+\subsection{Untergrundrate}
+\label{subsec:underground}
+
+\subsection{Bestimmung der Lebensdauer}
+\label{subsec:livetime}
