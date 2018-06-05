@@ -17,18 +17,16 @@ Kanal linear zusammenhängt.
 Somit ist es Sinnvoll dieses Zusammenhang über eine lineare Funktion
 
 \begin{equation}
-t(c) = A \cdot t + B
+f(c) = A \cdot c + B
 \end{equation}
 
-anzunehmen. Die Software des VKA \texttt{Maestro V6.06} führt die Ausgleichrechnung von selbst aus
-und liefert
+anzunehmen. Eine Ausgleichsrechnung liefert somit
 
 \begin{align*}
-	a &= \SI{-2.32}{\micro \second} \\
-	\text{und} \quad b &= \SI[per-mode=fraction]{8.86}{\micro \second \per {Kanal}} \,.
+	t(c) = (0,0454 \pm 0,00003)\frac{\text{\mu s}}{\text{Kanal}} - (0,035 \pm 0.004) \text{\mu s}
 \end{align*}
 
-Im der weiteren Auswertung ist lediglich der Prameter $b$ von Interesse.
+Im der weiteren Auswertung ist lediglich der Prameter $A$ von Interesse.
 
 \subsection{Zeitauflösung der Messapparatur}
 \label{subsec:timeresolution}
@@ -49,6 +47,32 @@ p_i = \frac{\lambda^i}{i!}\mathrm{e}^{-\lambda}\,.
 \end{equation*}
 
 Wobei der Erwarungswert der Messung eines Myons mit $\lambda$ bezeichnet wird. Dieser Erwarungswert wird mit der Myonenzählrate identifiziert. Somit liefert die Poissonverteilung die Wahrscheinlichkeit
-für diee Messung eines Myons
+für diee Messung eines Myons.
+
+Zur Berechnung der Untergrundrate ist es notwendig die durchschnittliche Anzahl an Myonen zu bestimmen, die in einer Sekunde den Tank passieren.
+
+\begin{equation}
+f = \frac{N_{\text{Start}}}{t_{Messung}} = 2,28 \frac{\text{myonen}}{\text{s}}
+\end{equation}
+
+Die Wahrscheinlichkeit, das genau ein weiteres Myon innerhalb der Suchzeit den Tank durchquert berechnet sich gem
+
+\begin{equation}
+P = \frac{(T_s \cdot f)^k}{k!} \exp{f \cdot T_s} = 0,00002 \%
+\end{equation}
+
+wobei k = 1 gilt.
+
+Somit ergibt sich bezogen auf die Startimpulse 
+
+\begin{equation}
+N_{Err} = 32.53
+\end{equation}
+
+Fehlmessungen. Werden jetzt noch die einzelnen Kanäle berücksichtigt ergibt sich folgende Untergrundrate:
+
+\begin{equation}
+U = 0,07 \frac{\text{counts}}{\text{Kanal}}
+\end{equation}
 \subsection{Bestimmung der Lebensdauer}
 \label{subsec:lifetime}

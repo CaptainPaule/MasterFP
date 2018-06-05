@@ -5,6 +5,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+# calc underground
+N_Start = 1426728
+T_Mess = 513673
+f = 2.28
+channels = 483
+search_time = 10 * 10**(-6)
+
+p = search_time * f * np.exp(f * search_time)
+print(p * N_Start / channels)
+
+
 channel_number = []
 data = np.genfromtxt('../data/Kalibrierung_TAC.txt', unpack=True)
 
@@ -47,5 +58,5 @@ plt.ylim(0.2, 9.9)
 # save fig
 plt.legend()
 plt.xlabel('Kanalnummer')
-plt.ylabel('Laufzeit \ ns')
+plt.ylabel(r'Laufzeit \ $\mu$ s')
 plt.savefig('../img/calib.png')
