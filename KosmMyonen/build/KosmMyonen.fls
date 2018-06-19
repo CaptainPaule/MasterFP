@@ -406,6 +406,12 @@ INPUT ./img/aufbau.png
 INPUT img/aufbau.png
 INPUT ./tex/02_auswertung.tex
 INPUT ./tex/02_auswertung.tex
+INPUT ./img/calib.png
+INPUT ./img/calib.png
+INPUT img/calib.png
+INPUT ./img/myons.pdf
+INPUT ./img/myons.pdf
+INPUT img/myons.pdf
 INPUT ./tex/03_diskussion.tex
 INPUT ./tex/03_diskussion.tex
 INPUT /home/alina/.local/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
