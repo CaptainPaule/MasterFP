@@ -1,14 +1,14 @@
-all: build/KosmMyonen.pdf
+all: build/Operationsverstaerker.pdf
 
 
 TeXOptions = -lualatex \
 			 -interaction=nonstopmode \
 			 -halt-on-error \
 			 -output-directory=build
-                                                                                
-build/KosmMyonen.pdf: FORCE | build
-	latexmk $(TeXOptions) KosmMyonen.tex
-	
+
+build/Operationsverstaerker.pdf: FORCE | build
+	latexmk $(TeXOptions) Operationsverstaerker.tex
+
 FORCE:
 
 build:

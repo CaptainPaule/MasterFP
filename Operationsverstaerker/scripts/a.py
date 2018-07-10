@@ -23,7 +23,7 @@ def make_linear_fit(input_file, data_sym, fit_sym, omit):
 
     # compute critical frequency
     nu_G = 10**((np.log10((U_A[0]/U_1[0])/np.sqrt(2)) - params[1]) / params[0])
-    print('Grenzfrequenz:', nu_G, 'Hz')
+    print('Grenzfrequenz:', nu_G, 'Hz; Verstärkung: ', U_A[0]/U_1[0])
 
     # plot
     plt.plot(freq[omit:], 10**(fit(np.log10(freq[omit:]), *params)), '{}'.format(fit_sym))
