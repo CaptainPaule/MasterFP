@@ -1,29 +1,33 @@
 \section{Auswertung}
 \label{sec:evaluation}
-Ausgleichsrechnungen mit den dazugehörigen Fehlern werden mit dem \texttt{python}-Paket \texttt{ScyPy} \cite{scipy} erstellt, weitere Fehler werden mit dem \texttt{python}-Paket \texttt{uncertainties} \cite{uncertain} berechnet, welches eine automatische Gauß'sche Fehlerfortpflanzung bereitstellt.
+Ausgleichsrechnungen mit den dazugehörigen Fehlern werden mit dem \texttt{python}-Paket \texttt{SciPy} \cite{scipy} erstellt, weitere Fehler werden mit dem \texttt{python}-Paket \texttt{uncertainties} \cite{uncertain} berechnet, welches eine automatische Gauß'sche Fehlerfortpflanzung bereitstellt.
 
 \subsection{Frequenzgang eines gegengekoppelten Verstärkers}
 \label{Frequenzgang}
-Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{Frequenzgang} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
+Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{loglog-plot} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
 \begin{equation}
 	\log_{10} V^\prime = A \cdot \log_{10} \nu + B
 	\label{linear_fit}
 \end{equation}
-an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst.
+an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Das Verstärkung-Bandbreite-Produkt $\nu_\text{G}V^\prime$ ist ebenfalls eingetragen. Der Mittelwert des Verstärkung-Bandbreite-Produkts der vier gemessenen Widerstandskombinationen ist $\SI{833 \pm 37}{\hertz}$, auch die Abweichungen davon sind 3.5, 1.6, 6.6 und 4.8\%.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{img/a.png}
 	\caption{Frequenzgang eines gegengekoppelten Verstärkers - bei kleinen Frequenzen ist die Verstärkung in etwa konstant, nimmt dann aber mit größer werdenden Frequenzen exponentiell ab.}
-	\label{Frequenzgang}
+	\label{loglog-plot}
 \end{figure}
 
-\begin{table}
-	\caption{}
-	\label{}
-	\begin{tabular}{ccccccc}
-		$R_1/\si{\kilo\ohm}$	&	$R_\text{N}/\si{\kilo\ohm}$	&	A	&	B	&	$V^\prime$	&	$R_{N}/R_1$	&	$\nu_\text{G}/\si{hertz}$	\\
-		10.02	&	100	&	-0.83\pm0.01	&	2.47\pm0.03	&	10.69 	&	9.98	&	80.74	\\
+\begin{table}[h]
+	\caption{blub}
+	\label{a}
+	\centering
+	\begin{tabular}{ccccccccc}
+		$R_1/\si{\kilo\ohm}$	&	$R_\text{N}/\si{\kilo\ohm}$	&	A	&	B	&	$V^\prime$	&	$R_{N}/R_1$	&	$\nu_\text{G}/\si{\hertz}$	&	$\nu_\text{G}\cdot V^\prime/\si{\hertz}$	&	$V$	\\ \toprule
+		10.02	&	100.0	&	-0.83\pm0.01	&	2.47\pm0.03	&	10.69 	&	9.98	&	80.74	&	862	&	3.5\%\\
+		10.02	&	33.2	&	-0.80\pm0.02	&	2.27\pm0.06	&	3.13 	&	3.31	&	262.07	&	820	&	1.6\%\\
+		1.00	&	0.2	&	-0.79\pm0.01	&	2.28\pm0.03	&	4.85 	&	5.00	&	160.60	&	778	&	6.6\%\\
+		33.30	&	100.0	&	-0.94\pm0.04	&	2.70\pm0.10	&	3.25 	&	3.00	&	269.00	&	873	&	4.8\%\\
 	\end{tabular}
 \end{table}
 

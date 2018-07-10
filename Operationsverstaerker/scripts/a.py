@@ -16,13 +16,13 @@ def make_linear_fit(input_file, data_sym, fit_sym, omit):
     params, cov = curve_fit(fit, np.log10(freq[omit:]), np.log10(U_A[omit:]/U_1[omit:]))
     errors = np.sqrt(np.diag(cov))
 
-    # print out fit results
-    print('\nInputfile: {}'.format(input_file))
-    print('A =', params[0], '+/-', errors[0])
-    print('B =', params[1], '+/-', errors[1])
-
     # compute critical frequency
     nu_G = 10**((np.log10((U_A[0]/U_1[0])/np.sqrt(2)) - params[1]) / params[0])
+
+    # print out results
+    print('\nInputfile: {}, nu_G*V: {}'.format(input_file, nu_G*U_A[0]/U_1[0]))
+    print('A =', params[0], '+/-', errors[0])
+    print('B =', params[1], '+/-', errors[1])
     print('Grenzfrequenz:', nu_G, 'Hz; Verstärkung: ', U_A[0]/U_1[0])
 
     # plot
