@@ -4,28 +4,27 @@ Ausgleichsrechnungen mit den dazugehörigen Fehlern werden mit dem \texttt{pytho
 
 \subsection{Frequenzgang eines gegengekoppelten Verstärkers}
 \label{Frequenzgang}
-Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{loglog-plot} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
+Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{fig:a} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
 \begin{equation}
 	\log_{10} V^\prime = A \cdot \log_{10} \nu + B
 	\label{linear_fit}
 \end{equation}
-an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Das Verstärkung-Bandbreite-Produkt $\nu_\text{G}V^\prime$ ist ebenfalls eingetragen. Der Mittelwert des Verstärkung-Bandbreite-Produkts der vier gemessenen Widerstandskombinationen ist $\SI{833 \pm 37}{\hertz}$, die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%.\par
+an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{tab:a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Das Verstärkung-Bandbreite-Produkt $\nu_\text{G}V^\prime$ ist ebenfalls eingetragen. Der Mittelwert des Verstärkung-Bandbreite-Produkts der vier gemessenen Widerstandskombinationen ist $\SI{833 \pm 37}{\hertz}$, die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%.\par
 Mit \autoref{effVerstaerkung} kann aus $V^\prime$ und den beiden Widerständen $R_1$ und $R_\text{N}$ die Leerlaufverstärkung $V$ mit
 \begin{equation}
 	V = \frac{R_\text{N} + R_1}{\frac{R_\text{N}}{V^\prime} - R_1}
 \end{equation}
-abgeschätzt werden. Die entsprechenden Werte sind ebenfalls in \autoref{a} eingetragen.
-
+abgeschätzt werden. Die entsprechenden Werte sind ebenfalls in \autoref{tab:a} eingetragen.\par
+In \autoref{scope_234} werden beispielhaft ein Sinussignal als Eingangssignal (in grün) und das verstärkte Ausgangssignal (in gelb) als Oszilloskopaufnahme gezeigt. Da das Eingangssignal auf den invertierenden Eingang des Operationsverstärkers gegeben wird, beträgt die Phase zwischen Ein- und Ausgangssignal nahezu $180^\circ$, das Eingangssignal wird bei einer Frequenz von $\SI{99.90}{\hertz}$ von $\SI{197}{\milli\volt}$ um einen Faktor von fast 2 auf $\SI{970}{\milli\volt}$ verstärkt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{img/a.png}
 	\caption{Frequenzgang eines gegengekoppelten Verstärkers - bei kleinen Frequenzen ist die Verstärkung in etwa konstant, nimmt dann aber mit größer werdenden Frequenzen exponentiell ab.}
-	\label{loglog-plot}
+	\label{fig:a}
 \end{figure}
-
 \begin{table}[h]
 	\caption{blub}
-	\label{a}
+	\label{tab:a}
 	\centering
 	\begin{tabular}{ccccccccc}
 		$R_1/\si{\kilo\ohm}$	&	$R_\text{N}/\si{\kilo\ohm}$	&	A	&	B	&	$V^\prime$	&	$R_{N}/R_1$	&	$\nu_\text{G}/\si{\hertz}$	&	$\nu_\text{G}V^\prime/\si{\hertz}$	&	$V$	\\ \toprule
@@ -35,14 +34,89 @@ abgeschätzt werden. Die entsprechenden Werte sind ebenfalls in \autoref{a} eing
 		33.30	&	100.0	&	-0.94\pm0.04	&	2.70\pm0.10	&	3.25 	&	3.00	&	269.00	&	873	&	-52.67\\
 	\end{tabular}
 \end{table}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_234.png}
+	\caption{Frequenzgang eines gegengekoppelten Verstärkers - bei kleinen Frequenzen ist die Verstärkung in etwa konstant, nimmt dann aber mit größer werdenden Frequenzen exponentiell ab.}
+	\label{scope_234}
+\end{figure}
 
 \FloatBarrier
 
 \subsection{Umkehr-Integrator}
 
+Der Fit der Form
+\begin{equation}
+	\log_{10} U_\text{A} = A \cdot \log_{10} \nu + B
+\end{equation}
+liefert die Parameter
+\begin{equation}
+	A = -0.920 \pm 0.006 \quad \text{und} \quad B = 0.798 \pm 0.002,
+\end{equation}
+die Messwerte mit der linearen Ausgleichsgeraden ist in \autoref{fig:d} zu sehen.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{img/d.png}
+	\caption{In dem dargestellten Frequenzbereich fällt die Ausgangsspannung nach dem Umkehr-Integrator in der doppelt-logarithmischen Darstellung linear mit der Frequenz ab.}
+	\label{fig:d}
+\end{figure}
+In \autoref{scope_242}, \autoref{scope_243} und \autoref{scope_244} ist jeweils zu sehen, welches Ausgangssignal der Umkehr-Integrator liefert, wenn ein Sinus-, Rechteck- bzw. Dreiecksignal auf den Eingang gegeben wird.\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_242.png}
+	\caption{Der Umkehr-Integrator liefert bei einem Sinussignal einen Cosinus, also wieder einen Sinus mit einer Phasendrehung von $90^\circ$ gegenüber dem Eingangssignal.}
+	\label{scope_242}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_243.png}
+	\caption{Der Umkehr-Integrator liefert bei einem Rechtecksignal ein Dreiecksignal.}
+	\label{scope_243}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_244.png}
+	\caption{Der Umkehr-Integrator liefert bei einem Dreiecksignal näherungsweise eine Abfolge von Parabeln.}
+	\label{scope_244}
+\end{figure}
+
 \FloatBarrier
 
 \subsection{Umkehr-Differentiator}
+
+Der Fit der Form
+\begin{equation}
+	\log_{10} U_\text{A} = A \cdot \log_{10} \nu + B
+\end{equation}
+liefert die Parameter
+\begin{equation}
+	A = 0.76 \pm 0.01 \quad \text{und} \quad 1.108 \pm 0.003,
+\end{equation}
+die Messwerte mit der linearen Ausgleichsgeraden ist in \autoref{fig:e} zu sehen.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{img/e.png}
+	\caption{In dem dargestellten Frequenzbereich steigt die Ausgangsspannung nach dem Umkehr-Differentiator in der doppelt-logarithmischen Darstellung linear mit der Frequenz an.}
+	\label{fig:e}
+\end{figure}
+In \autoref{scope_245}, \autoref{scope_246} und \autoref{scope_247} ist jeweils zu sehen, welches Ausgangssignal der Umkehr-Integrator liefert, wenn ein Sinus-, Rechteck- bzw. Dreiecksignal auf den Eingang gegeben wird.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_245.png}
+	\caption{Der Umkehr-Differentiator liefert bei einem Sinussignal einen Cosinus, also wieder einen Sinus mit einer Phasendrehung von $90^\circ$ gegenüber dem Eingangssignal.}
+	\label{scope_245}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_246.png}
+	\caption{Der Umkehr-Differentiator liefert bei einem Rechtecksignal eine Abfolge von Deltapeaks.}
+	\label{scope_246}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_247.png}
+	\caption{Der Umkehr-Differentiator liefert bei einem Dreiecksignal ein Rechtecksignal.}
+	\label{scope_247}
+\end{figure}
 
 \FloatBarrier
 
