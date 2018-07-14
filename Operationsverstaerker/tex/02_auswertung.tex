@@ -2,14 +2,18 @@
 \label{sec:evaluation}
 Ausgleichsrechnungen mit den dazugehörigen Fehlern werden mit dem \texttt{python}-Paket \texttt{SciPy} \cite{scipy} erstellt, weitere Fehler werden mit dem \texttt{python}-Paket \texttt{uncertainties} \cite{uncertain} berechnet, welches eine automatische Gauß'sche Fehlerfortpflanzung bereitstellt.
 
-\subsection{Frequenzgang eines gegengekoppelten Verstärkers}
+\subsection{Frequenzgang eines gegengekoppelten Verst\"{a}rkers}
 \label{Frequenzgang}
 Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{fig:a} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
 \begin{equation}
 	\log_{10} V^\prime = A \cdot \log_{10} \nu + B
 	\label{linear_fit}
 \end{equation}
-an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{tab:a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Das Verstärkung-Bandbreite-Produkt $\nu_\text{G}V^\prime$ ist ebenfalls eingetragen. Der Mittelwert des Verstärkung-Bandbreite-Produkts der vier gemessenen Widerstandskombinationen ist $\SI{833 \pm 37}{\hertz}$, die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%.\par
+an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} / U_\text{E}$ ist. In \autoref{tab:a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Das Verstärkung-Bandbreite-Produkt $\nu_\text{G}V^\prime$ ist ebenfalls eingetragen. Der Mittelwert des Verstärkung-Bandbreite-Produkts der vier gemessenen Widerstandskombinationen ist
+\begin{equation*}
+	\bar{\nu_\text{G}V^\prime} = \SI{833 \pm 37}{\hertz},
+\end{equation*}
+die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%.\par
 Mit \autoref{effVerstaerkung} kann aus $V^\prime$ und den beiden Widerständen $R_1$ und $R_\text{N}$ die Leerlaufverstärkung $V$ mit
 \begin{equation}
 	V = \frac{R_\text{N} + R_1}{\frac{R_\text{N}}{V^\prime} - R_1}
@@ -121,6 +125,49 @@ In \autoref{scope_245}, \autoref{scope_246} und \autoref{scope_247} ist jeweils 
 \FloatBarrier
 
 \subsection{Schmitt-Trigger}
+
+Mit Hilfe der Schaltung in \autoref{bild} wir ein Schmitt-Trigger implementiert. Es werden die Widerstände $R_\text{P} = \SI{10}{\kilo\ohm}$ und $R_\text{1} = \SI{0.2}{\kilo\ohm}$ bei einer Frequenz von $f = \SI{1}{\kilo\hertz}$ benutzt, die doppelte Betriebsspannung ist $2U_\text{B} = \SI{7.86}{\volt}$. Mit
+\begin{equation}
+	U_\text{trig,theo} = U_\text{B} \cdot \frac{R_1}{R_\text{P}}
+\end{equation}
+wird die theoretische Triggerschwelle als
+\begin{equation*}
+	U_\text{trig,theo} \approx \SI{78.6}{\milli\volt}
+\end{equation*}
+berechnet. Der gemessene Wert ist
+\begin{equation*}
+	U_\text{trig,exp} \approx \SI{82}{\milli\volt}.
+\end{equation*}
+Die Abweichung zwischen theoretischem und experimentellen Wert beträgt 4.3\%. Die entsprechende Oszilloskopaufnahme ist in \autoref{scope_237} zu sehen.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_237.png}
+	\caption{Durch den Schmitt-Trigger wird ein Ausgangssignal generiert, sobald das Eingangssignal die Triggerschwelle überschritten hat.}
+	\label{scope_237}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Dreiecksgenerator}
+
+Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\kilo\hertz}$ auf einen Schmitt-Trigger gegeben. Bei einer Triggerschwelle von $U_\text{E} = \SI{165}{\milli\volt}$ entsteht ein Rechtecksignal. Ein Integrator macht daraus ein Dreiecksignal, welches bei der Triggerschwelle eine Amplitude von $U_\text{Dreieck} = \SI{2.09}{\volt}$ und ebenfalls eine Frequenz von $f_\text{Dreieck} = \SI{1}{\kilo\hertz}$ hat. \autoref{scope_239} zeigt das Dreiecksignal bei einer höheren Eingangs- und Ausgangsspannung.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_239.png}
+	\caption{Mit Hilfe des Schmitt-Triggers wird aus einer Sinusschwingung (grün) zunächst ein Rechtecksignal generiert, aus welchem dann mit einem Integrator ein Dreiecksignal (gelb) gemacht wird.}
+	\label{scope_239}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Ged\"{a}mpften und unged\"{a}mpfte Schwingung}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{usb/scope_241.png}
+	\caption{Die ungedämpfte Schwingung hat eine Frequenz von $f = \SI{758}{\hertz}$.}
+	\label{scope_241}
+\end{figure}
 
 \FloatBarrier
 
