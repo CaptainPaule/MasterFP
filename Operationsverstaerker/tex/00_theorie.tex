@@ -10,7 +10,7 @@ Das Schaltbild mit den entsprechenden Anschlüssen ist in \ref{abb:op} abgebilde
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/op.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:op}
 \end{figure}
 Die Ausgangsspannung des Operationsverstärkers kann im Bereich der Betriebsspannungen varrieren:
@@ -57,7 +57,7 @@ Da der Operationsverstärker eine große Leerlaufverstärkung besitzt, kann  er 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/linear.png}
-	\caption{Schaltbild eines Operationsverstärkers}
+	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
 	\label{abb:linear}
 \end{figure}
 
@@ -79,7 +79,7 @@ sorgt.
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/elec.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:elektro}
 \end{figure}
 Hier berechet sich der Verstärkungsfaktor gem.:
@@ -89,14 +89,14 @@ V' = \frac{U_A}{U_1}=\frac{R_N + R_1}{R_1}.
 
 
 \subsubsection{Amperemeter}
-Zur Messung von kleinen Strömen wird ein klener Eingangswiderstand benötigt. Dazu kann ein Amperemeter gem \ref{} verwendet werden, bei dem doie Ausgangsspannung proportional zum Eingangsstrom ist:
+Zur Messung von kleinen Strömen wird ein klener Eingangswiderstand benötigt. Dazu kann ein Amperemeter gem. \ref{abb:ampere} verwendet werden, bei dem doie Ausgangsspannung proportional zum Eingangsstrom ist:
 \begin{equation}
 U_A = IR_N.
 \end{equation}
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/ampere.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:ampere}
 \end{figure}
 Der Eingangswiderstand der Schaltung ist
@@ -109,7 +109,7 @@ Mit der in \ref{abb:int} dargestellten Schaltung wird die Eingangsspannung integ
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/op.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:int}
 \end{figure}
 \begin{equation}
@@ -133,7 +133,7 @@ Somit ist die Amplitude der Ausgangsspannung proportional zur Frequenz
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/diff.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:diff}
 \end{figure}
 
@@ -145,7 +145,7 @@ $-U_B$ wenn die Eingangsspannung $-\frac{R_1}{R_P} U_B$ unterschreitet. Der Schm
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/schmitt.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:sch}
 \end{figure}
 
@@ -168,7 +168,7 @@ f = \frac{R_P}{4RCR_1}
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/gen.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:sig}
 \end{figure}
 
@@ -195,33 +195,6 @@ und der Abklingdauer
 \begin{figure}
  	\centering
  	\includegraphics[width=\textwidth]{img/sin.png}
- 	\caption{Schaltbild eines Operationsverstärkers}
+ 	\caption{Schaltbild eines Operationsverstärkers \cite{FP}}
  	\label{abb:sig2}
 \end{figure}
-
-\section{Durchf{\"u}hrung}
-Zuerst wird eine Schaltung gem. \ref{abb:linear} aufgebaut und für vier verschiedene Verstärkungen (einstellbar über den Widerstand in der Gegenkopplung)
-die Frequenz über mehrere Größenordnungen variert. Es ist eine frequenzabhängige Abnahme der Verstärkung zu beobachten.
-
-Als nächstes wird ein Umkehrintegrator gem. \ref{abb:int} aufgebaut, sodass die 
-Frequenzabhängigkeit der Amplitude des Ausgangssignals untersucht werden kann. Es 
-ist darauf zu achten, dass der Frequenzbereich so gewählt wird, das der Umkehrintegrator
-auch als solcher arbeitet.
-
-Dieses Vorgehen wiederholt man für den Differentiator gem. \ref{abb:diff}.
-
-Als nächste Schaltung wird der Schmitt-Triger gem. \ref{abb:schmitt} untersucht.
-An den Eingang des Schmitt-Triggers wird ein Funktionsgenrator angeschlosssen und an den Ausgang 
-ein Oszilloskop. Die Amplitude des Eingangssignals wird von null ausgehend solange erhöht,
-bis die Schaltung anfängt zu kippen. Daraufhin wird der Scheitelwert dieser Spannung sowie  
-sie Größe $2U_B$ gemessen.
-
-Für den Dreiecksgenerator gem. \ref{abb.sig} wird die Zeitabhängigkeit der Ausgangspannung mit einem
-Oszilloskop kontrolliert sowie die Frequenz und die Amplitude des erzeugten Signals gemessen.
-
-Abschließend wird ein Signalgenerator gem. \ref{abb.sig2} aufgebaut. An den Ausgang der Schaltung
-wird ein Oszilloskop angeschlossen. Über das Potentiometer ist es möglich die Dämpfung der Schwingungs
-einzustellen. Das Potentiometer wird so eingestellt, dass das Ausgangssignal ungedämpft ist. Von diesem Signal wird
-die Frequenz bestimmt. Daraufhin wird die Dämpfung auf ein Maximum erhöht und 
-die Schwingung mit einem Dreieck-Signal angeregt, wobei die Periodendauer des Eingangssignals groß ist
-gegenüber der Abklingdauer der gedämpften Schwingung. Von dem Ausgangssignal wird ein Bild erstellt.

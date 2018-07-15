@@ -1,3 +1,26 @@
-\section{Durchf\"{u}hrung}
+\section{Durchf{\"u}hrung}
+Zuerst wird eine Schaltung gem. \ref{abb:linear} aufgebaut und für vier verschiedene Verstärkungen (einstellbar über den Widerstand in der Gegenkopplung)
+die Frequenz über mehrere Größenordnungen variert. Es ist eine frequenzabhängige Abnahme der Verstärkung zu beobachten.
 
-Die Myonen, die gemessen werden sollen, entstehen größtenteils aus Pionzerfällen in der oberen Atmosphäre. Aufgrund ihrer relativistischen Energie erreichen sie den Erdboden. Durch Wechselwirkung mit Materie geben sie einen Teil ihrer kinetischen Energie ab. Bei Durchgang durch einen Szintillator in einem Edelstahltank regt die abgegebene Energie das Szintillatormaterial an, sodass bei der Rückkehr in den Grundzustand Photonen im kurzwelligen sichtbaren bis UV-Bereich emittiert werden. Diese Photonen werden mit zwei Sekundärelektronenvervielfachern (SEV) detektiert, die an den Enden des Tanks angebracht sind. Niederenergetische Myonen können innerhalb des Detektionsvolumen in ein Elektron zerfallen, welches ebenfalls durch einen Lichtblitz ein Signal auslöst. Der zeitliche Abstand zwischen dem Myon- und dem Elektronsignal ist dann die Lebensdauer des Myons im Tank.
+Als nächstes wird ein Umkehrintegrator gem. \ref{abb:int} aufgebaut, sodass die
+Frequenzabhängigkeit der Amplitude des Ausgangssignals untersucht werden kann. Es
+ist darauf zu achten, dass der Frequenzbereich so gewählt wird, das der Umkehrintegrator
+auch als solcher arbeitet.
+
+Dieses Vorgehen wiederholt man für den Differentiator gem. \ref{abb:diff}.
+
+Als nächste Schaltung wird der Schmitt-Triger gem. \ref{abb:sch} untersucht.
+An den Eingang des Schmitt-Triggers wird ein Funktionsgenrator angeschlosssen und an den Ausgang
+ein Oszilloskop. Die Amplitude des Eingangssignals wird von null ausgehend solange erhöht,
+bis die Schaltung anfängt zu kippen. Daraufhin wird der Scheitelwert dieser Spannung sowie
+sie Größe $2U_B$ gemessen.
+
+Für den Dreiecksgenerator gem. \ref{abb:sig} wird die Zeitabhängigkeit der Ausgangspannung mit einem
+Oszilloskop kontrolliert sowie die Frequenz und die Amplitude des erzeugten Signals gemessen.
+
+Abschließend wird ein Signalgenerator gem. \ref{abb:sig2} aufgebaut. An den Ausgang der Schaltung
+wird ein Oszilloskop angeschlossen. Über das Potentiometer ist es möglich die Dämpfung der Schwingungs
+einzustellen. Das Potentiometer wird so eingestellt, dass das Ausgangssignal ungedämpft ist. Von diesem Signal wird
+die Frequenz bestimmt. Daraufhin wird die Dämpfung auf ein Maximum erhöht und
+die Schwingung mit einem Dreieck-Signal angeregt, wobei die Periodendauer des Eingangssignals groß ist
+gegenüber der Abklingdauer der gedämpften Schwingung. Von dem Ausgangssignal wird ein Bild erstellt.
