@@ -13,8 +13,7 @@ an den abfallenden Teil bei hohen Frequenzen dar, wobei $V^\prime = U_\text{A} /
 \begin{equation*}
 	\bar{\nu_\text{G}V^\prime} = \SI{833 \pm 37}{\hertz},
 \end{equation*}
-die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%.\par
-Mit \autoref{effVerstaerkung} kann aus $V^\prime$ und den beiden Widerständen $R_1$ und $R_\text{N}$ die Leerlaufverstärkung $V$ mit
+die Abweichungen der einzelnen Werte vom Mittelwert liegen zwischen 1.6\% und 6.6\%. Mit \autoref{effVerstaerkung} kann aus $V^\prime$ und den beiden Widerständen $R_1$ und $R_\text{N}$ die Leerlaufverstärkung $V$ mit
 \begin{equation}
 	V = \frac{R_\text{N} + R_1}{\frac{R_\text{N}}{V^\prime} - R_1}
 \end{equation}
@@ -27,7 +26,7 @@ In \autoref{scope_234} werden beispielhaft ein Sinussignal als Eingangssignal (i
 	\label{fig:a}
 \end{figure}
 \begin{table}[h]
-	\caption{blub}
+	\caption{Zusammenfassung der Messergebnisse des Linearverstärkers.}
 	\label{tab:a}
 	\centering
 	\begin{tabular}{ccccccccc}
@@ -126,7 +125,7 @@ In \autoref{scope_245}, \autoref{scope_246} und \autoref{scope_247} ist jeweils 
 
 \subsection{Schmitt-Trigger}
 
-Mit Hilfe der Schaltung in \autoref{bild} wir ein Schmitt-Trigger implementiert. Es werden die Widerstände $R_\text{P} = \SI{10}{\kilo\ohm}$ und $R_\text{1} = \SI{0.2}{\kilo\ohm}$ bei einer Frequenz von $f = \SI{1}{\kilo\hertz}$ benutzt, die doppelte Betriebsspannung ist $2U_\text{B} = \SI{7.86}{\volt}$. Mit
+Mit Hilfe der Schaltung in \autoref{abb:sch} wird ein Schmitt-Trigger implementiert. Es werden die Widerstände $R_\text{P} = \SI{10}{\kilo\ohm}$ und $R_\text{1} = \SI{0.2}{\kilo\ohm}$ bei einer Frequenz von $f = \SI{1}{\kilo\hertz}$ benutzt, die doppelte Betriebsspannung ist $2U_\text{B} = \SI{7.86}{\volt}$. Mit
 \begin{equation}
 	U_\text{trig,theo} = U_\text{B} \cdot \frac{R_1}{R_\text{P}}
 \end{equation}
@@ -162,11 +161,35 @@ Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\k
 
 \subsection{Ged\"{a}mpften und unged\"{a}mpfte Schwingung}
 
+In \autoref{scope_241} ist die ungedämpfte Schwingung mit einer charakteristischen Frequenz von $f = \SI{758}{\hertz}$ dargestellt. Die Amplitude bleibt nahezu konstant.\par
+Theoretisch ergibt sich bei der gedämpften Schingung nach $f = 1 / 2\pi RC$ und $\tau = 20RC$ eine Schwingungsfrequenz von
+\begin{equation*}
+	f_\text{theo} = \SI{796}{\hertz}
+\end{equation*}
+und eine Abklingdauer von
+\begin{equation*}
+	\tau = 0.004.
+\end{equation*}
+Eine lineare Ausgleichsrechnung der Form
+\begin{equation}
+	\log_{10} U = At + B, \quad \text{mit} \quad A = \frac{1}{\tau}
+\end{equation}
+ergibt die Fitparameter
+\begin{equation*}
+	A = -110 \pm 5, \quad \text{also} \quad \tau = 0.009 \quad \text{und} \quad B = -0.22 \pm 0.05.
+\end{equation*}
+Die Ausgleichsrechnung zusammen mit den Messwerten ist in \autoref{h} zu sehen.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{usb/scope_241.png}
 	\caption{Die ungedämpfte Schwingung hat eine Frequenz von $f = \SI{758}{\hertz}$.}
 	\label{scope_241}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.48\textwidth]{img/h.png}
+	\caption{Die gedämpfte Schwingung klingt mit der Zeitkonstanten $\tau$ ab.}
+	\label{h}
 \end{figure}
 
 \FloatBarrier
