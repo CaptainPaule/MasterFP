@@ -1,9 +1,10 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from uncertainties import ufloat
 from uncertainties import unumpy as unp
 from scipy.optimize import curve_fit
-from codecs import open
+from detect_peaks import detect_peaks
 from textable import table
 
 C1 = 20e-9
@@ -17,23 +18,20 @@ t, U, _ = np.genfromtxt('../usb/scope_240.csv',unpack=True, delimiter=',')
 N = 12
 val = np.zeros(N)
 val_x = np.zeros(N)
-for i in range(len(t)):
-	highest = 0
-	if U[i] >= highest:
-		highest = U[i]
-	for z in range(len(val)):
-		if val[z] <= highest:
-			val[z] = highest
-			val_x[z] = t[i]
-			break
-val_log = np.log(val)
 
-def func(x,a,b):
-	return x/a+b
-
-def func2(x,a,b,c):
-	return a*np.exp(x/b)+c
-
+t_p = t[np.logical_and(t > 0.0, t < 0.02)]
+U_p = U[np.logical_and(t > 0.0, t < 0.02)]
+t_p = t_p[ U_p > 0.0 ]
+U_p = U_p[ U_p > 0.0 ]
+# indexes = detect_peaks(cb, mph=0.04, mpd=100)
+data_array = np.stack((t_p, U_p), axis=-1)
+#
+# def func(x,a,b):
+# 	return x/a+b
+#
+# def func2(x,a,b,c):
+# 	return a*np.exp(x/b)+c
+#
 # popt, pcov = curve_fit(func,val_x[0:6],val_log[0:6])
 # popt1, pcov1 = curve_fit(func2,val_x,val)
 #
@@ -45,14 +43,14 @@ def func2(x,a,b,c):
 #
 # plt.plot(x,func(x,*popt),'g-',label=r'Regression $f_h(x)$')
 # plt.plot(val_x,val_log,'rx',label=r'Messpunkte')
-plt.plot(t,np.log(U),'b-',label=r'Messdaten')
+plt.plot(data_array[:, 0], data_array[:, 1],'rx',label=r'Messdaten')
 
 plt.grid()
 plt.xlabel(r'$t/\mathrm{s}$')
-plt.ylabel(r'$U/\mathrm{V}$')
+plt.ylabel(r'$\log U/\mathrm{V}$')
 plt.legend(loc="best")
 plt.show()
-#
+
 # plt.savefig('build/h_plot.pdf')
 #
 # with open('build/h_table.tex', 'w', 'utf-8') as f:
