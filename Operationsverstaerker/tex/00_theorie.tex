@@ -26,7 +26,7 @@ Für reale Operationsverstärker gibt es weitere Eigenschaften, die erläutert w
 Sollte an beiden Eingängen die gleiche Spannung $U_G$ anliegen, müsste theoretisch $U_A = 0$ sein. Jedoch beobachtet man auf Grund der Unsymmetrien der beiden Kanäle eine Ausgangsspannung.
 Der Quotient aus $U_G$ und $U_A$ wird Gleichtacktverstärkung
 \begin{equation}
-V_G = \frac{\delta U_A}{\delta U_G}
+V_G = \frac{\Delta U_A}{\Delta U_G}
 \end{equation}
 genannt und ist ein Maß für die Abweichung vom idealen Operationsverstärker.
 Ferner gibt es Eingangsströme auf Grund der endlichen Eingangswiderstände. Somit ist es möglich den Eingangsruhestrom
@@ -41,12 +41,12 @@ I_0 = I_P - I_N.
 \end{equation}
 Aus den definierten Größen lässt sich der Differenzeingangswiderstand $r_D$ definieren:
 \begin{equation}
-r_D = \left\{\begin{array}{ll} \frac{\delta U_P}{\delta I_P}, für U_N = 0\\
-	  \frac{\delta U_N}{\delta I_N}, für U_P = 0\end{array}\right\}.
+r_D = \left\{\begin{array}{ll} \frac{\Delta U_P}{\Delta I_P}, \, \, U_N = 0\\
+	  \frac{\Delta U_N}{\Delta I_N}, \, \, U_P = 0\end{array}\right\}.
 \end{equation}
 Auch ist für $U_G = U_P = U_N$ und $I_G = I_P + I_N$ der Gleichtakteingangswiderstand
 \begin{equation}
-r_G = \frac{\delta U_G}{\delta I_G}
+r_G = \frac{\Delta U_G}{\Delta I_G}
 \end{equation}
 
 \subsection{Schaltungen mit Operationsverst{\"a}rker}
@@ -181,7 +181,7 @@ Die Schaltung besitzt die Differentialgleichung
 \end{equation}
 mit der Lösung
 \begin{equation}
-U_A(t) = U_0 \exp(\frac{\nu t}{20 RC}) \sin(\frac{t}{RC})
+U_A(t) = U_0 \exp\left(\frac{\nu t}{20 RC}\right) \sin\left(\frac{t}{RC}\right)
 \end{equation}
 Mit der Schwingungsdauer
 \begin{equation}
