@@ -19,10 +19,10 @@ Die Ausgangsspannung des Operationsverstärkers kann im Bereich der Betriebsspan
 \end{equation}
 Sollte $U_A$ außerhalb des von den Betriebsspannungen definierten Bereich leigen, so nimmt die Ausgangspannung den nächstliegenden Wert, also $-U_B$ oder $U_B$ an.
 
-Um den Umgang mit realen Operationsverstärkern bei Berechnungen und in Schaltungen zu vereinfachen, wird das Modell des idealen Operationsverstärkers eingeführt:
+\noindent Um den Umgang mit realen Operationsverstärkern bei Berechnungen und in Schaltungen zu vereinfachen, wird das Modell des idealen Operationsverstärkers eingeführt:
 Der ideale Operationsverstärker zeichnet sich durch eine unendlich große Leerlaufverstärkung, einem unendlichen Eigangswiderstand, sowie einem verschwindenen Eingangswiderstand aus.
 
-Für reale Operationsverstärker gibt es weitere Eigenschaften, die erläutert werden müssen:
+\noindent Für reale Operationsverstärker gibt es weitere Eigenschaften, die erläutert werden müssen:
 Sollte an beiden Eingängen die gleiche Spannung $U_G$ anliegen, müsste theoretisch $U_A = 0$ sein. Jedoch beobachtet man auf Grund der Unsymmetrien der beiden Kanäle eine Ausgangsspannung.
 Der Quotient aus $U_G$ und $U_A$ wird Gleichtacktverstärkung
 \begin{equation}
@@ -35,7 +35,7 @@ I_B = \frac{1}{2} (I_P + I_N)
 \end{equation}
 aus den Eingangsströmen $I_P$ (nicht invertierter Eingang) und $I_N$ (invertierter Eingang) zu berechnen.
 
-Außerdem lässt sich der Offsetstrom definieren
+\noindent Außerdem lässt sich der Offsetstrom definieren
 \begin{equation}
 I_0 = I_P - I_N.
 \end{equation}
@@ -61,7 +61,7 @@ Da der Operationsverstärker eine große Leerlaufverstärkung besitzt, kann  er 
 	\label{abb:linear}
 \end{figure}
 
-Die Verstärkung des Linearverstärkers hat somit die Form
+\noindent Die Verstärkung des Linearverstärkers hat somit die Form
 \begin{equation}
 V^\prime = - \frac{R_N}{R_1}
 \end{equation}
@@ -120,7 +120,7 @@ Beschreibt $U_1$ eine Sinusspannung $U_1 = U_0 sin(\omega t)$, so ist die Amplit
 U_A = \frac{U_0}{\omega RC} \cos(\omega t)
 \end{equation}
 
-Das Gegenstück zum Integrator ist der Differentiator. Dieser wird gem \ref{abb:diff} aufgebaut.
+\noindent Das Gegenstück zum Integrator ist der Differentiator. Dieser wird gem \ref{abb:diff} aufgebaut.
 \begin{equation}
 U_A = -RC \frac{\text{d} U_1}{\text{d} t}
 \end{equation}
@@ -152,7 +152,7 @@ $-U_B$ wenn die Eingangsspannung $-\frac{R_1}{R_P} U_B$ unterschreitet. Der Schm
 \subsubsection{Signalgenerator}
 In \ref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Integrator integriert die durch den Schmitt-Trigger erzeugen Rechteck-Spannungen, was zu einem Dreieck-Signal führt, wobei der Ausgang des Integrators gleichzeitig der Eingang des Schmitt-Triggers ist, sodass dieser regelmäßig an der Spitze des Dreieck-Signals den Zustand ändert.
 
-Die Integration erfolgt folgendermaßen:
+\noindent Die Integration erfolgt folgendermaßen:
 \begin{equation}
 U_A = - \frac{1}{RC} \int_{0}^{\frac{T}{2}} U_E(t^\prime)dt^\prime = -\frac{1}{RC} U_B \frac{T}{2}
 \end{equation}
@@ -175,7 +175,7 @@ f = \frac{R_P}{4RCR_1}
 \subsubsection{Erzeugung von ged{\"a}mpften Sinusschwingungen}
 Es wird ein Generator verwendet, der eine Sinusschwingung erzeugt, die mit einer abfallenden Exponentialfunktion überlagert ist. Die Schaltung ist in \ref{abb:sig2} dargestellt.
 
-Die Schaltung besitzt die Differentialgleichung
+\noindent Die Schaltung besitzt die Differentialgleichung
 \begin{equation}
 \frac{\text{d}^2 U_A}{\text{d}t^2} - \frac{\nu}{10RC} \frac{\text{d} U_A}{\text{d}t} + \frac{1}{R^2 C^2} U_A = 0
 \end{equation}
