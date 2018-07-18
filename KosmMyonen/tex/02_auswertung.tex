@@ -34,7 +34,7 @@ f(c) = Ac + B
 	t(c) = (0,0454 \pm 0,00003)\frac{\si{\micro\second}}{\text{Kanal}} - (0,035 \pm 0.004) \si{\micro\second}
 \end{equation}
 
-\noindent Im der weiteren Auswertung ist lediglich der Prameter $A$ von Interesse.
+\noindent Im der weiteren Auswertung ist lediglich der Prameter $A$ von Interesse, da dieser den die Wartezeit pro Kanal beschreibt und somit den Zusammenhang zwischen VKA Kanal und Wartezeit liefert.
 
 \subsection{Zeitauflösung der Messapparatur}
 \label{subsec:timeresolution}
@@ -66,6 +66,7 @@ f = \frac{N_{\text{Start}}}{t_{\text{Messung}}} = 2,28 \, \frac{\text{myonen}}{\
 P = \frac{(T_s \cdot f)^k}{k!} \exp{f \cdot T_s} = 0,00002 \%\,,
 \end{equation}
 
+
 \noindent wobei k = 1 gilt.
 
 \noindent Somit ergeben sich bezogen auf die Startimpulse
@@ -77,7 +78,7 @@ N_{Err} = 32.53
 \noindent Fehlmessungen. Werden jetzt noch die einzelnen Kanäle berücksichtigt ergibt sich folgende Untergrundrate pro Kanal:
 
 \begin{equation}
-U = 0,07 \, \frac{\text{Counts}}{\text{Kanal}}\,.
+U_{\text{B}} = 0,07 \, \frac{\text{Counts}}{\text{Kanal}}\,.
 \end{equation}
 
 \subsection{Bestimmung der Lebensdauer}
@@ -85,10 +86,10 @@ U = 0,07 \, \frac{\text{Counts}}{\text{Kanal}}\,.
 Zur bestimmung der Individuallebensdauer der Myonen werden in Abbildung 3 die Daten logarithmiert und an das Ergebnis eine Funktion gemäß
 
 \begin{equation}
-f(x) = Ax + B
+f(x) = Ax + U_{\text{B}}
 \end{equation}
 
-\noindent gefittet.
+\noindent gefittet, wobei $U_{\text{B}}$ die Untergrundrate ist.
 
 \begin{figure}
 	\centering
