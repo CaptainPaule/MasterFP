@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from detect_peaks import detect_peaks
+from uncertainties import ufloat
 
 C1 = 20e-9
 R = 10e3
@@ -24,9 +25,12 @@ def fit(x,a,b):
 # linear fit
 params, cov = curve_fit(fit, t_p[indexes], np.log10(U_p[indexes]))
 errors = np.sqrt(np.diag(cov))
+A = ufloat(params[0], errors[0])
+tau = 1 / A
 
 print('A =', params[0], '+/-', errors[0])
 print('B =', params[1], '+/-', errors[1])
+print('1/A =', tau)
 
 plt.plot(t_p, U_p,'rx',label=r'Messdaten')
 # plt.plot(t_p[indexes], U_p[indexes],'gx',label=r'Peaks')

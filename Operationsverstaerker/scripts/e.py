@@ -23,7 +23,7 @@ def make_linear_fit(input_file):
 
     # plot
     plt.plot(freq, 10**(fit(np.log10(freq), *params)), 'g-')
-    plt.plot(freq, U_A, 'rx', label='{}F'.format(input_file.replace("_", " ")[10:-4]))
+    plt.plot(freq, U_A, 'rx', label='{}F'.format(input_file.replace("_", " ").replace("-", ".")[10:-4]))
 
 if __name__ == '__main__':
     make_linear_fit('../data/e_R1_0-2k_C1_23-1n.txt')

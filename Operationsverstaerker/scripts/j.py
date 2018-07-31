@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def plot_phase(input_file, data_sym):
     freq, U_A, phi, U_1 = np.genfromtxt('{}'.format(input_file), unpack=True)
-    plt.plot(freq, phi, '{}'.format(data_sym), label='{}'.format(input_file.replace("_", " ")[10:-4]))
+    plt.plot(freq, phi, '{}'.format(data_sym), label='{}'.format(input_file.replace("_", " ").replace("-", ".")[10:-4]))
 
 if __name__ == '__main__':
     plot_phase('../data/a_R1_10-02k_RN_100k.txt', 'gx')
