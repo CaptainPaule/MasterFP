@@ -34,8 +34,7 @@ Ferner gibt es Eingangsströme auf Grund der endlichen Eingangswiderstände. Som
 I_B = \frac{1}{2} (I_P + I_N)
 \end{equation}
 aus den Eingangsströmen $I_P$ (nicht invertierter Eingang) und $I_N$ (invertierter Eingang) zu berechnen.
-
-\noindent Außerdem lässt sich der Offsetstrom definieren
+Außerdem lässt sich der Offsetstrom definieren
 \begin{equation}
 I_0 = I_P - I_N.
 \end{equation}
@@ -113,22 +112,22 @@ Mit der in \autoref{abb:int} dargestellten Schaltung wird die Eingangsspannung i
  	\label{abb:int}
 \end{figure}
 \begin{equation}
-U_A = - \frac{1}{RC} \int U_1(t) \text{dt} .
+U_A = - \frac{1}{RC} \int U_1(t) \text{d}t \, .
 \end{equation}
 Beschreibt $U_1$ eine Sinusspannung $U_1 = U_0 \sin(\omega t)$, so ist die Amplitude antiproportional zur Frequenz
 \begin{equation}
-U_A = \frac{U_0}{\omega RC} \cos(\omega t) .
+U_A = \frac{U_0}{\omega RC} \cos(\omega t) \, .
 \end{equation}
 
 \noindent Das Gegenstück zum Integrator ist der Differentiator. Dieser wird nach \autoref{abb:diff} aufgebaut.
 \begin{equation}
-U_A = -RC \frac{\text{d} U_1}{\text{d} t} .
+U_A = -RC \frac{\text{d} U_1}{\text{d} t} \, .
 \end{equation}
 Für den Fall, dass das Eingangssignal wieder als Sinusspannung vorliegt ergibt sich:
 \begin{equation}
-U_A = -\omega RCU_0 \cos(\omega t) .
+U_A = -\omega RCU_0 \cos(\omega t) \, .
 \end{equation}
-Somit ist die Amplitude der Ausgangsspannung proportional zur Frequenz
+Somit ist die Amplitude der Ausgangsspannung proportional zur Frequenz.
 
 \begin{figure}[h!]
  	\centering
@@ -140,7 +139,7 @@ Somit ist die Amplitude der Ausgangsspannung proportional zur Frequenz
 
 \subsubsection{Schmitt-Trigger}
 Der Schmitt-Trigger wird nach \autoref{abb:sch} verschaltet. Hier liegt ein Teil der Ausgangsspannung wieder am  nicht-invertierten Eingang an. Dadurch steigt die Ausgangsspannung immer weiter an. Die Schaltung bekommt somit ein instabiles Verhalten. Der Schmitt-Triger hat nur zwei Zusände, in denen seine Ausgangsspannung $U_B$ beträgt, wenn die Eingangsspannung $(R_1 / R_P) \cdot U_B$ überschreitet oder
-$-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Somit ist der Schmitt-Trigger als Schalter zu verstehen, welcher nicht nur einen Schwellenwert besitzt.  Durch geeignete Wahl der Widerstände ist es möglich, das Hysterese-Fenster zu beeinflussen und somit Einfluss auf die Schwellenwerte der Schaltung zu nehmen Der Schmitt-Trigger ist daher ein nützliches Element für binäre Logik und Signalgeneratoren.
+$-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Der Schmitt-Trigger liefert nach Über- bzw. Unterschreiten des Schwellenwertes solange eine konstante Ausgangsspannung bis die jeweils andere Schwelle über- bzw. unterschritten wurde. Somit ist der Schmitt-Trigger als Schalter zu verstehen, welcher nicht nur einen Schwellenwert besitzt. Wird zum Beispiel eine Sinusspannung angelegt, ist das resultierende Ausgangssignal eine Rechteckspannung. Durch geeignete Wahl der Widerstände ist es möglich, das Hysterese-Fenster zu beeinflussen und somit Einfluss auf die Schwellenwerte der Schaltung zu nehmen. Der Schmitt-Trigger ist daher ein nützliches Element für binäre Logik und Signalgeneratoren.
 
 \begin{figure}[h!]
  	\centering
@@ -153,7 +152,7 @@ $-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Somit 
 In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger liefert zu beginn eine kostante Ausgangsspannung $U_B$,
 welche vom Integrator integriert wird. Die Ausgangsspannung der Integrator fällt somit linear mit der Zeit bis diese die Triggerschwelle des Schmitt Triggers erreicht hat, sodass der Schmitt-Trigger Schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder Integriert was dazu führt das seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
 
-Die Integration erfolgt folgendermaßen:
+Die Integration über eine halbe Periode mit dem Startzeitpunkt bei $U_A(t=0) = $ erfolgt folgendermaßen:
 \begin{equation}
 U_A = - \frac{1}{RC} \int_{0}^{\frac{T}{2}} U_E(t^\prime)dt^\prime = -\frac{1}{RC} U_B \frac{T}{2} .
 \end{equation}

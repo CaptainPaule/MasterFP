@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber build/Operationsverstaerker"] 1533062523 "build/Operationsverstaerker.bcf" "build/Operationsverstaerker.bbl" "build/Operationsverstaerker" 1533064224
-  "build/Operationsverstaerker.bcf" 1533064223 96591 4959b7c3a33db2469087cdc44d17c796 ""
+["biber build/Operationsverstaerker"] 1533062523 "build/Operationsverstaerker.bcf" "build/Operationsverstaerker.bbl" "build/Operationsverstaerker" 1533066219
+  "build/Operationsverstaerker.bcf" 1533066218 96591 4959b7c3a33db2469087cdc44d17c796 ""
   "references.bib" 1533062363 1267 857c628c02e0a540a4a7f40136cfaa14 ""
   (generated)
-  "build/Operationsverstaerker.bbl"
   "build/Operationsverstaerker.blg"
-["lualatex"] 1533064218 "Operationsverstaerker.tex" "build/Operationsverstaerker.pdf" "Operationsverstaerker" 1533064224
+  "build/Operationsverstaerker.bbl"
+["lualatex"] 1533066213 "Operationsverstaerker.tex" "build/Operationsverstaerker.pdf" "Operationsverstaerker" 1533066219
   "/home/utlohcrap/.local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/home/utlohcrap/.local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/home/utlohcrap/.local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm" 1480098698 1228 9be37fdf0dc0e1f4df4af3594876d628 ""
@@ -238,11 +238,11 @@
   "/home/utlohcrap/.local/texlive/2017/texmf-var/tex/generic/config/language.dat.lua" 1497906675 17237 354c82de5e865ff9be21e8cce3818f0c ""
   "/home/utlohcrap/.local/texlive/2017/texmf-var/web2c/luatex/lualatex.fmt" 1497906702 1297033 237c2444a2459a1038c6a11bdefc9964 ""
   "Operationsverstaerker.tex" 1533062508 4470 c53fd47a043e4848642e657fd5c5eee2 ""
-  "build/Operationsverstaerker.aux" 1533064223 14422 3873ef19e5dea128a19656f2fb7f31d5 ""
+  "build/Operationsverstaerker.aux" 1533066218 14422 3873ef19e5dea128a19656f2fb7f31d5 ""
   "build/Operationsverstaerker.bbl" 1533062524 3820 3d48500b2f30b371c536111d5e0cb48e "biber build/Operationsverstaerker"
-  "build/Operationsverstaerker.out" 1533064223 1601 a0a27217fadcf7352d2ee85116cdcc6a ""
-  "build/Operationsverstaerker.run.xml" 1533064223 2423 e28475b0b9ddefdb434be1e6b8acf4cd ""
-  "build/Operationsverstaerker.toc" 1533064223 2090 31a1502a662ae52e9aa9403a43a0a363 ""
+  "build/Operationsverstaerker.out" 1533066218 1601 a0a27217fadcf7352d2ee85116cdcc6a ""
+  "build/Operationsverstaerker.run.xml" 1533066218 2423 e28475b0b9ddefdb434be1e6b8acf4cd ""
+  "build/Operationsverstaerker.toc" 1533066218 2090 31a1502a662ae52e9aa9403a43a0a363 ""
   "img/a_R1_0-2k_RN_1k.png" 1533061592 17592 9eff67179f140fa8aa234b6bc339d0ad ""
   "img/a_R1_10-02k_RN_100k.png" 1533061591 19123 d23c893f173aa353005dd01f9f5e0863 ""
   "img/a_R1_10-02k_RN_33-2k.png" 1533061591 16683 fb1a6a4a420bf0a89d3d98cec4225f60 ""
@@ -260,8 +260,8 @@
   "img/op.png" 1531695959 20670 c6d7effaa2feda2511d53714476408b7 ""
   "img/schmitt.png" 1531695959 17916 370cfe67ffe64f81761c5ab2c2bdac5a ""
   "img/sin.png" 1531695959 48946 312a8a592644ae914e2d13ba41a96cd1 ""
-  "tex/00_theorie.tex" 1533052286 9616 aa08f00f321bbe1f1069643726d8d8b1 ""
-  "tex/01_aufbau.tex" 1533052286 1923 37be513793368f856c9f3a7be6a65183 ""
+  "tex/00_theorie.tex" 1533065852 9977 643fcadcfb0f787fdb11aebb5bda836c ""
+  "tex/01_aufbau.tex" 1533066210 1996 587c7c898b5725f3283796be91728c1c ""
   "tex/02_auswertung.tex" 1533064018 12910 16f15d19feeb6067a98e06868ac98629 ""
   "tex/03_diskussion.tex" 1531695959 714 74cbae0735ad2ef3db3b0325bcf17e73 ""
   "usb/scope_234.png" 1529506999 41633 9759567cc8ab4f6d084b831031288d10 ""
@@ -275,10 +275,10 @@
   "usb/scope_246.png" 1529506999 40335 fecb644c23619605ae42e6d1905af98c ""
   "usb/scope_247.png" 1529506999 48360 ed3f9436d8ec36edecf4497cdcadfa92 ""
   (generated)
-  "build/Operationsverstaerker.pdf"
-  "build/Operationsverstaerker.run.xml"
   "build/Operationsverstaerker.bcf"
-  "build/Operationsverstaerker.log"
-  "build/Operationsverstaerker.aux"
   "build/Operationsverstaerker.toc"
   "build/Operationsverstaerker.out"
+  "build/Operationsverstaerker.run.xml"
+  "build/Operationsverstaerker.pdf"
+  "build/Operationsverstaerker.log"
+  "build/Operationsverstaerker.aux"
