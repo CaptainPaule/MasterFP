@@ -140,7 +140,7 @@ Somit ist die Amplitude der Ausgangsspannung proportional zur Frequenz
 
 \subsubsection{Schmitt-Trigger}
 Der Schmitt-Trigger wird nach \autoref{abb:sch} verschaltet. Hier liegt ein Teil der Ausgangsspannung wieder am  nicht-invertierten Eingang an. Dadurch steigt die Ausgangsspannung immer weiter an. Die Schaltung bekommt somit ein instabiles Verhalten. Der Schmitt-Triger hat nur zwei Zusände, in denen seine Ausgangsspannung $U_B$ beträgt, wenn die Eingangsspannung $(R_1 / R_P) \cdot U_B$ überschreitet oder
-$-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Der Schmitt-Trigger ist daher ein nützliches Element für binäre Logik und Signalgeneratoren.
+$-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Somit ist der Schmitt-Trigger als Schalter zu verstehen, welcher nicht nur einen Schwellenwert besitzt.  Durch geeignete Wahl der Widerstände ist es möglich, das Hysterese-Fenster zu beeinflussen und somit Einfluss auf die Schwellenwerte der Schaltung zu nehmen Der Schmitt-Trigger ist daher ein nützliches Element für binäre Logik und Signalgeneratoren.
 
 \begin{figure}[h!]
  	\centering
@@ -150,7 +150,8 @@ $-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Der Sc
 \end{figure}
 
 \subsubsection{Signalgenerator}
-In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Integrator integriert die durch den Schmitt-Trigger erzeugen Rechteck-Spannungen, was zu einem Dreieck-Signal führt, wobei der Ausgang des Integrators gleichzeitig der Eingang des Schmitt-Triggers ist, sodass dieser regelmäßig an der Spitze des Dreieck-Signals den Zustand ändert.
+In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger liefert zu beginn eine kostante Ausgangsspannung $U_B$,
+welche vom Integrator integriert wird. Die Ausgangsspannung der Integrator fällt somit linear mit der Zeit bis diese die Triggerschwelle des Schmitt Triggers erreicht hat, sodass der Schmitt-Trigger Schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder Integriert was dazu führt das seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
 
 Die Integration erfolgt folgendermaßen:
 \begin{equation}
