@@ -172,13 +172,13 @@ Mit Hilfe der Schaltung in \autoref{abb:sch} wird ein Schmitt-Trigger implementi
 \end{equation}
 wird die theoretische Triggerschwelle als
 \begin{equation*}
-	U_\text{trig,theo} \approx \SI{78.6}{\milli\volt}
+	U_\text{trig,theo} \approx \SI{\pm 78.6}{\milli\volt}
 \end{equation*}
-berechnet. Der gemessene Wert ist
+berechnet. Die gemessenen Wertefür den oberen bzw. unteren Triggerpunkt sind
 \begin{equation*}
-	U_\text{trig,exp} \approx \SI{82}{\milli\volt}.
+	U_\text{trig,exp} \approx \SI{82}{\milli\volt} \quad \text{und} \quad U_\text{trig,exp} \approx \SI{-95}{\milli\volt}.
 \end{equation*}
-Die Abweichung zwischen theoretischem und experimentellen Wert beträgt 4.3\%. Die entsprechende Oszilloskopaufnahme ist in \autoref{scope_237} zu sehen.
+Die Abweichung zwischen theoretischem und experimentellen Wert beträgt 4.3\% bzw. 20.9\%. Die entsprechende Oszilloskopaufnahme ist in \autoref{scope_237} zu sehen.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{usb/scope_237.png}
@@ -190,7 +190,15 @@ Die Abweichung zwischen theoretischem und experimentellen Wert beträgt 4.3\%. D
 
 \subsection{Dreiecksgenerator}
 
-Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\kilo\hertz}$ auf einen Schmitt-Trigger gegeben. Bei einer Triggerschwelle von $U_\text{E} = \SI{165}{\milli\volt}$ entsteht ein Rechtecksignal. Ein Integrator macht daraus ein Dreiecksignal, welches bei der Triggerschwelle eine Amplitude von $U_\text{Dreieck} = \SI{2.09}{\volt}$ und ebenfalls eine Frequenz von $f_\text{Dreieck} = \SI{1}{\kilo\hertz}$ hat. \autoref{scope_239} zeigt das Dreiecksignal bei einer höheren Eingangs- und Ausgangsspannung.
+Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\kilo\hertz}$ als Anstoß-Signal auf einen Schmitt-Trigger gegeben. Bei einer Triggerschwelle von $U_\text{E} = \SI{165}{\milli\volt}$ entsteht ein Rechtecksignal. Ein Integrator macht daraus ein Dreiecksignal, welches bei der Triggerschwelle eine Amplitude von $U_\text{Dreieck} = \SI{2.09}{\volt}$ und ebenfalls eine Frequenz von $f_\text{Dreieck} = \SI{1}{\kilo\hertz}$ hat. Da das Signal auf dem invertierenden Eingang liegt, hat der positive kontante Wert eine linear abfallende Spannung zur Folge, eine konstante negative Spannung eine hingegen eine ansteigende Spannung. \autoref{scope_239} zeigt das Dreiecksignal bei einer höheren Eingangs- und Ausgangsspannung. Das Dreiecksignal wird daraufhin wieder auf den nicht-invertierenden Eingang des Schmitt-Triggers gegeben. Sobald die fallende Flanke die untere Triggerschwelle unterschreitet, schaltet der Schmitt-Trigger auf den konstanten negativen Wert, dies resultiert in einer steigenden Flanke auf dem Trigger-Eingang, bis die obere Triggerschwelle überschritten wird. Anhang von \autoref{frequenz} wird die theoretisch erwartete Frequenz des Rechteck- und Dreiecksignals zu
+\begin{equation*}
+	f_\text{theo} = \SI{54.113}{\kilo\hertz}
+\end{equation*}
+bestimmt. Die Werte der Widerstände und des Kondensators sind $R = \SI{10}{\kilo\ohm}$, $R_\text{P} = \SI{10}{\kilo\ohm}$, $R_1 = \SI{0.2}{\kilo\ohm}$ und $C = \SI{23.1}{\nano\farad}$. Der theoretische Wert ist 54-mal größer als die gemessene Frequenz. Nach \autoref{differenz} ist die theoretische Amplitude der Rechteckspannung
+\begin{equation*}
+	U_\text{theo} = \SI{157.6}{\milli\volt}\, ,
+\end{equation*}
+diese wurde allerdings durch einen Fehler in der Durchführung nicht gemessen, sodass kein Vergleichswert existiert.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{usb/scope_239.png}

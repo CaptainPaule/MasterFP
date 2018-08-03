@@ -150,21 +150,23 @@ $-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Der Sc
 
 \subsubsection{Signalgenerator}
 In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger liefert zu beginn eine kostante Ausgangsspannung $U_B$,
-welche vom Integrator integriert wird. Die Ausgangsspannung der Integrator fällt somit linear mit der Zeit bis diese die Triggerschwelle des Schmitt Triggers erreicht hat, sodass der Schmitt-Trigger Schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder Integriert was dazu führt das seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
+welche vom Integrator integriert wird. Die Ausgangsspannung des Integrators fällt somit linear mit der Zeit, bis diese die Triggerschwelle des Schmitt-Triggers erreicht hat, sodass der Schmitt-Trigger schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder integriert, was dazu führt, dass seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
 
-Die Integration über eine halbe Periode mit dem Startzeitpunkt bei $U_A(t=0) = $ erfolgt folgendermaßen:
+Die Integration über eine halbe Periode mit dem Startzeitpunkt bei $U_E(t=0) = 0$ erfolgt folgendermaßen:
 \begin{equation}
 U_A = - \frac{1}{RC} \int_{0}^{\frac{T}{2}} U_E(t^\prime)dt^\prime = -\frac{1}{RC} U_B \frac{T}{2} .
+\label{integral}
 \end{equation}
 Da diese Spannung der Differenz zwischen den beiden Schwellenwerten des Schmitt-Triggers entspricht, ist
 \begin{equation}
 U_A = 2U_B\frac{R_1}{R_P} .
+\label{differenz}
 \end{equation}
 Diese beiden Gleichung ergeben mit der Periodendauer $T$ und der Frequenz $f$:
 \begin{equation}
 f = \frac{R_P}{4RCR_1} .
+\label{frequenz}
 \end{equation}
-
 \begin{figure}[h!]
  	\centering
  	\includegraphics[width=\textwidth]{img/gen.png}
