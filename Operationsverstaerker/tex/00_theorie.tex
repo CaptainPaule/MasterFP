@@ -52,19 +52,17 @@ r_G = \frac{\Delta U_G}{\Delta I_G}
 
 \subsubsection{Linearverst{\"a}rker}
 Da der Operationsverstärker eine große Leerlaufverstärkung besitzt, kann  er nur einen kleinen Eingangsspannungsbereich linear verstärken, bevor er an die Grenzen  seiner Betriebsspannung stößt und in Sättigung geht. Um den Aussteuerungsbereich zu vergrößern, wird der Operationsverstärker nach \autoref{abb:linear} mit einer Gegegenkopplung erweitert, mit der das Verstärkungsverhältnis eingestellt werden kann.
-
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{img/linear.png}
 	\caption{Gegengekoppelter invertierender Linearverstärker \cite{FP}}
 	\label{abb:linear}
 \end{figure}
-
-\noindent Die Verstärkung des Linearverstärkers hat somit die Form
+Die Verstärkung des Linearverstärkers, bei dem der invertierende Eingang genutzt wird, hat somit die Form
 \begin{equation}
-V^\prime = - \frac{R_N}{R_1}
+V^\prime = - \frac{R_N}{R_1}\,.
 \end{equation}
-bzw. unter Berücksichtigung der Eigenschaften eines realen Operationsverstärkers
+Unter Berücksichtigung der Eigenschaften eines realen Operationsverstärkers und unter Betrachtung des Absolutwertes des Verstärkung $|V^\prime| = -U_A/U_1$ ist entsprechend
 \begin{equation}
 \frac{1}{V^\prime} = - \frac{U_1}{U_A} = \frac{1}{V} + \frac{R_1}{R_N} \left( 1 + \frac{1}{V} \right) \approx \frac{1}{V} + \frac{R_1}{R_N}.
 \label{effVerstaerkung}
@@ -149,22 +147,21 @@ $-U_B$ wenn die Eingangsspannung $-(R_1 / R_P) \cdot U_B$ unterschreitet. Der Sc
 \end{figure}
 
 \subsubsection{Signalgenerator}
-In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger liefert zu beginn eine kostante Ausgangsspannung $U_B$,
-welche vom Integrator integriert wird. Die Ausgangsspannung des Integrators fällt somit linear mit der Zeit, bis diese die Triggerschwelle des Schmitt-Triggers erreicht hat, sodass der Schmitt-Trigger schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder integriert, was dazu führt, dass seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
+In \autoref{abb:sig} ist der Aufbau eines Signalgenerators gezeigt. Dieser besteht aus einem Schmitt-Trigger und einem Integrator, wobei der Ausgang des Schmitt-Triggers auf dem invertierenden Eingang des Integrators liegt und der Ausgang des Integrators wieder zurück auf den nicht-invertierenden Eingang des Schmitt-Triggers gegeben wird. Der Schmitt-Trigger liefert zu Beginn eine kostante Ausgangsspannung $U_B$, welche vom Integrator integriert wird. Die Ausgangsspannung des Integrators fällt somit linear mit der Zeit, bis diese die Triggerschwelle des Schmitt-Triggers erreicht hat, sodass der Schmitt-Trigger schaltet und eine konstante Ausgangsspannung $-U_B$ liefert. Diese wird vom Integrator wieder integriert, was dazu führt, dass seine Ausgangspannung mit der Zeit linear ansteigt, bis die andere Triggerschwelle erreicht wird. Sodann schaltet der Schmitt-Trigger erneut und ist wieder im Ausgangszustand.
 
-Die Integration über eine halbe Periode mit dem Startzeitpunkt bei $U_E(t=0) = 0$ erfolgt folgendermaßen:
+Die Integration über eine viertel Periode mit dem Startzeitpunkt bei $U_E(t=0) = 0$ erfolgt folgendermaßen:
 \begin{equation}
-U_A = - \frac{1}{RC} \int_{0}^{\frac{T}{2}} U_E(t^\prime)dt^\prime = -\frac{1}{RC} U_B \frac{T}{2} .
+U_A = - \frac{1}{RC} \int_{0}^{\frac{T}{4}} U_E(t^\prime)dt^\prime = -\frac{1}{RC} U_B \frac{T}{4} \,.
 \label{integral}
 \end{equation}
-Da diese Spannung der Differenz zwischen den beiden Schwellenwerten des Schmitt-Triggers entspricht, ist
+Da diese Spannung der Differenz zwischen des Nulllinie und des Schwellenwertes des Schmitt-Triggers entspricht, ist
 \begin{equation}
-U_A = 2U_B\frac{R_1}{R_P} .
+U_A = U_B\frac{R_1}{R_P} \,.
 \label{differenz}
 \end{equation}
 Diese beiden Gleichung ergeben mit der Periodendauer $T$ und der Frequenz $f$:
 \begin{equation}
-f = \frac{R_P}{4RCR_1} .
+f = \frac{R_P}{4RCR_1} \,.
 \label{frequenz}
 \end{equation}
 \begin{figure}[h!]
@@ -175,9 +172,7 @@ f = \frac{R_P}{4RCR_1} .
 \end{figure}
 
 \subsubsection{Erzeugung von ged{\"a}mpften Sinusschwingungen}
-Es wird ein Generator verwendet, der eine Sinusschwingung erzeugt, die mit einer abfallenden Exponentialfunktion überlagert ist. Die Schaltung ist in \autoref{abb:sig2} dargestellt.
-
-\noindent Die Schaltung besitzt die Differentialgleichung
+Es wird ein Generator verwendet, der eine Sinusschwingung erzeugt, die mit einer abfallenden Exponentialfunktion überlagert ist. Die Schaltung ist in \autoref{abb:sig2} dargestellt. Die Schaltung besitzt die Differentialgleichung
 \begin{equation}
 \frac{\text{d}^2 U_A}{\text{d}t^2} - \frac{\nu}{10RC} \frac{\text{d} U_A}{\text{d}t} + \frac{1}{R^2 C^2} U_A = 0
 \end{equation}

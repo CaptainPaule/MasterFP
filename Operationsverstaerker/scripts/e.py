@@ -13,7 +13,7 @@ def make_linear_fit(input_file):
     freq, U_E, U_A, phi = np.genfromtxt('{}'.format(input_file), unpack=True)
 
     # linear fit
-    params, cov = curve_fit(fit, np.log10(freq), np.log10(U_A))
+    params, cov = curve_fit(fit, np.log10(freq), np.log10(U_A/U_E))
     errors = np.sqrt(np.diag(cov))
 
     # print out results
@@ -23,7 +23,7 @@ def make_linear_fit(input_file):
 
     # plot
     plt.plot(freq, 10**(fit(np.log10(freq), *params)), 'g-')
-    plt.plot(freq, U_A, 'rx', label='{}F'.format(input_file.replace("_", " ").replace("-", ".")[10:-4]))
+    plt.plot(freq, U_A/U_E, 'rx', label='{}F'.format(input_file.replace("_", " ").replace("-", ".")[10:-4]))
 
 if __name__ == '__main__':
     make_linear_fit('../data/e_R1_0-2k_C1_23-1n.txt')
@@ -32,6 +32,6 @@ if __name__ == '__main__':
     plt.xscale('log')
     plt.yscale('log')
     plt.xlabel(r'Frequenz $\nu$ / Hz')
-    plt.ylabel(r'Ausgangsspannung $U_A$')
+    plt.ylabel(r'Verstärkung $V^\prime$')
     plt.savefig('../img/e.png')
     print('')

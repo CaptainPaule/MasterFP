@@ -6,7 +6,7 @@ Ausgleichsrechnungen mit den dazugehörigen Fehlern werden mit dem \texttt{pytho
 \label{Frequenzgang}
 Die Frequenzabhängigkeit des Linearverstärkers wird untersucht, indem die Verstärkung bei verschiedenen Frequenzen über mehrere Zehnerpotenzen gemessen wird. Dies wird für vier verschiedene Kombinationen von Widerständen durchgeführt. Eine doppelt-logarithmische Darstellung der Frequenzgänge ist in \autoref{fig:a} gezeigt. Die durchgezogene Linie stellt dabei jeweils den linearen Fit der Form
 \begin{equation}
-	\log_{10} \frac{{V_0}^\prime}{\SI{1}{\milli\volt}} = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
+	\log_{10} {V_0}^\prime = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
 	\label{linear_fit}
 \end{equation}
 an den abfallenden Teil bei hohen Frequenzen dar, wobei der Plateauwert ${V_0}^\prime = U_\text{A} / U_\text{E}$ der Mittelwert aus dem Quotienten aus Ausgangs- und Eingangsspannung für Frequenzen $\nu < \SI{10}{\hertz}$ ist. In \autoref{tab:a} werden die verwendeten Widerstände, die daraus resultierenden Fitparameter und die Grenzfrequenzen $\nu_\text{G}$ -- also die Frequenz, bei der die Verstärkung auf $V'/\sqrt{2}$ abgefallen ist -- zusammengefasst. Die Grenzfrequenz wird über
@@ -91,17 +91,17 @@ das heißt, je näher die Frequenz gegen die Grenzfrequenz $\omega_\text{g}$ geh
 
 Der Fit der Form
 \begin{equation}
-	\log_{10} \frac{U_\text{A}}{\SI{1}{\milli\volt}} = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
+	\log_{10} \frac{U_\text{A}}{U_\text{E}} = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
 \end{equation}
 liefert die Parameter
 \begin{equation}
-	A = -0.920 \pm 0.006 \quad \text{und} \quad B = 0.798 \pm 0.002,
+	A = -0.93 \pm 0.01 \quad \text{und} \quad B = -1.496 \pm 0.003,
 \end{equation}
-die Messwerte mit der linearen Ausgleichsgeraden sind in \autoref{fig:d} zu sehen.
+die Messwerte mit der linearen Ausgleichsgeraden sind in \autoref{fig:d} zu sehen. Die ersten drei Messwerte werden dabei nicht genutzt, da die Phase nicht mit dem gewünschten Wert von $\approx \SI{90}{\degree}$ übereinstimmt (siehe dazu \autoref{tab:d}).
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{img/d.png}
-	\caption{In dem dargestellten Frequenzbereich fällt die Ausgangsspannung nach dem Umkehr-Integrator in der doppelt-logarithmischen Darstellung linear mit der Frequenz ab; die ersten drei Messwerte werden für die lineare Ausgleichsrechnung nicht genutzt.}
+	\caption{In dem dargestellten Frequenzbereich fällt die auf die Eingangsspannung normierte Ausgangsspannung nach dem Umkehr-Integrator in der doppelt-logarithmischen Darstellung linear mit der Frequenz ab; die ersten drei Messwerte werden für die lineare Ausgleichsrechnung nicht genutzt.}
 	\label{fig:d}
 \end{figure}
 In \autoref{scope_242}, \autoref{scope_243} und \autoref{scope_244} ist jeweils zu sehen, welches Ausgangssignal der Umkehr-Integrator liefert, wenn ein Sinus-, Rechteck- bzw. Dreiecksignal auf den Eingang gegeben wird.\begin{figure}[h]
@@ -129,17 +129,17 @@ In \autoref{scope_242}, \autoref{scope_243} und \autoref{scope_244} ist jeweils 
 
 Der Fit der Form
 \begin{equation}
-	\log_{10} \frac{U_\text{A}}{\SI{1}{\milli\volt}} = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
+	\log_{10} \frac{U_\text{A}}{U_\text{E}} = A \cdot \log_{10} \frac{\nu}{\SI{1}{\hertz}} + B
 \end{equation}
 liefert die Parameter
 \begin{equation}
-	A = 0.76 \pm 0.01 \quad \text{und} \quad 1.108 \pm 0.003,
+	A = 0.73 \pm 0.01 \quad \text{und} \quad -1.381 \pm 0.002,
 \end{equation}
 die Messwerte mit der linearen Ausgleichsgeraden sind in \autoref{fig:e} zu sehen.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{img/e.png}
-	\caption{In dem dargestellten Frequenzbereich steigt die Ausgangsspannung nach dem Umkehr-Differentiator in der doppelt-logarithmischen Darstellung linear mit der Frequenz an.}
+	\caption{In dem dargestellten Frequenzbereich steigt die auf die Eingangsspannung normierte Ausgangsspannung nach dem Umkehr-Differentiator in der doppelt-logarithmischen Darstellung linear mit der Frequenz an.}
 	\label{fig:e}
 \end{figure}
 In \autoref{scope_245}, \autoref{scope_246} und \autoref{scope_247} ist jeweils zu sehen, welches Ausgangssignal der Umkehr-Integrator liefert, wenn ein Sinus-, Rechteck- bzw. Dreiecksignal auf den Eingang gegeben wird.
@@ -190,11 +190,11 @@ Die Abweichung zwischen theoretischem und experimentellen Wert beträgt 4.3\% bz
 
 \subsection{Dreiecksgenerator}
 
-Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\kilo\hertz}$ als Anstoß-Signal auf einen Schmitt-Trigger gegeben. Bei einer Triggerschwelle von $U_\text{E} = \SI{165}{\milli\volt}$ entsteht ein Rechtecksignal. Ein Integrator macht daraus ein Dreiecksignal, welches bei der Triggerschwelle eine Amplitude von $U_\text{Dreieck} = \SI{2.09}{\volt}$ und ebenfalls eine Frequenz von $f_\text{Dreieck} = \SI{1}{\kilo\hertz}$ hat. Da das Signal auf dem invertierenden Eingang liegt, hat der positive kontante Wert eine linear abfallende Spannung zur Folge, eine konstante negative Spannung eine hingegen eine ansteigende Spannung. \autoref{scope_239} zeigt das Dreiecksignal bei einer höheren Eingangs- und Ausgangsspannung. Das Dreiecksignal wird daraufhin wieder auf den nicht-invertierenden Eingang des Schmitt-Triggers gegeben. Sobald die fallende Flanke die untere Triggerschwelle unterschreitet, schaltet der Schmitt-Trigger auf den konstanten negativen Wert, dies resultiert in einer steigenden Flanke auf dem Trigger-Eingang, bis die obere Triggerschwelle überschritten wird. Anhang von \autoref{frequenz} wird die theoretisch erwartete Frequenz des Rechteck- und Dreiecksignals zu
+Zunächst wird eine Sinusschwingung mit der Frequenz $f_\text{Sinus} = \SI{1}{\kilo\hertz}$ als Anstoß-Signal auf einen Schmitt-Trigger gegeben. Bei einer Triggerschwelle von $U_\text{E} = \SI{165}{\milli\volt}$ entsteht ein Rechtecksignal. Ein Integrator macht daraus ein Dreiecksignal, welches bei der Triggerschwelle eine Amplitude von $U_\text{Dreieck} = \SI{2.09}{\volt}$ und ebenfalls eine Frequenz von $f_\text{Dreieck} = \SI{1}{\kilo\hertz}$ hat. Da das Signal auf dem invertierenden Eingang liegt, hat der positive kontante Wert eine linear abfallende Spannung zur Folge, eine konstante negative Spannung eine hingegen eine ansteigende Spannung. \autoref{scope_239} zeigt das Dreiecksignal bei einer höheren Eingangs- und Ausgangsspannung. Aufgrund eines Fehlers in der Durchführung dieses Versuchsteils, unterscheiden sich die Ergebnisse deutlich von den theoretisch vorhergesagten Werten. Anhang von \autoref{frequenz} wird die theoretisch erwartete Frequenz des Rechteck- und Dreiecksignals zu
 \begin{equation*}
 	f_\text{theo} = \SI{54.113}{\kilo\hertz}
 \end{equation*}
-bestimmt. Die Werte der Widerstände und des Kondensators sind $R = \SI{10}{\kilo\ohm}$, $R_\text{P} = \SI{10}{\kilo\ohm}$, $R_1 = \SI{0.2}{\kilo\ohm}$ und $C = \SI{23.1}{\nano\farad}$. Der theoretische Wert ist 54-mal größer als die gemessene Frequenz. Nach \autoref{differenz} ist die theoretische Amplitude der Rechteckspannung
+bestimmt. Die Werte der Widerstände und des Kondensators sind $R = \SI{10}{\kilo\ohm}$, $R_\text{P} = \SI{10}{\kilo\ohm}$, $R_1 = \SI{0.2}{\kilo\ohm}$ und $C = \SI{23.1}{\nano\farad}$. Wegen der falschen Durchführung ist der theoretische Wert 54-mal größer als die gemessene Frequenz. Nach \autoref{differenz} ist die theoretische Amplitude der Rechteckspannung mit $U_\text{B} = \SI{3.94}{\volt}$
 \begin{equation*}
 	U_\text{theo} = \SI{157.6}{\milli\volt}\, ,
 \end{equation*}
