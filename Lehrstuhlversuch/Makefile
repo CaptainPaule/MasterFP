@@ -6,7 +6,7 @@ TeXOptions = -lualatex \
 			 -halt-on-error \
 			 -output-directory=build
 
-build/KosmMyonen.pdf: FORCE | build
+build/Lehrstuhlversuch.pdf: FORCE | build
 	latexmk $(TeXOptions) Lehrstuhlversuch.tex
 
 FORCE:
