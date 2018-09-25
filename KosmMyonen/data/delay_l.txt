@@ -1,4 +1,4 @@
-# delay		counts	
+delay counts	
 2	265
 4	246
 6	230
