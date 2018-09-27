@@ -1,3 +1,6 @@
+#! /usr/bin/env python3.4
+# -*- coding: utf-8 -*-
+
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 import numpy as np
@@ -23,9 +26,14 @@ print('A =', params[0], '+/-', errors[0])
 print('mu =', params[1], '+/-', errors[1])
 print('sigma =', params[2], '+/-', errors[2])
 
+# calculate FWHM (Full Width at Half Maximum)
+FWHM = 2.3548 * params[2]
+print("FWHM {}".format(FWHM))
+
 # plot
-plt.plot(delay, gauss(delay, *params), 'r-', label="fit")
+ax = np.linspace(-15, 20, 1000)
+plt.plot(ax, gauss(ax, *params), 'r-', label="fit")
 plt.plot(delay, counts, 'g+')
 plt.xlabel('Verzögerung in ns')
 plt.ylabel('Zählrate')
-plt.show()
+plt.savefig('../img/res.pdf')
