@@ -4,6 +4,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import pandas as pd
+
+def make_table(inputfile):
+    data = pd.read_csv(inputfile, sep=" ", header='infer', index_col=False)
+    outputfile = inputfile[:-4] + '.tex'
+    with open(outputfile,'w') as tf:
+        tf.write(data.to_latex(index=False))
 
 # calc underground
 N_Start = 1426728
@@ -46,6 +53,18 @@ errors = np.sqrt(np.diag(cov))
 print("Fit Function")
 print('A =', params[0], '+/-', errors[0])
 print('A =', params[1], '+/-', errors[1])
+
+# write table
+df = pd.DataFrame()
+df['Kanalnummer'] = channel_number
+df['Laufzeit / ns'] = delay
+with open('../data/calib.tex','w') as tf:
+    tf.write('\\begin{table}\n')
+    tf.write('\\centering\n')
+    tf.write(df.to_latex(index=False))
+    tf.write('\\caption{Modifizierte Messdaten zur Kalibration der Messkanäle des VKA}\n')
+    tf.write('\\label{tab:calib}\n')
+    tf.write('\\end{table}')
 
 # plot
 plt.plot(channel_number, fit(channel_number, *params), 'g-', label="fit")

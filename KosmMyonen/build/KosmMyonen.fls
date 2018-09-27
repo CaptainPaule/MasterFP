@@ -1,4 +1,4 @@
-PWD /home/alina/Documents/MasterFP/KosmMyonen
+PWD /home/alina/Documents/praktikum/MasterFP/KosmMyonen
 INPUT /home/alina/.local/texlive/2017/texmf-var/web2c/luatex/lualatex.fmt
 INPUT ./KosmMyonen.tex
 OUTPUT build/KosmMyonen.log
@@ -409,15 +409,21 @@ INPUT ./tex/02_auswertung.tex
 INPUT ./img/calib.png
 INPUT ./img/calib.png
 INPUT img/calib.png
+INPUT ./img/res.pdf
+INPUT ./img/res.pdf
+INPUT img/res.pdf
 INPUT ./img/myons.pdf
 INPUT ./img/myons.pdf
 INPUT img/myons.pdf
 INPUT ./tex/03_diskussion.tex
 INPUT ./tex/03_diskussion.tex
 INPUT /home/alina/.local/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
+INPUT ./data/calib.tex
+INPUT ./data/calib.tex
 INPUT build/KosmMyonen.aux
 INPUT build/KosmMyonen.run.xml
 OUTPUT build/KosmMyonen.run.xml
+INPUT /home/alina/.local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /home/alina/.local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /home/alina/.local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /home/alina/.local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
