@@ -45,9 +45,9 @@ def plot_data(plot_data, out_name, **kwargs):
             plt.plot(kwargs[key][0], kwargs[key][1], "r-", label="model")
 
 
-    #plt.show()
-    print("savefig: {}".format(out_name))
-    plt.savefig(os.path.join(os.path.dirname(__file__), "..", "img", "eval", out_name))
+    plt.show()
+    #print("savefig: {}".format(out_name))
+    #plt.savefig(os.path.join(os.path.dirname(__file__), "..", "img", "eval", out_name))
     plt.clf()
 
 def set_time_offset(data, offset):
@@ -60,7 +60,7 @@ def main():
     blank_probe_filename = "002_a000_b0_e245_FILM.txt"
 
     for root, dirs, files in os.walk(".."):
-        if root == "../data":
+        if root == "..\\data":
             for item in files:
                 if item  == blank_probe_filename:
                     blank_probe_path = os.path.join(root, item)
@@ -89,36 +89,37 @@ def main():
     model_data = build_data_from_model(params, scope=(350, 10000), model=three_temp_model)
     
     # plot
-    plot_data(data, blank_probe_path.split("/")[-1].replace("txt", "pdf"), model_data=model_data)
+    plot_data(data, blank_probe_path.split("\\")[-1].replace("txt", "pdf"), model_data=model_data)
 
     # plot all
     for path in data_paths:
         data = load_file(path)
         data = set_time_offset(data, 350)
-        plot_data(data, path.split("/")[-1].replace("txt", "pdf"), scope=(2, 3))
+        plot_data(data, path.split("\\")[-1].replace("txt", "pdf"), scope=(2, 3))
 
         # correct data with three temp modell
         signal = sub(data, model_data)
-        plot_data(signal, path.split("/")[-1].replace("txt", "corr.pdf"), scope=(2, 3))
+        plot_data(signal, path.split("\\")[-1].replace("txt", "corr.pdf"), scope=(2, 3))
 
         # apply fft on signal
-        fft_freq = np.fft.fftfreq(data[0].size, d=1./1000)
-        fft_val = np.fft.fft(signal[1])
+        fft_freq = np.fft.fftfreq(signal[0].size, d=1./1000)
+        fft_val = np.fft.fft(signal[1], signal[1].size)
+        fft_signal_tmp = (fft_freq, fft_val.real)
         fft_signal_real = (fft_freq, abs(fft_val.real))
 
         # fit lorentz
         p0 = [12.5, 0.1]
         (params, cov) = apply_model(fft_signal_real, lorentz_model, p0=p0)
         model_data_fft = build_data_from_model(params, scope=(0, 20000), model=lorentz_model)
-        plot_data(fft_signal_real, path.split("/")[-1].replace("txt", "fft.pdf"), xscope=(7.5, 15.5), yscope=(0.0, 0.25), model_data=model_data_fft)
+        plot_data(fft_signal_real, path.split("\\")[-1].replace("txt", "fft.pdf"), xscope=(7.5, 15.5), yscope=(0.0, 0.25), model_data=model_data_fft)
 
         # apply low pass filter at 16 Ghz
-        low_pass_filter(fft_signal_real, 16)
-        signal = np.fft.ifft(fft_signal_real[1])
+        low_pass_filter(fft_signal_tmp, 16)
+        signal = np.fft.ifft(fft_signal_tmp[1], fft_signal_tmp[1].size)
         ax = np.fft.fftfreq(signal.size, d=1./1000)
 
         data = (ax, signal.real)
-        plot_data(data, path.split("/")[-1].replace("txt", "lowpass.pdf"), scope=(200, 300))
+        plot_data(data, path.split("\\")[-1].replace("txt", "lowpass.pdf"), xscope=(0, 450))
 
 if __name__ == "__main__":
     main()
