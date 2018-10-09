@@ -19,9 +19,9 @@ def low_pass_filter(fft_signal, cut_off_freq):
             fft_signal[0][i] = 0
             fft_signal[1][i] = 0 
 
-def build_data_from_model(params, scope):
-    ax = np.linspace(scope[0]/1000, (scope[1]-scope[0])/1000, (scope[1]-scope[0]))
-    return (ax, three_temp_model(ax, *params))
+def build_data_from_model(params, scope, model):
+    ax = np.linspace(scope[0]/1000, (scope[1]-scope[0])/1000, 9650)
+    return (ax, model(ax, *params))
 
 def load_file(path):
     ax, data = np.genfromtxt(path, unpack=True)
@@ -33,8 +33,10 @@ def sub(x, y):
 
 def plot_data(plot_data, out_name, **kwargs):
     for key in kwargs.keys():
-        if key == "scope":
+        if key == "xscope":
             plt.xlim(kwargs[key][0], kwargs[key][1])
+        if key == "yscope":
+            plt.ylim(kwargs[key][0], kwargs[key][1])
 
     plt.plot(plot_data[0], plot_data[1], "bx", label="data")
 
@@ -84,7 +86,7 @@ def main():
 
 
     (params, cov) = apply_model(data, three_temp_model, p0=p0)
-    model_data = build_data_from_model(params, scope=(350, 10000))
+    model_data = build_data_from_model(params, scope=(350, 10000), model=three_temp_model)
     
     # plot
     plot_data(data, blank_probe_path.split("/")[-1].replace("txt", "pdf"), model_data=model_data)
@@ -103,7 +105,12 @@ def main():
         fft_freq = np.fft.fftfreq(data[0].size, d=1./1000)
         fft_val = np.fft.fft(signal[1])
         fft_signal_real = (fft_freq, abs(fft_val.real))
-        plot_data(fft_signal_real, path.split("/")[-1].replace("txt", "fft.pdf"), scope=(11.5, 13.5))
+
+        # fit lorentz
+        p0 = [12.5, 0.1]
+        (params, cov) = apply_model(fft_signal_real, lorentz_model, p0=p0)
+        model_data_fft = build_data_from_model(params, scope=(0, 20000), model=lorentz_model)
+        plot_data(fft_signal_real, path.split("/")[-1].replace("txt", "fft.pdf"), xscope=(7.5, 15.5), yscope=(0.0, 0.25), model_data=model_data_fft)
 
         # apply low pass filter at 16 Ghz
         low_pass_filter(fft_signal_real, 16)
