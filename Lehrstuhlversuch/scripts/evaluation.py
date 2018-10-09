@@ -7,6 +7,9 @@ import numpy as np
 def three_temp_model(x, a, b, c, d, e, f):
     return a * np.exp(b * x) + c * np.exp(d * x) + e * np.exp(f * x)
 
+def lorentz_model(w, w0, gamma):
+    return 1. / ((w**2 - w0**2)**2 + gamma**2 * w0**2)
+
 def apply_model(data, model, p0):
     return curve_fit(model, data[0], data[1], p0=p0)
 
@@ -47,6 +50,7 @@ def plot_data(plot_data, out_name, **kwargs):
 
 def set_time_offset(data, offset):
     return (data[0][offset:], data[1][offset:])
+
 
 def main():
     data_paths = []
