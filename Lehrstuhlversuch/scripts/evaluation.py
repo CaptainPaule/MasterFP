@@ -57,8 +57,9 @@ def plot_data(plot_data, out_name, **kwargs):
 
 
     #plt.show()
-    plt.xlabel(r"$\omega$ / GHz")
-    plt.ylabel(r"Amplitude")
+    plt.xlabel(r"$time$ / ns")
+    plt.ylabel(r"r")
+    plt.xticks([200, 220, 240, 260, 280, 300], [2, 2.2, 2.4, 2.6, 2.8, 3.0])
     plt.legend()
     print("savefig: {}".format(out_name))
     plt.savefig(os.path.join(os.path.dirname(__file__), "..", "img", "eval", out_name))
@@ -70,10 +71,10 @@ def set_time_offset(data, offset):
 
 def main():
     p0_store = {
-                "005_a000_b0_e245_G4.txt" : [12.5, 0.1],
-                "006_a000_b0_e245_G3.txt" : [12.5, 0.1],
-                "007_a000_b0_e245_G2.txt" : [12.5, 0.1],
-                "008_a000_b0_e245_G1.txt" : [12.5, 0.1],
+                "005_a000_b0_e245_G4.txt"    : [12.5, 0.1],
+                "006_a000_b0_e245_G3.txt"    : [12.5, 0.1],
+                "007_a000_b0_e245_G2.txt"    : [12.5, 0.1],
+                "008_a000_b0_e245_G1.txt"    : [12.5, 0.1],
                 "009_a000_b0_e245_G4_90.txt" : [12.5, 0.1],
                 "011_a000_b0_e245_G4_45.txt" : [12.5, 0.1],
                 }
@@ -142,16 +143,16 @@ def main():
 
         # fit lorentz
         # select p0
-        p0 = p0_store[path.split("/")[-1]]
+        #p0 = p0_store[path.split("/")[-1]]
 
-        (params, cov) = apply_model(fft_signal_real, lorentz_model, p0=p0)
-        model_data_fft = build_data_from_model(params, scope=(0, 20000), model=lorentz_model)
-        plot_data(fft_signal_real, path.split("/")[-1].replace("txt", "fft.pdf"), xscope=(7.5, 15.5), yscope=(0.0, 0.25), model_data=model_data_fft)
-        freq_peaks.append(peak_detect(model_data_fft[1]))
+        #(params, cov) = apply_model(fft_signal_real, lorentz_model, p0=p0)
+        #model_data_fft = build_data_from_model(params, scope=(0, 20000), model=lorentz_model)
+        #plot_data(fft_signal_real, path.split("/")[-1].replace("txt", "fft.pdf"), xscope=(7.5, 15.5), yscope=(0.0, 0.25), model_data=model_data_fft)
+        #freq_peaks.append(peak_detect(model_data_fft[1]))
 
-        errors = np.sqrt(np.diag(cov))
-        print("omega = {0} +- {1}".format(params[0], errors[0]))
-        print("gamma = {0} +- {1}".format(params[1], errors[1]))
+        #errors = np.sqrt(np.diag(cov))
+        #print("omega = {0} +- {1}".format(params[0], errors[0]))
+        #print("gamma = {0} +- {1}".format(params[1], errors[1]))
 
         # apply low pass filter at 16 Ghz
         low_pass_filter(fft_signal_tmp, 16)
@@ -159,7 +160,7 @@ def main():
         ax = np.fft.fftfreq(signal.size, d=1./1000)
 
         data = (ax, signal.real)
-        plot_data(data, path.split("/")[-1].replace("txt", "lowpass.pdf"), xscope=(0, 450))
+        plot_data(data, path.split("/")[-1].replace("txt", "lowpass.pdf"), xscope=(200, 300), yscope=(-0.0005, 0.0005))
 
     print(freq_peaks)
     # print amplitudes related to grid depth
