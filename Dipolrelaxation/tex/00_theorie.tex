@@ -1,0 +1,23 @@
+\section{Theorie}
+
+Mithilfe eines Anrege-Lasers werden in einem Festkörper akustische Gitterschwingungen im GHz-Bereich durch ultrakurze Laserpulse angeregt. Diese werden daraufhin mit einem Abfrage-Laser spektroskopisch untersucht.
+
+\subsection{Akustische Gitterschwingungen durch Anregung mit einem Laserpuls}
+
+In einem Galfenol-Film auf einem Galliumarsenid-Substrat werden akustische Gitterschwingungen durch ultrakurze Laserpulse angeregt. Die Gitterschwingungen besitzen bei einem flachen Film ohne Oberflächenstruktur zunächst keine bevorzugte Frequenz. Die Intensität der Schwingungen steigt also nach der Anregung schlagartig an und fällt aufgrund der Energiedissipation einem exponentiellen Abfall ähnlich ab. Das Abkühlen des Materials nach der Anregung durch den Laserpuls kann mithilfe des 3-Temperatur-Modells beschrieben werden.\par
+Durch den Laserpuls wird den Elektronen im Gitter Energie hinzugefügt, das System ist nicht mehr im Gleichgewichtszustand. Durch Elektron-Elektron-Wechselwirkung wird die große Menge hinzugefügter Energie zunächst von wenigen Elektronen verteilt auf eine große Anzahl Elektronen; die Elektronen haben dann alle die gleiche Temperatur $T_e$ und folgen einer Fermi-Dirac-Verteilung. Die Anzahl von Spin-up und Spin-down Elektronen kann sich unterscheiden. Die Energie wird dann durch Elektron-Phonon-Wechselwirkung auf das Gitter übertragen, das bis dahin noch unbeeinflusst von der Energieaufnahme war und die Temperatur von Elektronen und Gitter nähern sich einem Gleichgewicht an. Die Anregung mit dem Laserpuls resultiert in einer Reduzierung des magnetischen (Spin-)Moments durch Wechselwirkungen mit Phononen bzw. Elektronen.Die Temperaturänderung der drei Systeme kann durch gekoppelte Differentailgleichungen beschrieben werden \cites{3TM-2, 3TM-1}:
+\begin{align}
+  c_e(T_e)\frac{\partial T_e}{\partial t} &= -g_{el} (T_e - T_l) - g_{es}(T_e - T_s) + P(t)\\
+  c_l(T_l)\frac{\partial T_l}{\partial t} &= -g_{el} (T_l - T_e) - g_{sl}(T_l - T_s)\\
+  c_s(T_s)\frac{\partial T_s}{\partial t} &= -g_{es} (T_s - T_e) - g_{sl}(T_s - T_l) \, ,
+\end{align}
+wobei $P(t)$ die zugeführte Leistung des Laserpulses beschreibt und $c_i(T_i)$ die temperaturabhängigen Wärmekapazitäten von System $i$ und $g_{ij}$ die Kopplungskonstanten zwischen System $i$ und $j$ sind. Die Änderung der Reflektivität ist abhängig von der Abweichung der Temperatur der einzelnen Systeme vom Gleichgewichtszustand \cite{3TM-2}:
+\begin{align}
+  \frac{\Delta R}{R} = c_e \cdot \Delta T_e + c_l \cdot \Delta T_l + c_s \cdot \Delta T_s \, .
+\end{align}
+
+Sobald die Oberflächenstruktur periodisch verändert wird, kommt es zu konstruktiver und destruktiver Interferenz. Da es sich bei den Schwingungen um Rayleigh-Wellen handelt, sind die Schwingungen an der Oberfläche lokalisiert. Rayleigh-Wellen haben eine Geschwindigkeitskomponente in Ausbreitungsrichtung und senkrecht dazu. Ihre Geschwindigkeit und Eindringtiefe sind abhängig von ihrer Frequenz. Zu dem Abfall der Schwingungsamplitude kommen periodische Gitterschwingungen hinzu, deren Amplitude und Frequenz von der Struktur der Oberfläche des Films abhängen. Die Frequenz der Schwingungen lässt sich über die Dispersionsrelation $f = \sfrac{v_s}{\lambda}$ abschätzen, wobei $\lambda \approx \SI{200}{\nano\metre}$ durch das Gitter vorgegeben wird und $v_s \approx \SI{2500}{\metre\per\second}$ die Schallgeschwindigkeit in Galfenol \cite{galfenol} ist. Die Größenordung der Schwingungsfrequenz liegt im Bereich von einigen GHz.
+
+\subsection{Anrege-Abfrage-Experimente und asynchrones optisches Abtasten}
+
+Bei Anrege-Abfrage-Experimenten wird die Probe durch einen ersten Laserpuls (der pump-Puls) angeregt, dann wird ein zweiter Laserpuls (der probe-Puls) zur spektroskopischen Analyse der angeregten Probe verwendet. Um die zeitliche Entwicklung der Probe untersuchen zu können, muss der probe-Puls jeweils mit unterschiedlichem zeitlichen Abstand zu dem pump-Puls auf der Probe eintreffen. Das kann durch eine mechanische Verzögerung erreicht werden. Bei diesem Ansatz ist die Messgeschwindigkeit allerdings begrenzt und durch Fehler in Justage und Kalibration kann es zu Messungenauigkeiten kommen. Stattdessen werden zwei Laser mit leicht unterschiedlicher Repetitionsrate verwendet. Das Verfahren wird "asynchrones optisches Abtasten" genannt \cite{ASOPS}.
