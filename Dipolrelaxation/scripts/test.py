@@ -10,6 +10,9 @@ def polynomal_fit(x, a, b, c, d, e):
 def linear_fit(x, a, b):
     return (a * x + b)
 
+def relaxationszeit(T_max, W):
+    tau_0 = Boltzmann * T_max**2 * np.exp(- W / (Boltzmann * T_max)) / 
+
 T, I = np.genfromtxt('../data/heizrate_15C.txt', unpack=True)
 T = convert_temperature(T, 'C', 'K')
 T1 = T[:15]
@@ -35,29 +38,33 @@ print(np.argmin(np.log(I_clean)))
 
 # noch den Offset (vom Messgerät) bestimmen und abziehen!
 
-# plt.figure()
-# plt.plot(T, polynomal_fit(T, *params_exp), 'r-', label='Untergrund')
-# plt.plot(T, I, 'b+', label='Messwerte')
-# plt.plot(T_fit, I_fit, 'g+', label='Untergrundfit-Daten')
-# plt.xlabel('T/K')
-# plt.ylabel('I/A')
-# plt.legend()
+plt.figure()
+plt.plot(T, polynomal_fit(T, *params_exp), 'r-', label='Untergrund')
+plt.plot(T, I, 'b+', label='Messwerte')
+plt.plot(T_fit, I_fit, 'g+', label='Untergrundfit-Daten')
+plt.xlabel('T/K')
+plt.ylabel('I/A')
+plt.legend()
 # plt.savefig('../img/heizrate_15C.pdf')
+plt.show()
 # plt.figure()
 # plt.plot(T_clean, I_clean, 'b+', label='Bereinigte Daten')
 # plt.xlabel('T/K')
 # plt.ylabel('I/A')
 # plt.legend()
 # plt.savefig('../img/heizrate_15C_no-bg.pdf')
+pl.show()
 
 # fit
 params_lin, cov_lin = curve_fit(linear_fit, 1/T[:25], np.log(I_clean[:25]))
 errors_lin = np.sqrt(np.diag(cov_lin))
 
+W_meth1 = - params_lin[0] * Boltzmann / e
+
 print('Einfacher linearer Fit für W:')
 print(f'a = {params_lin[0]} \pm {errors_lin[0]}')
 print(f'b = {params_lin[1]} \pm {errors_lin[1]}')
-print(f'Aktivierungsenergie W = {- params_lin[0] * Boltzmann / e} eV')
+print(f'Aktivierungsenergie W = {W_meth1} eV')
 
 # plt.figure()
 # plt.plot(1/T_clean, np.log(I_clean), 'r*', label='Messwerte')
@@ -76,10 +83,12 @@ for i in range(len(T_clean)):
 params_linin, cov_linin = curve_fit(linear_fit, 1/T_clean[:-25], integrated[:-25])
 errors_linin = np.sqrt(np.diag(cov_linin))
 
+W_meth2 = params_linin[0] * Boltzmann / e
+
 print('Linearer Fit an Integral für W:')
 print(f'a = {params_linin[0]} \pm {errors_linin[0]}')
 print(f'b = {params_linin[1]} \pm {errors_linin[1]}')
-print(f'Aktivierungsenergie W = {params_linin[0] * Boltzmann / e} eV')
+print(f'Aktivierungsenergie W = {W_meth2} eV')
 
 plt.figure()
 plt.plot(1/T_clean[:-5], integrated[:-5], 'bx', label='Daten')
