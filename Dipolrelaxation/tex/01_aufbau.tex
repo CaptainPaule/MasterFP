@@ -1,13 +1,6 @@
 \section{Aufbau}
 
-Der Aufbau, der schematisch in Abbildung \autoref{aufbau} dargestell ist, besteht aus zwei Lasern, dem pump-Laser mit einer Wellenlänge von \SI{1047}{\nano\metre} und einem Fokus von \SI{20}{\micro\metre} und dem probe-Laser mit einer Wellenlänge von \SI{780}{\nano\metre} und einem Fokus von \SI{2}{\micro\metre}. Diese werden über Spiegel auf die Probe gerichtet, welche zwischen den Polen eines Magneten positioniert wird. Mit einer Kombination aus einem Glan-Thompson-Prisma und einem Lambda-Halbe-Filter kann die Intensität des pump-Lasers auf der Probe eingestellt werden. Für die optische Justage ist nach der Probe ein Objektiv mit 20-facher Vergrößerung, einer Linse und einem Mikroskop. Ein Wollaston-Prisma teilt den von der Probe kommenden probe-Laserstrahl auf zwei Photodioden auf, mit welcher  die Intensität gemessen wird, aus welcher die Reflektivität bestimmt wird.
-
-Die Probe besteht aus einem Galliumarsenid-Substrat mit einem Galfenolfilm. An unterschiedlichen Stellen auf dem Film sind Gitterstrukturen verschiedener Höhen,  Breiten und Periodenlängen mit Ionenstrahlepitaxie eingebracht.
-
-\section{Durchf\"{u}hrung}
-
-Zur Messung der Gitterschwingungen wird ein pump-probe-Aufbau verwendet. Die durch die Oszillation der Gitterschwingungen hervorgerufene, periodische Reflektivitätsänderung wird bestimmt, indem die Intensität des von der Probe reflektierten probe-Laserstrahls mit einer Photodiode gemessen wird. Dazu wird der Aufbau zunächst einjustiert. Sowohl der pump-Laser, als auch der probe-Laser müssen auf die gleiche Stelle auf der Probe gerichtet sein. Das reflektierte Licht muss weiterhin auf eine Photodiode treffen.\par
-Als erstes wird der Film ohne Höhenprofil angeregt und die Reflektivität gemessen. Daraus wird die Energiedissipation im Galfenol-Film bestimmt. Die Energiedissipation wird im Folgenden jeweils von jeder Messung als Untergrund subtrahiert. Es werden vier Gitter unterschiedlicher Tiefe vermessen. Für das tiefste Gitter wird außerdem eine Messung mit gedrehter Polarisation durchgeführt. Aus der Intensität wird die Oszillation der Reflektivitätsänderung der Probe bestimmt. Mit einer Fouriertransformation der Messwerte in der Zeitdomäne lassen sich Amplitude, Frequenz und Breite des Signals untersuchen.
+Der Aufbau, der schematisch in Abbildung \autoref{aufbau} dargestell ist, besteht aus einer Probe von einigen Millimetern Dicke zwischen den Platten eines Kondensators. Diese Probe wird über Heizwicklungen mit einem Heizstrom mit der gewünschten Rate erwämt. Da der Kristall hygroskopisch ist, befindet sich die Probe in einem zu allen Zeiten vakuumierten Rezipienten. Die Temperaturmessung erfolgt über ein an der Probe angeschlossenes Thermoelement. Für die Messung des Relaxationsstroms ist außerdem ein Pikoamperemeter vorhanden.
 \begin{figure}
   \centering
   \includegraphics[width=0.75\textwidth]{img/aufbau.png}
@@ -16,3 +9,7 @@ Als erstes wird der Film ohne Höhenprofil angeregt und die Reflektivität gemes
 \end{figure}
 
 \FloatBarrier
+
+\section{Durchf\"{u}hrung}
+
+Zunächst wird die Probe bei eingeschaltenem elektrischen Feld für ca. \SI{900}{\second} bis auf ungefähr \SI{320}{\kelvin} erwärmt. Dann wird der Heizstrom abgestellt und die Probe wird mit flüssigem Stickstoff auf etwa \SI{210}{\kelvin} abgekühlt. Das Feld an den Kondensatorplatten wird abgeschaltet und der Kondenstor kurzgeschlossen, um zu verhindern, dass Ladungsträger aus dieser Quelle die Messung des Relaxationsstroms stören. Nach einer Wartezeit von einigen Minuten wird das Pikoamperemeter angeschlossen und der Heizstrom so eingeregelt, dass eine konstante Heizrate von \SI{1.5}{\kelvin} bzw. \SI{2}{\kelvin} an der Probe gemessen wird. Sobald ein konstanter Strom gemessen wird, werden Wertepaare für die Temperatur und den Strom genommen.
