@@ -47,10 +47,9 @@ print(f'e = {e_exp}')
 # Strom ohne Untergrund
 T_clean = T[:80]
 I_clean = I[:80] - polynomal_fit(T_clean, *params_exp) + unp.nominal_values(e_exp)
-I_clean = I_clean - np.min(I_clean) + np.min(I_clean)*1e-55
+offset = np.min(I_clean) - np.min(I_clean)*1e-55
+I_clean = I_clean - offset
 T_max = T_clean[np.argmax(I_clean)]
-
-# noch den Offset (vom Messgerät) bestimmen und abziehen!
 
 plt.figure()
 plt.plot(T, polynomal_fit(T, *params_exp), 'r-', label='Untergrund')
@@ -101,7 +100,7 @@ for i in range(len(T_clean)):
     integrated = np.append(integrated, np.log(np.trapz(I_clean[i:], T_clean[i:]) / I_clean[i]))
 
 # fit
-params_linin, cov_linin = curve_fit(linear_fit, 1/T_clean[:-25], integrated[:-25])
+params_linin, cov_linin = curve_fit(linear_fit, 1/T_clean[7:-25], integrated[7:-25])
 errors_linin = np.sqrt(np.diag(cov_linin))
 
 a_linin = ufloat(params_linin[0], errors_linin[0])
@@ -115,11 +114,13 @@ print(f'a = {a_linin}')
 print(f'b = {b_linin}')
 print(f'Aktivierungsenergie W = {W_meth2} eV')
 print(f'Relaxationszeit tau0 = {tau0_2} s')
+print(f'T_max = {T_max} K')
+print(f'Offset des Messgeraets: I_off = {offset}')
 
 plt.figure()
 plt.plot(1/T_clean[:-5], integrated[:-5], 'bx', label='Daten')
-plt.plot(1/T_clean[:-25], integrated[:-25], 'gx', label='Fitdaten')
-plt.plot(1/T_clean[:-25], linear_fit(1/T_clean[:-25], *params_linin), 'k-', label='Ausgleichsgerade')
+plt.plot(1/T_clean[7:-25], integrated[7:-25], 'gx', label='Fitdaten')
+plt.plot(1/T_clean[7:-25], linear_fit(1/T_clean[7:-25], *params_linin), 'k-', label='Ausgleichsgerade')
 plt.xlabel('1/T / 1/K')
 plt.ylabel(r'$\ln(\int I/I)$')
 plt.legend()
@@ -155,7 +156,8 @@ print(f'e = {e_exp}')
 # Strom ohne Untergrund
 T_clean = T[:72]
 I_clean = I[:72] - polynomal_fit(T_clean, *params_exp) + unp.nominal_values(e_exp)
-I_clean = I_clean - np.min(I_clean) + np.min(I_clean)*1e-55
+offset = np.min(I_clean) - np.min(I_clean)*1e-55
+I_clean = I_clean - offset
 T_max = T_clean[np.argmax(I_clean)]
 
 plt.figure()
@@ -219,6 +221,8 @@ print(f'a = {a_linin}')
 print(f'b = {b_linin}')
 print(f'Aktivierungsenergie W = {W_meth2} eV')
 print(f'Relaxationszeit tau0 = {tau0_2} s')
+print(f'T_max = {T_max} K')
+print(f'Offset des Messgeraets: I_off = {offset}')
 
 plt.figure()
 plt.plot(1/T_clean[:-5], integrated[:-5], 'bx', label='Daten')

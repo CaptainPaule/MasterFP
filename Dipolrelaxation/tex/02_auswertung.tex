@@ -1,8 +1,34 @@
 \section{Auswertung}
 
-Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy} und uncertainties \cite{uncertain} berechnet.
+Der Relaxationsstroms wird für zwei verschiedene Heizraten (\SI{1.5}{\kelvin\per\second} und \SI{2.0}{\kelvin\per\second}) in Abhängigkeit der Temperatur gemessen. Aus dem Strom werden die Aktivierugnsenergie und die Relaxationszeit bestimmt. Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy} und uncertainties \cite{uncertain} berechnet.
 
 \subsection{Untergrundsubtraktion}
+
+Die Messdaten müssen zunächst von einem Untergrund bereinigt werden. Dieser Untergrund ist das Resultat der steigenden Temperatur, was dazu führt, dass sich mehr Ladungsträger im Kristall bewegen können, was sich in einem kontinuierlichen Anstieg des gemessenen Stroms zeigt. Der Untergrund wird mit einem Polynom vierten Grades der Form
+\begin{equation}
+  I_\text{bg}(T) = aT^4 + bT^3 + cT^2 + dT + e
+\end{equation}
+modelliert. Die berechneten Parameter sind
+\begin{equation*}
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  a &= \num{6.3(13)e-18}\\
+  b &= \num{-6.2(14)e-15}\\
+  c &= \num{2.3(5)e-12}\\
+  d &= \num{-3.8(9)e-10}\\
+  e &= \num{2.4(6)e-08}
+\end{aligned}
+\qquad
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  a &= \num{1.23(22)e-17}\\
+  b &= \num{-1.20(23)e-14}\\
+  c &= \num{4.4(9)e-12}\\
+  d &= \num{-7.1(15)e-10}\\
+  e &= \num{4.3(9)e-08}\,,
+\end{aligned}
+\end{equation*}
+die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg} dargestellt. In \autoref{fig:no-bg} sind die Messdaten ohne Untergrund und ohne den Anstieg vom zweiten Relaxationsvorgang zu sehen.
 
 \begin{figure}[htp]
     \centering
@@ -15,9 +41,10 @@ Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_2C.pdf}
-        \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
     \end{subfigure}
-    \caption{Temperaturabhängiger Verlauf der Messdaten und Fit an den Untergrund durch ein Polynom fünften Grades.}
+    \caption{Temperaturabhängiger Verlauf der Messdaten und Fit an den Untergrund durch ein Polynom vierten Grades.}
+    \label{fig:bg}
 \end{figure}
 
 \begin{figure}[htp]
@@ -31,49 +58,69 @@ Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_2C_no-bg.pdf}
-        \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
     \end{subfigure}
     \caption{Vom Untergrund bereinigte und Messwerte ohne den zweiten Anstieg des Relaxationsstroms.}
+    \label{fig:no-bg}
 \end{figure}
 
 Heizrate: 1.5 K/s
-Background Fit:
-a = (6.3+/-1.3)e-18
-b = (-6.2+/-1.4)e-15
-c = (2.3+/-0.5)e-12
-d = (-3.8+/-0.9)e-10
-e = (2.4+/-0.6)e-08
+
 Einfacher linearer Fit für W:
-a = (-1.388+/-0.033)e+04
-b = 32.1+/-1.4
-Aktivierungsenergie W = 1.196+/-0.029 eV
-Relaxationszeit tau0 = (0.7+/-1.0)e-23 s
+a = (-1.388\pm0.033)e+04
+b = 32.1\pm1.4
+Aktivierungsenergie W = 1.196\pm0.029 eV
+Relaxationszeit tau0 = (0.7\pm1.0)e-23 s
 Linearer Fit an Integral für W:
-a = (1.022+/-0.034)e+04
-b = -37.3+/-1.4
-Aktivierungsenergie W = 0.880+/-0.029 eV
-Relaxationszeit tau0 = (1.7+/-2.4)e-17 s
+a = (1.158\pm0.033)e+04
+b = -42.7\pm1.3
+Aktivierungsenergie W = 0.998\pm0.029 eV
+Relaxationszeit tau0 = (0.7\pm1.0)e-19 s
+$T_max$ = 255.14999999999998 K
 
 Heizrate: 2 K/s
-Background Fit:
-a = (1.23+/-0.22)e-17
-b = (-1.20+/-0.23)e-14
-c = (4.4+/-0.9)e-12
-d = (-7.1+/-1.5)e-10
-e = (4.3+/-0.9)e-08
+
 Einfacher linearer Fit für W:
-a = (-9.61+/-0.30)e+03
-b = 15.0+/-1.2
-Aktivierungsenergie W = 0.829+/-0.026 eV
-Relaxationszeit tau0 = (2.7+/-3.2)e-16 s
+a = (-9.61\pm0.30)e+03
+b = 15.0\pm1.2
+Aktivierungsenergie W = 0.829\pm0.026 eV
+Relaxationszeit tau0 = (2.7\pm3.2)e-16 s
 Linearer Fit an Integral für W:
-a = (1.011+/-0.018)e+04
-b = -36.8+/-0.7
-Aktivierungsenergie W = 0.871+/-0.015 eV
-Relaxationszeit tau0 = (3.8+/-2.6)e-17 s
+a = (1.011\pm0.018)e+04
+b = -36.8\pm0.7
+Aktivierungsenergie W = 0.871\pm0.015 eV
+Relaxationszeit tau0 = (3.8\pm2.6)e-17 s
+$T_max$ = 259.15 K
 
 \subsection{Bestimmung der Aktivierungsenergie durch einen linearen Fit}
 
+Die erste Methode, mit der die Aktivierugnsenergie $W$ bestimmt wird, ist, indem eine Gerade an den linearen Verlauf des logarithmierten Stroms in Abhängigkeit von $1/T$ gefittet wird. Gemäß \autoref{eq:meth1} ist mit dem Fit
+\begin{equation}
+  \ln{(j(T))} = a \cdot \frac{1}{T} + b
+\end{equation}
+die Aktivierungsenergie
+\begin{equation*}
+  W_\text{meth1} = a \cdot k_\text{B}\,.
+\end{equation*}
+Die Fitparameter und daraus resultierende Aktivierugnsenergie und Relaxationszeit sind
+\begin{equation*}
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  a &= \num{-1.388(33)e+04}\\
+  b &= \num{32.1(14)}\\
+  W &= \SI{1.196(29)}{\electronvolt}\\
+  \tau_0 &= \SI{0.7(10)e-23}{\second}
+\end{aligned}
+\qquad
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  a &= \num{-9.61(30)e+03}\\
+  b &= \num{15.0(12)}\\
+  W &= \SI{0.829(26)}{\electronvolt}\\
+  \tau_0 &= \SI{2.7(32)e-16}{\second}\,.
+\end{aligned}
+\end{equation*}
+Die ensprechenden Plot sind in \autoref{fig:meth1}
 \begin{figure}[htp]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
@@ -88,6 +135,7 @@ Relaxationszeit tau0 = (3.8+/-2.6)e-17 s
         \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an den Anstieg des Relaxationsstroms.}
+    \label{fig:meth1}
 \end{figure}
 
 \subsection{Bestimmung der Aktivierungsenergie durch Integration}

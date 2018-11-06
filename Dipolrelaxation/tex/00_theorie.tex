@@ -15,4 +15,23 @@ Wird ein solcher Kristalls als Dielektrikum zwischen zwei Kondensatorplatten ang
 \begin{equation}
   y(p) = \frac{pE}{3k_\text{B}T}\,,
 \end{equation}
-wobei $p$ der Betrag des Dipolmoments und $E$ die elektrische Feldstärke ist.
+wobei $p$ der Betrag des Dipolmoments und $E$ die elektrische Feldstärke ist.\par
+Durch ein Abkühlen auf Stickstofftemperatur, erhöht sich die Relaxationszeit, die Anzahl der ausgerichteten Dipole wird jedoch kaum verändert. Die Probe wird dann mit einer konstanten Heizrate $b = \text{d}T/\text{d}t$ aufgeheizt, sodass die zuvor ausgerichteten Dipole wieder eine statistische Verteilung annehmen. Dieser Vorgang ist die Ursache für einen Relaxationsstrom. Durch die Abnahme der Relaxationszeit mit steigender Temperatur, steigt der Strom an, durchläuft ein Maximum und nimmt wieder ab, da sich die Zahl der noch nicht relaxierten Dipole verringert.
+Da die Zahl der bei der Temperatur $T$ im Zeitintervall $\text{d}t$ relaxierenden Dipole abhängig von der Zahl der noch vorhandenen, orientierten Dipole ist, mit der inversen Relaxationszeit $\tau(T)$ als Proportionalitätskonstante, ist die Zahl der ausgerichteten Dipole zur Zeit $t$ bzw. bei der Temperatur $T$
+\begin{equation}
+  N = N_\text{p} \exp{\left( - \int_{t_0}^{t} \frac{\text{d}t^\prime}{\tau(T)} \right)} = N_\text{p} \exp{\left( - \frac{1}{b} \int_{T_0}^{T} \frac{\text{d}T^\prime}{\tau(T^\prime)} \right)}
+\end{equation}
+Die Depolarisationsstromdichte ist
+\begin{equation}
+  j(T) = \frac{p^2E}{3k_\text{B}T_\text{p}} \frac{N_\text{p}}{\tau_0} \exp{\left[ -\frac{1}{b\tau_0}\int_{T_0}^{T} \exp{\left( -W / k_\text{B}T^\prime \text{d}T^\prime \right)} \right]} \exp{\left( -W / k_\text{B}T \right)}\.
+  \label{eq:stromdichte}
+\end{equation}
+Da für den Anfang der Kurve
+\begin{equation}
+  irgendwas=0
+\end{equation}
+gilt, kann die Depolarisationsstromdichte mit
+\begin{equation}
+  bla
+\end{equation}
+genähert werden.
