@@ -64,32 +64,10 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
     \label{fig:no-bg}
 \end{figure}
 
-Heizrate: 1.5 K/s
-
-Einfacher linearer Fit für W:
-a = (-1.388\pm0.033)e+04
-b = 32.1\pm1.4
-Aktivierungsenergie W = 1.196\pm0.029 eV
-Relaxationszeit tau0 = (0.7\pm1.0)e-23 s
-Linearer Fit an Integral für W:
-a = (1.158\pm0.033)e+04
-b = -42.7\pm1.3
-Aktivierungsenergie W = 0.998\pm0.029 eV
-Relaxationszeit tau0 = (0.7\pm1.0)e-19 s
+Heizrate: 1.5 K/s\\
 $T_max$ = 255.14999999999998 K
 
-Heizrate: 2 K/s
-
-Einfacher linearer Fit für W:
-a = (-9.61\pm0.30)e+03
-b = 15.0\pm1.2
-Aktivierungsenergie W = 0.829\pm0.026 eV
-Relaxationszeit tau0 = (2.7\pm3.2)e-16 s
-Linearer Fit an Integral für W:
-a = (1.011\pm0.018)e+04
-b = -36.8\pm0.7
-Aktivierungsenergie W = 0.871\pm0.015 eV
-Relaxationszeit tau0 = (3.8\pm2.6)e-17 s
+Heizrate: 2 K/s\\
 $T_max$ = 259.15 K
 
 \subsection{Bestimmung der Aktivierungsenergie durch einen linearen Fit}
@@ -120,7 +98,7 @@ Die Fitparameter und daraus resultierende Aktivierugnsenergie und Relaxationszei
   \tau_0 &= \SI{2.7(32)e-16}{\second}\,.
 \end{aligned}
 \end{equation*}
-Die ensprechenden Plot sind in \autoref{fig:meth1}
+Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden Plot sind in \autoref{fig:meth1}.
 \begin{figure}[htp]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
@@ -154,23 +132,33 @@ Die ensprechenden Plot sind in \autoref{fig:meth1}
         \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an die gewichtete Integration des gesamten Verlaufs des Relaxationsstroms.}
+    \label{fig:meth2}
 \end{figure}
 
-Eine genauere Bestimmung der Aktivierungsenergie $W$ erfolgt anhand der Gleichung
-\begin{equation*}
-    F(T) = \frac{\int_T^{T^\ast} i(T^\prime)\mathrm{d}T^\prime}{i(T)}\,.
-\end{equation*}
-Dazu wird $F(T)$ linear gegen $1/T$ aufgetragen:
-\begin{equation*}
-    F(T) = a \cdot\frac{1}{T} + b\,,
-\end{equation*}
-die Aktivierugnsenergie ist dann
+Eine genauere Bestimmung der Aktivierungsenergie $W$ erfolgt anhand \autoref{eq:meth2}. Dazu wird die integrierte und gewichtete Stromdichte linear gegen $1/T$ aufgetragen und die Fitparameter bestimmt. Die Aktivierungsenergie ist dann mit der Steigung $a$ der Gerade
 \begin{equation*}
     W = a \cdot k_\text{B}\,.
 \end{equation*}
-Die Relaxationszeit $\tau_0$ wird mit die Lage des maximalen Stroms $T_\text{max}$ bestimmt, hier fehlt noch eine genauere Beschreibung, wie man zu dieser Gleichung kommt:
-\begin{equation}
-    \label{eqn:tau0}
-    \tau_0 = \frac{k_\text{B}T_\text{max}^2}{Wb}
-             \exp\!\left[-\frac{W}{k_\text{B}T_\text{max}} \right]
-\end{equation}
+Die Werte sind
+\begin{equation*}
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  a &= \num{1.158(33)e+04}\\
+  b &= \num{-42.7(13)}\\
+  W &= \SI{0.998(29)}{\electronvolt}\\
+  \tau_0 &= \SI{0.7(10)e-19}{\second}
+\end{aligned}
+\qquad
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  a &= \num{1.011(18)e+04}\\
+  b &= \num{-36.8(7)}\\
+  W &= \SI{0.871(15)}{\electronvolt}\\
+  \tau_0 &= \SI{3.8(26)e-17}{\second}
+\end{aligned}
+\end{equation*}
+und die Plots sind in \autoref{fig:meth2} zu sehen.
+
+\subsection{Temperaturabhängiger Verlauf der Relaxationszeit}
+
+Hier muss noch tau gegen T hin

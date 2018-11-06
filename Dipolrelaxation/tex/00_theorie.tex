@@ -7,6 +7,7 @@ Durch Messung des Relaxationsstroms, der entsteht, wenn zuvor in einem elektrisc
 Durch das Dotieren des einwertigen Ionenkristalls Kaliumbromid mit zweiwertigen $\text{Strontium}^{2+}$-Ionen, entstehen Paare von Strontium-Ionen und Leerstellen, da eine lokale, elektrische Ladungsneutralität energetisch bevorzugt ist. So werden im Kristall permanante Dipole erzeugt. Die Richtungsverteilung der Dipole unterliegt der Boltzmannstatistik. Die Energie, die aufgebracht werden muss, um die Richtung eines Dipols im Gitter zu verändern beträgt $W$; die Anzahl der Dipole, die diese Energie bei einer Temperatur $T$ aufbringen können ist $\exp \left( -W/k_\text{B}T \right)$. Die Relaxationszeit $\tau$ ist eine Größe, die die mittlere Zeit zwischen zwei Umorientierungen eines Dipols beschreibt. Sie ist temperaturabhängig, nähert sich mit steigender Temperatur dem Wert $\tau_0$ an und lässt sich beschreiben mit
 \begin{equation}
   \tau(T) = \tau_0 \exp \left( W/k_\text{B}T \right)\,.
+  \label{eq:tau}
 \end{equation}
 
 \subsection{Grundlagen des Messverfahrens}
@@ -23,15 +24,32 @@ Da die Zahl der bei der Temperatur $T$ im Zeitintervall $\text{d}t$ relaxierende
 \end{equation}
 Die Depolarisationsstromdichte ist
 \begin{equation}
-  j(T) = \frac{p^2E}{3k_\text{B}T_\text{p}} \frac{N_\text{p}}{\tau_0} \exp{\left[ -\frac{1}{b\tau_0}\int_{T_0}^{T} \exp{\left( -W / k_\text{B}T^\prime \text{d}T^\prime \right)} \right]} \exp{\left( -W / k_\text{B}T \right)}\.
+  j(T) = \frac{p^2E}{3k_\text{B}T_\text{p}} \frac{N_\text{p}}{\tau_0} \exp{\left[ -\frac{1}{b\tau_0}\int_{T_0}^{T} \exp{\left( -W / k_\text{B}T^\prime \text{d}T^\prime \right)} \right]} \exp{\left( -W / k_\text{B}T \right)}\,.
   \label{eq:stromdichte}
 \end{equation}
 Da für den Anfang der Kurve
 \begin{equation}
-  irgendwas=0
+  \int_{T_0}^{T} \exp{\left( -W / k_\text{B}T^\prime \text{d}T^\prime \right)} \approx 0
 \end{equation}
-gilt, kann die Depolarisationsstromdichte mit
+gilt, kann die Depolarisationsstromdichte dort mit
 \begin{equation}
-  bla
+  j(T) = \frac{p^2E}{3k_\text{B}T_\text{p}} \frac{N_\text{p}}{\tau_0} \int_{T_0}^{T} \exp{\left( -W / k_\text{B}T \right)}
+  \label{eq:meth1}
 \end{equation}
-genähert werden.
+genähert werden; Eine lineare Ausgleichsrechung an $\ln{j(T)}$ gegen $1/T$ liefert dann die Aktivierungsenergie $W$.\par
+Um ein genaueres Ergebnis zu erhalten wird der gesamte Kurvernverlauf berücksichtigt. Da die Änderung der Polarisation einen zur Änderungsrate proportionalen Zusammenhang besitzt und die Relaxationsfrequenz ebenfalls proportional zu der Änderung der Polarisation ist, besteht zwischen dem Strom und der Relaxationszeit der Zusammenhang
+\begin{equation}
+  \tau(T) = \frac{\int_{T}^{\inf} i(T^\prime) \text{d}T^\prime}{b \cdot i(T)}\,.
+\end{equation}
+Mit \autoref{eq:tau} ergibt sich daraus
+\begin{equation}
+  \frac{W}{k_\text{B}T} = \ln{\frac{\int_{T}^{\inf} i(T^\prime) \text{d}T^\prime}{b \tau_0 \cdot i(T)}}\,,
+  \label{eq:meth2}
+\end{equation}
+sodass $W$ aus der Steigung einer linearen Ausgleichsrechung bestimmt werden kann, indem die linke Seite dieser Gleichung gegen $1/T$ aufgetragen wird. Die obere Integrationsgrenze sollte zu diesem Zweck eine Temperatur sein, bei der sich der Strom nicht mehr ändert.\par
+Die Relaxationszeit $\tau_0$ kann bestimmt werden, indem \autoref{eq:stromdichte} nach der Temperatur abgeleitet wird. Das Ergebnis wird gleich Null gesetzt und an der Stelle $T_\text{max}$ ausgewertet:
+\begin{equation}
+  \tau_0 = \frac{k_\text{B} {T^2}_\text{max}}{W b} \cdot \exp{\left(- \frac{W}{k_\text{B} T_\text{max}}\right)}\,.
+  \label{eq:tau0}
+\end{equation}
+$T_\text{max}$ ist die Temperatur, an der der Relaxationsstrom maximal wird.
