@@ -1,6 +1,6 @@
 \section{Auswertung}
 
-Der Relaxationsstroms wird für zwei verschiedene Heizraten (\SI{1.5}{\kelvin\per\second} und \SI{2.0}{\kelvin\per\second}) in Abhängigkeit der Temperatur gemessen. Aus dem Strom werden die Aktivierugnsenergie und die Relaxationszeit bestimmt. Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy} und uncertainties \cite{uncertain} berechnet.
+Der Relaxationsstroms wird für zwei verschiedene Heizraten (\SI{1.5}{\kelvin\per\minute} und \SI{2.0}{\kelvin\per\minute}) in Abhängigkeit der Temperatur gemessen. Aus dem Strom werden die Aktivierugnsenergie und die Relaxationszeit bestimmt. Fehler und Ausgleichsrechnungen werden mit den Python-Paketen SciPy \cite{scipy} und uncertainties \cite{uncertain} berechnet.
 
 \subsection{Untergrundsubtraktion}
 
@@ -11,7 +11,7 @@ Die Messdaten müssen zunächst von einem Untergrund bereinigt werden. Dieser Un
 modelliert. Die berechneten Parameter sind
 \begin{equation*}
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\minute}\\
   a &= \num{6.3(13)e-18}\\
   b &= \num{-6.2(14)e-15}\\
   c &= \num{2.3(5)e-12}\\
@@ -20,7 +20,7 @@ modelliert. Die berechneten Parameter sind
 \end{aligned}
 \qquad
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\minute}\\
   a &= \num{1.23(22)e-17}\\
   b &= \num{-1.20(23)e-14}\\
   c &= \num{4.4(9)e-12}\\
@@ -35,13 +35,13 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_15C.pdf}
-        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\minute}$}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_2C.pdf}
-        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
     \caption{Temperaturabhängiger Verlauf der Messdaten und Fit an den Untergrund durch ein Polynom vierten Grades.}
     \label{fig:bg}
@@ -52,13 +52,13 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_15C_no-bg.pdf}
-        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\minute}$}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/heizrate_2C_no-bg.pdf}
-        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
     \caption{Vom Untergrund bereinigte und Messwerte ohne den zweiten Anstieg des Relaxationsstroms.}
     \label{fig:no-bg}
@@ -67,12 +67,12 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
 Das Maximum im Relaxationsstrom ist für die beiden Heizraten
 \begin{equation*}
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\minute}\\
   T_\text{max} = \SI{255.15}{\kelvin}
 \end{aligned}
 \qquad
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\minute}\\
   T_\text{max} = \SI{259.15}{\kelvin}\,,
 \end{aligned}
 \end{equation*}
@@ -91,7 +91,7 @@ die Aktivierungsenergie
 Die Fitparameter und daraus resultierende Aktivierugnsenergie und Relaxationszeit sind
 \begin{equation*}
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\minute}\\
   a &= \num{-1.388(33)e+04}\\
   b &= \num{32.1(14)}\\
   W &= \SI{1.196(29)}{\electronvolt}\\
@@ -99,7 +99,7 @@ Die Fitparameter und daraus resultierende Aktivierugnsenergie und Relaxationszei
 \end{aligned}
 \qquad
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\minute}\\
   a &= \num{-9.61(30)e+03}\\
   b &= \num{15.0(12)}\\
   W &= \SI{0.829(26)}{\electronvolt}\\
@@ -112,13 +112,13 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr15_W-aus-Methode1.pdf}
-        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\minute}$}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr2_W-aus-Methode1.pdf}
-        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an den Anstieg des Relaxationsstroms.}
     \label{fig:meth1}
@@ -132,13 +132,13 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr15_W-aus-Methode2.pdf}
-        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\minute}$}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr2_W-aus-Methode2.pdf}
-        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an die gewichtete Integration des gesamten Verlaufs des Relaxationsstroms.}
     \label{fig:meth2}
@@ -151,7 +151,7 @@ Eine genauere Bestimmung der Aktivierungsenergie $W$ erfolgt anhand \autoref{eq:
 Die Werte sind
 \begin{equation*}
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\minute}\\
   a &= \num{1.158(33)e+04}\\
   b &= \num{-42.7(13)}\\
   W &= \SI{0.998(29)}{\electronvolt}\\
@@ -159,7 +159,7 @@ Die Werte sind
 \end{aligned}
 \qquad
 \begin{aligned}[c]
-  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\minute}\\
   a &= \num{1.011(18)e+04}\\
   b &= \num{-36.8(7)}\\
   W &= \SI{0.871(15)}{\electronvolt}\\
@@ -177,13 +177,13 @@ In \autoref{fig:tau} ist der temperaturabhängige Verlauf der Relaxationszeit f�
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr15_tau.pdf}
-        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\minute}$}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr2_tau.pdf}
-        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
     \caption{Temperaturabhängiger Verlauf der Relaxationszeit; für die Relaxationszeit $\tau_0$ sind  pro Heizrate zwei Berechnungsmethoden angewandt worden.}
     \label{fig:tau}
