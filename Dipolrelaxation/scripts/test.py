@@ -17,6 +17,13 @@ def relaxationszeit(T_max, b, W):
     tau_0 = Boltzmann / elementary_charge * T_max**2 / (W * b) * unp.exp(- W / (Boltzmann / elementary_charge * T_max))
     return(tau_0)
 
+@np.vectorize
+def tau_vs_T(tau, W, T):
+    tau = unp.nominal_values(tau)
+    W = unp.nominal_values(W)
+    tau_T = tau * unp.exp( W / (Boltzmann / elementary_charge * T))
+    return(tau_T)
+
 print('\nHeizrate: 1.5 K/s')
 T, I = np.genfromtxt('../data/heizrate_15C.txt', unpack=True)
 T = convert_temperature(T, 'C', 'K')
@@ -126,6 +133,18 @@ plt.ylabel(r'$\ln(\int I/I)$')
 plt.legend()
 plt.savefig('../img/hr15_W-aus-Methode2.pdf')
 
+tau_T1 = tau_vs_T(tau0_1, W_meth1, T)
+tau_T2 = tau_vs_T(tau0_2, W_meth2, T)
+
+plt.figure()
+plt.plot(T, tau_T1, 'rx', label='Methode 1')
+plt.plot(T, tau_T2, 'gx', label='Methode 2')
+plt.yscale('log')
+plt.xlabel('T / K')
+plt.ylabel(r'$\tau(T)$ / s')
+plt.legend()
+plt.savefig('../img/hr15_tau.pdf')
+
 print('\nHeizrate: 2 K/s')
 T, I = np.genfromtxt('../data/heizrate_2C.txt', unpack=True)
 T = convert_temperature(T, 'C', 'K')
@@ -232,3 +251,15 @@ plt.xlabel('1/T / 1/K')
 plt.ylabel(r'$\ln(\int I/I)$')
 plt.legend()
 plt.savefig('../img/hr2_W-aus-Methode2.pdf')
+
+tau_T1 = tau_vs_T(tau0_1, W_meth1, T)
+tau_T2 = tau_vs_T(tau0_2, W_meth2, T)
+
+plt.figure()
+plt.plot(T, tau_T1, 'rx', label='Methode 1')
+plt.plot(T, tau_T2, 'gx', label='Methode 2')
+plt.yscale('log')
+plt.xlabel('T / K')
+plt.ylabel(r'$\tau(T)$ / s')
+plt.legend()
+plt.savefig('../img/hr2_tau.pdf')

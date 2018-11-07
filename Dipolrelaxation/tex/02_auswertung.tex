@@ -64,13 +64,21 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
     \label{fig:no-bg}
 \end{figure}
 
-Heizrate: 1.5 K/s\\
-$T_max$ = 255.14999999999998 K
-
-Heizrate: 2 K/s\\
-$T_max$ = 259.15 K
+Das Maximum im Relaxationsstrom ist für die beiden Heizraten
+\begin{equation*}
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{1.5}{\kelvin\per\second}\\
+  T_\text{max} = \SI{255.15}{\kelvin}
+\end{aligned}
+\qquad
+\begin{aligned}[c]
+  \text{Heizrate: }& \SI{2.0}{\kelvin\per\second}\\
+  T_\text{max} = \SI{259.15}{\kelvin}\,,
+\end{aligned}
+\end{equation*}
 
 \subsection{Bestimmung der Aktivierungsenergie durch einen linearen Fit}
+\label{sec:lin}
 
 Die erste Methode, mit der die Aktivierugnsenergie $W$ bestimmt wird, ist, indem eine Gerade an den linearen Verlauf des logarithmierten Stroms in Abhängigkeit von $1/T$ gefittet wird. Gemäß \autoref{eq:meth1} ist mit dem Fit
 \begin{equation}
@@ -110,13 +118,14 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr2_W-aus-Methode1.pdf}
-        \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an den Anstieg des Relaxationsstroms.}
     \label{fig:meth1}
 \end{figure}
 
 \subsection{Bestimmung der Aktivierungsenergie durch Integration}
+\label{sec:linin}
 
 \begin{figure}[htp]
     \centering
@@ -129,7 +138,7 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/hr2_W-aus-Methode2.pdf}
-        \caption{Heizrate: $\SI{2}{\kelvin\per\second}$}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
     \end{subfigure}
     \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an die gewichtete Integration des gesamten Verlaufs des Relaxationsstroms.}
     \label{fig:meth2}
@@ -161,4 +170,21 @@ und die Plots sind in \autoref{fig:meth2} zu sehen.
 
 \subsection{Temperaturabhängiger Verlauf der Relaxationszeit}
 
-Hier muss noch tau gegen T hin
+In \autoref{fig:tau} ist der temperaturabhängige Verlauf der Relaxationszeit für beide Heizraten zu sehen, dazu wurde \autoref{eq:tau} verwendet. Pro Heizrate sind zwei Kurven dargestellt, da die Ergebnisse der in \autoref{sec:lin} und \autoref{sec:linin} verwendeteten Methoden gegenübergestellt werden.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/hr15_tau.pdf}
+        \caption{Heizrate: $\SI{1.5}{\kelvin\per\second}$}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/hr2_tau.pdf}
+        \caption{Heizrate: $\SI{2.0}{\kelvin\per\second}$}
+    \end{subfigure}
+    \caption{Temperaturabhängiger Verlauf der Relaxationszeit; für die Relaxationszeit $\tau_0$ sind  pro Heizrate zwei Berechnungsmethoden angewandt worden.}
+    \label{fig:tau}
+\end{figure}
