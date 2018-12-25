@@ -28,7 +28,7 @@ modelliert. Die berechneten Parameter sind
   e &= \num{4.3(9)e-08}\,,
 \end{aligned}
 \end{equation*}
-die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg} dargestellt. In \autoref{fig:no-bg} sind die Messdaten ohne Untergrund und ohne den Anstieg vom zweiten Relaxationsvorgang zu sehen.
+die Messdaten, zusammen mit der Anpassung für den Untergrund sind in \autoref{fig:bg} dargestellt. In \autoref{fig:no-bg} sind die Messdaten ohne Untergrund und ohne den Anstieg vom zweiten Relaxationsvorgang zu sehen.
 
 \begin{figure}[htp]
     \centering
@@ -43,7 +43,7 @@ die Messdaten, zusammen mit dem Fit für den Untergrund sind in \autoref{fig:bg}
         \includegraphics[width=\textwidth]{img/heizrate_2C.pdf}
         \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
-    \caption{Temperaturabhängiger Verlauf der Messdaten und Fit an den Untergrund durch ein Polynom vierten Grades.}
+    \caption{Temperaturabhängiger Verlauf der Messdaten und Anpassung an den Untergrund durch ein Polynom vierten Grades.}
     \label{fig:bg}
 \end{figure}
 
@@ -77,10 +77,10 @@ Das Maximum im Relaxationsstrom ist für die beiden Heizraten
 \end{aligned}
 \end{equation*}
 
-\subsection{Bestimmung der Aktivierungsenergie durch einen linearen Fit}
+\subsection{Bestimmung der Aktivierungsenergie durch eine lineare Anpassung}
 \label{sec:lin}
 
-Die erste Methode, mit der die Aktivierugnsenergie $W$ bestimmt wird, ist, indem eine Gerade an den linearen Verlauf des logarithmierten Stroms in Abhängigkeit von $1/T$ gefittet wird. Gemäß \autoref{eq:meth1} ist mit dem Fit
+Die erste Methode, mit der die Aktivierugnsenergie $W$ bestimmt wird, ist, indem eine Gerade an den linearen Verlauf des logarithmierten Stroms in Abhängigkeit von $1/T$ gefittet wird. Gemäß \autoref{eq:meth1} ist mit der Anpassung
 \begin{equation}
   \ln{(j(T))} = a \cdot \frac{1}{T} + b
 \end{equation}
@@ -88,7 +88,7 @@ die Aktivierungsenergie
 \begin{equation*}
   W_\text{meth1} = a \cdot k_\text{B}\,.
 \end{equation*}
-Die Fitparameter und daraus resultierende Aktivierugnsenergie und Relaxationszeit sind
+Die Anpassungsparameter und daraus resultierende Aktivierugnsenergie und Relaxationszeit sind
 \begin{equation*}
 \begin{aligned}[c]
   \text{Heizrate: }& \SI{1.5}{\kelvin\per\minute}\\
@@ -120,7 +120,7 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
         \includegraphics[width=\textwidth]{img/hr2_W-aus-Methode1.pdf}
         \caption{Heizrate: $\SI{2.0}{\kelvin\per\minute}$}
     \end{subfigure}
-    \caption{Bestimmung der Aktivierungsenergie $W$ durch einen linearen Fit an den Anstieg des Relaxationsstroms.}
+    \caption{Bestimmung der Aktivierungsenergie $W$ durch eine lineare Anpassung an den Anstieg des Relaxationsstroms.}
     \label{fig:meth1}
 \end{figure}
 
@@ -144,7 +144,7 @@ Die Relaxationszeit wird dabei mit \autoref{eq:tau0} bestimmt. Die ensprechenden
     \label{fig:meth2}
 \end{figure}
 
-Eine genauere Bestimmung der Aktivierungsenergie $W$ erfolgt anhand \autoref{eq:meth2}. Dazu wird die integrierte und gewichtete Stromdichte linear gegen $1/T$ aufgetragen und die Fitparameter bestimmt. Die Aktivierungsenergie ist dann mit der Steigung $a$ der Gerade
+Eine genauere Bestimmung der Aktivierungsenergie $W$ erfolgt anhand \autoref{eq:meth2}. Dazu wird die integrierte und gewichtete Stromdichte linear gegen $1/T$ aufgetragen und die Anpassungsparameter bestimmt. Die Aktivierungsenergie ergibt sich dann aus der Steigung $a$ der Gerade
 \begin{equation*}
     W = a \cdot k_\text{B}\,.
 \end{equation*}
